@@ -5,9 +5,66 @@
 
 /*Fuentes*/
 /*Colores*/
+/* HEADER */
 h1 {
   font-family: "Zilla Slab", serif;
-  font-size: 2rem;
-  color: #1b1b1b;
+  font-size: 2.7rem;
+  color: #393d40;
   text-transform: uppercase;
   font-weight: bolder; }
+
+.container-fluid.header {
+  position: relative;
+  padding: 0; }
+  .container-fluid.header .navbar {
+    position: absolute;
+    width: 100%;
+    z-index: 10; }
+    .container-fluid.header .navbar-brand {
+      width: 20%; }
+    .container-fluid.header .navbar-collapse {
+      width: 80%; }
+      .container-fluid.header .navbar-collapse .navbar-nav {
+        width: 100%;
+        justify-content: flex-end;
+        margin-right: 0; }
+      .container-fluid.header .navbar-collapse .nav-item .nav-link {
+        color: #dedede;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-family: "Zilla Slab", serif;
+        font-size: 1.10rem;
+        letter-spacing: 0.1rem; }
+        .container-fluid.header .navbar-collapse .nav-item .nav-link:hover {
+          color: #ee7500; }
+
+.start {
+  height: 100vh;
+  padding-left: 0;
+  padding-right: 0; }
+  .start .row {
+    padding: 0;
+    margin: 0; }
+  .start__pyme {
+    height: 100vh; }
+    .start__pyme h1 {
+      margin: 0; }
+    .start__pyme p {
+      font-family: "Zilla Slab", serif;
+      font-size: 1.2rem;
+      line-height: 1.2; }
+    .start__pyme__down a {
+      font-size: 3rem;
+      color: #ee7500; }
+      .start__pyme__down a .animate__shakeY {
+        --animate-duration: 5s; }
+  .start__shop {
+    height: 100vh;
+    background-image: url(../img/intro-shopping.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+/* MAIN */
+#main {
+  height: 700px; }

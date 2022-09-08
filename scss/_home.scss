@@ -1,7 +1,93 @@
+/* HEADER */
 h1{
     font-family: $fuente-primaria;
-    font-size: $fuente-size-titulos;
-    color: $color-oscuro;
+    font-size: 2.7rem;
+    color: $color-gris-oscuro;
     text-transform: uppercase;
     font-weight: bolder;
+}
+
+.container-fluid.header{
+    position: relative;
+    padding: 0;
+
+    .navbar{
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+
+        &-brand{
+            width: 20%;
+        }
+
+        &-collapse{
+            width: 80%;
+
+            .navbar-nav{
+                width: 100%;
+                justify-content: flex-end;
+                margin-right: 0;
+            }
+
+            .nav-item .nav-link{
+                color: #dedede;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-family: $fuente-primaria;
+                font-size: 1.10rem;
+                letter-spacing: 0.1rem;
+
+                &:hover{
+                    color: $color-persimmon;
+                }
+            }
+        }
+    }
+}
+
+.start{
+    height: 100vh;
+    padding-left: 0;
+    padding-right: 0;
+
+    .row{
+        padding: 0;
+        margin: 0;
+    }
+
+    &__pyme{
+        height: 100vh;
+
+        h1{
+            margin: 0;
+        }
+
+        p{
+            font-family: $fuente-primaria;
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+
+        &__down a{
+            font-size: 3rem;
+            color: $color-persimmon;
+
+            .animate__shakeY{
+                --animate-duration: 5s;
+            }
+        }
+    }
+
+    &__shop{
+        height: 100vh;
+        background-image: url(../img/intro-shopping.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+/* MAIN */
+#main{
+    height: 700px;
 }
