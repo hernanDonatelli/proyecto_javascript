@@ -1,6 +1,6 @@
 /* HEADER */
 h1{
-    font-family: $fuente-primaria;
+    font-family: $fuente-Zilla;
     font-size: 2.7rem;
     color: $color-gris-oscuro;
     text-transform: uppercase;
@@ -33,7 +33,7 @@ h1{
                 color: #dedede;
                 text-transform: uppercase;
                 font-weight: 600;
-                font-family: $fuente-primaria;
+                font-family: $fuente-Zilla;
                 font-size: 1.10rem;
                 letter-spacing: 0.1rem;
 
@@ -63,7 +63,7 @@ h1{
         }
 
         p{
-            font-family: $fuente-primaria;
+            font-family: $fuente-Rubik;
             font-size: 1.2rem;
             line-height: 1.2;
         }
@@ -90,4 +90,42 @@ h1{
 /* MAIN */
 #main{
     height: 700px;
+    background-color: $color-gris-oscuro;
+
+    h1{
+        font-family: $fuente-Zilla;
+        color: $color-almond;
+    }
+
+    .shop{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-rows: minmax(300px, auto);
+        margin: 40px;
+        grid-auto-flow: dense;
+        gap: .8rem;
+
+        &__item{
+            color: $color-almond;
+            background-color: $color-gris-oscuro;
+            padding: 1.5rem;
+            display: grid;
+            font-size: .9rem;
+            font-family: $fuente-Rubik;
+            place-items: center;
+            text-align: center;
+            border: 1px solid $color-gris;
+            border-radius: 0.5rem;
+            transition: .5s;
+
+            &:hover{
+                background-color: $color-persimmon;
+            }
+
+            &__content img{
+                position: relative;
+                // max-width: 100px;
+            }
+        }
+    }
 }
