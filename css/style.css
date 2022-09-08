@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/*Fuentes*/
+/*Colores*/
+h1 {
+  font-family: "Zilla Slab", serif;
+  font-size: 2rem;
+  color: #1b1b1b;
+  text-transform: uppercase;
+  font-weight: bolder; }
