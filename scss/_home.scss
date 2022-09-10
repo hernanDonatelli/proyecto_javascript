@@ -90,42 +90,132 @@ h1{
 /* MAIN */
 #main{
     height: 700px;
-    background-color: $color-gris-oscuro;
 
     h1{
         font-family: $fuente-Zilla;
-        color: $color-almond;
+        color: $color-gris-oscuro;
     }
 
     .shop{
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        grid-template-rows: minmax(300px, auto);
-        margin: 40px;
-        grid-auto-flow: dense;
-        gap: .8rem;
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+        justify-items: center;
+        align-items: center;
+        gap: 20px;
 
-        &__item{
-            color: $color-almond;
-            background-color: $color-gris-oscuro;
-            padding: 1.5rem;
-            display: grid;
-            font-size: .9rem;
-            font-family: $fuente-Rubik;
-            place-items: center;
+        &__card{
+            position: relative;
+            width: 300px;
+            overflow: hidden;
+            margin: auto;
+            padding: .8rem;
+            border-radius: 2%;
+            border: 1px solid $color-almond;
+            transition: all .6s ease-in-out;
+            box-shadow: 0 1px 5px 0 rgba(0,0,0,.3);
             text-align: center;
-            border: 1px solid $color-gris;
-            border-radius: 0.5rem;
-            transition: .5s;
 
-            &:hover{
-                background-color: $color-persimmon;
+
+            .brand{
+                position: absolute;
+                top: 2%;
+                left: 2%;
+
+                h2{
+                    color: $color-almond;
+                    font-family: $fuente-Rubik;
+                    font-size: 1.15rem;
+                    font-weight: 200;
+                }
             }
 
-            &__content img{
+            &__header img{
                 position: relative;
-                // max-width: 100px;
+                border-radius: 50%;
+                display: block;
+                height: 200px;
+                width: 200px;
+                border-top: 8px solid $color-almond;
+                border-bottom: 8px solid $color-almond;
+                object-fit: cover;
+                margin: 20px auto 15px;
+                transition: all .3s ease;
+            }
+
+            &__content{
+                .content__price{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: space-between;
+
+                    .price{
+                        color: $color-almond;
+                        font-family: $fuente-Rubik;
+                        font-weight: 300;
+                        font-size: 1.4rem;
+                    }
+
+                    .title{
+                        color: $color-almond;
+                        font-family: $fuente-Rubik;
+                        font-weight: 700;
+                        font-size: 1.20rem;
+                        text-transform: uppercase;
+                        line-height: 1.3rem;
+                    }
+                }
+
+                .description p{
+                    font-family: $fuente-Rubik;
+                    color: $color-almond;
+                    font-size: .85rem;
+                    font-weight: 300;
+                    text-align: left;
+                    padding: 0;
+                }
+
+            }
+
+            &__actions{
+
+                .btn_shop_card{
+                    width: 75%;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border: 1px solid $color-almond;
+                    background-color: transparent;
+                    border-radius: 20px;
+                    padding: 5px 10px;
+                    transition: all .3s ease-in-out;
+
+                    &:hover{
+                        background-color: $color-almond;
+
+                        span,
+                        .market{
+                            color: $color-gris-oscuro;
+                        }
+                    }
+
+                    .market{
+                        color: $color-almond;
+                        font-size: 1.2rem;
+                    }
+
+                    span{
+                        font-family: $fuente-Oswald;
+                        font-size: 1.2rem;
+                        color: $color-almond;
+                    }
+                }
             }
         }
+
+
+
     }
 }

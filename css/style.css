@@ -1,10 +1,22 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  outline: 0;
   box-sizing: border-box; }
 
 /*Fuentes*/
 /*Colores*/
+.shop__card.inti {
+  background: linear-gradient(-135deg, #D1934B, #4158d0); }
+
+.shop__card.colonial {
+  background: linear-gradient(-135deg, #09c577, #4158d0); }
+
+.shop__card.cocoon {
+  background: linear-gradient(-135deg, #e43997, #4158d0); }
+
 /* HEADER */
 h1 {
   font-family: "Zilla Slab", serif;
@@ -67,31 +79,92 @@ h1 {
 
 /* MAIN */
 #main {
-  height: 700px;
-  background-color: #393d40; }
+  height: 700px; }
   #main h1 {
     font-family: "Zilla Slab", serif;
-    color: #f1edea; }
+    color: #393d40; }
   #main .shop {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-template-rows: minmax(300px, auto);
-    margin: 40px;
-    grid-auto-flow: dense;
-    gap: .8rem; }
-    #main .shop__item {
-      color: #f1edea;
-      background-color: #393d40;
-      padding: 1.5rem;
-      display: grid;
-      font-size: .9rem;
-      font-family: "Rubik", sans-serif;
-      place-items: center;
-      text-align: center;
-      border: 1px solid #636363;
-      border-radius: 0.5rem;
-      transition: .5s; }
-      #main .shop__item:hover {
-        background-color: #ee7500; }
-      #main .shop__item__content img {
-        position: relative; }
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    justify-items: center;
+    align-items: center;
+    gap: 20px; }
+    #main .shop__card {
+      position: relative;
+      width: 300px;
+      overflow: hidden;
+      margin: auto;
+      padding: .8rem;
+      border-radius: 2%;
+      border: 1px solid #ffffff;
+      transition: all .6s ease-in-out;
+      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+      text-align: center; }
+      #main .shop__card .brand {
+        position: absolute;
+        top: 2%;
+        left: 2%; }
+        #main .shop__card .brand h2 {
+          color: #ffffff;
+          font-family: "Rubik", sans-serif;
+          font-size: 1.15rem;
+          font-weight: 200; }
+      #main .shop__card__header img {
+        position: relative;
+        border-radius: 50%;
+        display: block;
+        height: 200px;
+        width: 200px;
+        border-top: 8px solid #ffffff;
+        border-bottom: 8px solid #ffffff;
+        object-fit: cover;
+        margin: 20px auto 15px;
+        transition: all .3s ease; }
+      #main .shop__card__content .content__price {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-between; }
+        #main .shop__card__content .content__price .price {
+          color: #ffffff;
+          font-family: "Rubik", sans-serif;
+          font-weight: 300;
+          font-size: 1.4rem; }
+        #main .shop__card__content .content__price .title {
+          color: #ffffff;
+          font-family: "Rubik", sans-serif;
+          font-weight: 700;
+          font-size: 1.20rem;
+          text-transform: uppercase;
+          line-height: 1.3rem; }
+      #main .shop__card__content .description p {
+        font-family: "Rubik", sans-serif;
+        color: #ffffff;
+        font-size: .85rem;
+        font-weight: 300;
+        text-align: left;
+        padding: 0; }
+      #main .shop__card__actions .btn_shop_card {
+        width: 75%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #ffffff;
+        background-color: transparent;
+        border-radius: 20px;
+        padding: 5px 10px;
+        transition: all .3s ease-in-out; }
+        #main .shop__card__actions .btn_shop_card:hover {
+          background-color: #ffffff; }
+          #main .shop__card__actions .btn_shop_card:hover span,
+          #main .shop__card__actions .btn_shop_card:hover .market {
+            color: #393d40; }
+        #main .shop__card__actions .btn_shop_card .market {
+          color: #ffffff;
+          font-size: 1.2rem; }
+        #main .shop__card__actions .btn_shop_card span {
+          font-family: "Oswald", sans-serif;
+          font-size: 1.2rem;
+          color: #ffffff; }
