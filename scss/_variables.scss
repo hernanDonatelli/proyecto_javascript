@@ -7,20 +7,20 @@ $fuente-size-titulos: 24px;
 
 /*Colores*/
 $color-persimmon: #ee7500;
-$color-brown: #d69764;
+$color-brown: #be6317;
 $color-almond: #ffffff;
 $color-gris: #636363;
 $color-gris-oscuro: #393d40;
-$color-deg-inti: linear-gradient(-135deg, #D1934B, #4158d0);
-$color-deg-colonial: linear-gradient(-135deg, #09c577, #4158d0);
-$color-deg-cocoon: linear-gradient(-135deg, #e43997, #4158d0);
+$color-deg-inti: linear-gradient(-180deg, #047c00, #212121);
+$color-deg-colonial: linear-gradient(-180deg, $color-brown, #212121);
+$color-deg-cocoon: linear-gradient(-180deg, #a5045d, #212121);
 
-.shop__card.inti{
+.inti{
     background: $color-deg-inti;
 }
-.shop__card.colonial{
+.colonial{
     background: $color-deg-colonial;
 }
-.shop__card.cocoon{
+.cocoon{
     background: $color-deg-cocoon;
 }
