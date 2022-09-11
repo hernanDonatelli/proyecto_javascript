@@ -10,17 +10,17 @@ $color-persimmon: #ee7500;
 $color-brown: #be6317;
 $color-almond: #ffffff;
 $color-gris: #636363;
-$color-gris-oscuro: #393d40;
-$color-deg-inti: linear-gradient(-180deg, #047c00, #212121);
-$color-deg-colonial: linear-gradient(-180deg, $color-brown, #212121);
-$color-deg-cocoon: linear-gradient(-180deg, #a5045d, #212121);
+$color-gris-oscuro: #212121;
+$color-deg-inti: linear-gradient(-180deg, #069b01, #035300);
+$color-deg-colonial: linear-gradient(-180deg, #be6317, #853c01);
+$color-deg-cocoon: linear-gradient(-180deg, #a5045d, #72013f);
 
-.inti{
-    background: $color-deg-inti;
+.brand-Infusiones{
+    background-color: rgb(2, 131, 9);
 }
-.colonial{
-    background: $color-deg-colonial;
+.brand-Chocolates{
+    background-color: rgb(133, 98, 3);
 }
-.cocoon{
-    background: $color-deg-cocoon;
+.brand-Leches{
+    background-color: rgb(103, 3, 133);
 }

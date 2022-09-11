@@ -31,7 +31,7 @@ class Producto {
 }
 
 ////////////////////////////////////////////////////////////////////
-/* VARIABLES */
+/* ARRAY DE PRODUCTOS */
 let productos = [];
 
 let producto1 = new Producto({
@@ -50,7 +50,7 @@ let producto2 = new Producto({
     id: 2,
     marca: "Inti Zen",
     nombre: "Inti Grey",
-    img: "https://hernandonatelli.github.io/proyecto_javascript/img/ilumine.png",
+    img: "./img/ilumine.png",
     descripcion:
         "Clásico Earl Grey sutilmente perfumado con bergamota, prensada a frío, que aporta notas cítricas a la base de té negro de Oriente. Cada taza es un encuentro con la tradición.",
     precio: 254.45,
@@ -62,7 +62,7 @@ let producto3 = new Producto({
     id: 3,
     marca: "Chocolate Colonial",
     nombre: "Chocolate para Taza",
-    img: "https://hernandonatelli.github.io/proyecto_javascript/img/ilumine.png",
+    img: "./img/ilumine.png",
     descripcion:
         "Clásico Earl Grey sutilmente perfumado con bergamota, prensada a frío, que aporta notas cítricas a la base de té negro de Oriente. Cada taza es un encuentro con la tradición.",
     precio: 210.23,
@@ -74,7 +74,7 @@ let producto4 = new Producto({
     id: 4,
     marca: "Chocolate Colonial",
     nombre: "Chocolate 55% sin Azucar",
-    img: "https://hernandonatelli.github.io/proyecto_javascript/img/ilumine.png",
+    img: "./img/ilumine.png",
     descripcion:
         "Clásico Earl Grey sutilmente perfumado con bergamota, prensada a frío, que aporta notas cítricas a la base de té negro de Oriente. Cada taza es un encuentro con la tradición.",
     precio: 225.78,
@@ -86,37 +86,37 @@ let producto5 = new Producto({
     id: 5,
     marca: "Cocoon",
     nombre: "Leche de Almendras s/Azucar",
-    img: "https://hernandonatelli.github.io/proyecto_javascript/img/ilumine.png",
+    img: "./img/ilumine.png",
     descripcion:
         "Clásico Earl Grey sutilmente perfumado con bergamota, prensada a frío, que aporta notas cítricas a la base de té negro de Oriente. Cada taza es un encuentro con la tradición.",
     precio: 255.78,
     stock: 360,
     vendidos: 0,
-    categoria: "Leches de Almendra",
+    categoria: "Leches",
 });
 let producto6 = new Producto({
     id: 6,
     marca: "Cocoon",
     nombre: "Leche de Almendras Original",
-    img: "https://hernandonatelli.github.io/proyecto_javascript/img/ilumine.png",
+    img: "./img/ilumine.png",
     descripcion:
         "Clásico Earl Grey sutilmente perfumado con bergamota, prensada a frío, que aporta notas cítricas a la base de té negro de Oriente. Cada taza es un encuentro con la tradición.",
     precio: 255.78,
     stock: 120,
     vendidos: 0,
-    categoria: "Leches de Almendra",
+    categoria: "Leches",
 });
 let producto7 = new Producto({
     id: 7,
     marca: "Cocoon",
     nombre: "Leche de Almendras Chocolatada",
-    img: "https://hernandonatelli.github.io/proyecto_javascript/img/ilumine.png",
+    img: "./img/ilumine.png",
     descripcion:
         "Clásico Earl Grey sutilmente perfumado con bergamota, prensada a frío, que aporta notas cítricas a la base de té negro de Oriente. Cada taza es un encuentro con la tradición.",
     precio: 278.25,
     stock: 0,
     vendidos: 0,
-    categoria: "Leches de Almendra",
+    categoria: "Leches",
 });
 
 productos.push(producto1);
