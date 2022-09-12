@@ -1,42 +1,46 @@
-/* HEADER */
-h1{
-    font-family: $fuente-Zilla;
-    font-size: 2.7rem;
-    color: $color-gris-oscuro;
-    text-transform: uppercase;
-    font-weight: bolder;
-}
+/* MAIN */
+.modal__product{
+    position: fixed;
+    width: 25vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .85);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .3);
+    top: 0;
+    right: 12%;
+    transform: translate(100%, 0%);
+    transition: all .4s ease-in-out;
+    z-index: 9999;
+    opacity: 0;
 
-.container-fluid.header{
-    position: relative;
-    padding: 0;
+    &__active{
+        transform: translate(50%, 0%);
+        opacity: 1;
+        z-index: 9998;
+    }
 
-    .navbar{
-        position: absolute;
-        width: 50%;
-        z-index: 10;
+    .modal__carrito{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1rem;
 
-        &-brand{
-            width: 10%;
-            margin: 0;
+        h3{
+            color: white;
+            font-family: $fuente-Zilla;
+            font-weight: bolder;
+            text-transform: uppercase;
+            padding-left: .5rem;
         }
 
-        &-collapse{
-            width: 90%;
+        #close{
+            background-color: transparent;
+            border: none;
+            padding-right: 1rem;
 
-            .navbar-nav{
-                width: 100%;
-                justify-content: center;
-                margin-right: 0;
-            }
-
-            .nav-item .nav-link{
-                color: $color-gris-oscuro;
-                text-transform: uppercase;
-                font-weight: 600;
-                font-family: $fuente-Zilla;
-                font-size: 1.10rem;
-                letter-spacing: 0.1rem;
+            iconify-icon{
+                color: white;
+                font-size: 1.75rem;
+                transition: all .3s ease;
 
                 &:hover{
                     color: $color-persimmon;
@@ -44,52 +48,45 @@ h1{
             }
         }
     }
-}
 
-.start{
-    height: 100vh;
-    padding-left: 0;
-    padding-right: 0;
+    .productoEnCarrito{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
 
-    .row{
-        padding: 0;
-        margin: 0;
-    }
-
-    &__pyme{
-        height: 100vh;
-
-        h1{
+        p{
+            color: white;
+            font-family: $fuente-Rubik;
+            font-weight: 300;
+            font-size: .8rem;
+            padding: 0 .5rem;
             margin: 0;
         }
 
-        p{
-            font-family: $fuente-Rubik;
-            font-size: 1.2rem;
-            line-height: 1.2;
-        }
+        button{
+            padding-right: 1.5rem;
+            background-color: transparent;
+            border: none;
+            color: white;
+            transition: all .3s ease;
 
-        &__down a{
-            font-size: 3rem;
-            color: $color-persimmon;
-
-            .animate__shakeY{
-                --animate-duration: 5s;
+            &:hover{
+                color: red;
             }
         }
-    }
 
-    &__shop{
-        height: 100vh;
-        background-image: url(../img/intro-shopping.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        hr{
+            color: white;
+            width: 75%;
+            margin: .75rem auto;
+        }
     }
 }
 
-/* MAIN */
 #main{
+    position: relative;
+
     h1{
         font-family: $fuente-Zilla;
         color: $color-gris-oscuro;
@@ -97,25 +94,37 @@ h1{
 
     .shop{
         display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
 
         &__card{
-            width: 33%;
+            width: 32%;
             position: relative;
             margin-bottom: 3rem;
+
+            .overlay_product{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .80);
+                overflow: hidden;
+            }
 
             .style{
                 font-family: sans-serif;
 
                 .img-container{
                     position: relative;
-                    height: 400px;
+                    height: 380px;
                     overflow: hidden;
+                    object-position: 100px 50px;
 
                     img{
-                        // width: 100%;
+                        width: 100%;
                         position: absolute;
-                        top: 0;
+                        top: 20%;
                         transition: all .3s ease-in-out;
                     }
                 }
@@ -143,17 +152,16 @@ h1{
                     top: 12%;
                     font-weight: 300;
                     color: white;
+                    width: 50%;
                 }
                 .like{
-                    top: 72%;
-                    right: 5%;
+                    display: block;
+                    top: 70%;
+                    right: 45%;
                     border-radius: 50%;
                     width: 32px;
                     height: 32px;
                     background-color: white;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
                     cursor: pointer;
                     transition: all .3s ease-in-out;
 
@@ -168,10 +176,9 @@ h1{
 
                 p{
                     position: absolute;
-                    width: 90%;
-                    top: 73%;
-                    left: 2%;
-                    text-align: left;
+                    width: 100%;
+                    top: 38%;
+                    text-align: center;
                     font-family: $fuente-Oswald;
                     font-weight: 400;
                     font-size: 1.5rem;
@@ -180,10 +187,22 @@ h1{
                     color: white;
                 }
 
+                .description{
+                    position: absolute;
+                    top: 43%;
+                    padding: 1rem;
+                    font-family: $fuente-Rubik;
+                    color: white;
+                    font-weight: 300;
+                    font-size: .9rem;
+                    font-style: italic;
+                    text-align: center;
+                }
+
                 a{
                     display: block;
                     text-decoration: none;
-                    width: 33%;
+                    width: 40%;
                     margin: 0 auto;
                     text-align: center;
                     color: white;

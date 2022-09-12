@@ -20,17 +20,13 @@
     <header class="container-fluid header">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Bootstrap"
-                        width="30" height="24">
-                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mb-2 mb-lg-0">
+                    <ul class="navbar-nav my-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
@@ -39,6 +35,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                        <li class="nav-item pl-5">
+                            <a href="#" class="shop-car" id="open">
+                                <iconify-icon icon="map:grocery-or-supermarket"></iconify-icon>
+                                <span>20</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -76,32 +78,18 @@
             <!-- Productos desde js -->
         </section>
 
-
-        <!-- Button trigger modal
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Launch demo modal
-        </button>
-
-        Modal
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
+        <!-- Modal lateral -->
+        <div id="modal__product" class="modal__product">
+            <div class="modal__carrito">
+                <h3>Carrito</h3>
+                <button id="close">
+                    <iconify-icon icon="ant-design:close-circle-outlined"></iconify-icon>
+                </button>
             </div>
+            <div id="carritoContainer"></div>
         </div>
-        -->
     </main>
+
 
     <!-- Footer -->
     <footer>
@@ -113,10 +101,11 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
-    <script src="./js/constructor.js"></script>
+    <!-- Javascript -->
+    <script src="./js/productos.js"></script>
     <script src="./js/home.js"></script>
     <script src="./js/carrito.js"></script>
-    <!-- <script src="js/index.js"></script> -->
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>

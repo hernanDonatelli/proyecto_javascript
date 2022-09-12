@@ -32,15 +32,16 @@ h1 {
     position: absolute;
     width: 50%;
     z-index: 10; }
-    .container-fluid.header .navbar-brand {
-      width: 10%;
-      margin: 0; }
     .container-fluid.header .navbar-collapse {
-      width: 90%; }
+      width: 100%; }
       .container-fluid.header .navbar-collapse .navbar-nav {
         width: 100%;
         justify-content: center;
+        align-items: center;
         margin-right: 0; }
+        .container-fluid.header .navbar-collapse .navbar-nav li:nth-child(4) {
+          width: 100px;
+          text-align: right; }
       .container-fluid.header .navbar-collapse .nav-item .nav-link {
         color: #212121;
         text-transform: uppercase;
@@ -50,6 +51,27 @@ h1 {
         letter-spacing: 0.1rem; }
         .container-fluid.header .navbar-collapse .nav-item .nav-link:hover {
           color: #ee7500; }
+      .container-fluid.header .navbar-collapse .nav-item .shop-car {
+        color: #212121;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        margin: 0 auto;
+        transition: all .3s ease-in-out; }
+        .container-fluid.header .navbar-collapse .nav-item .shop-car iconify-icon {
+          font-size: 1.25rem;
+          padding-right: 5px; }
+        .container-fluid.header .navbar-collapse .nav-item .shop-car:hover {
+          background-color: #ee7500;
+          border: 1px solid #ee7500; }
+          .container-fluid.header .navbar-collapse .nav-item .shop-car:hover iconify-icon,
+          .container-fluid.header .navbar-collapse .nav-item .shop-car:hover span {
+            color: white; }
 
 .start {
   height: 100vh;
@@ -79,91 +101,173 @@ h1 {
     background-size: cover; }
 
 /* MAIN */
-#main h1 {
-  font-family: "Zilla Slab", serif;
-  color: #212121; }
-
-#main .shop {
-  display: flex;
-  flex-wrap: wrap; }
-  #main .shop__card {
-    width: 33%;
-    position: relative;
-    margin-bottom: 3rem; }
-    #main .shop__card .style {
-      font-family: sans-serif; }
-      #main .shop__card .style .img-container {
-        position: relative;
-        height: 400px;
-        overflow: hidden; }
-        #main .shop__card .style .img-container img {
-          position: absolute;
-          top: 0;
-          transition: all .3s ease-in-out; }
-    #main .shop__card__product {
-      position: relative; }
-      #main .shop__card__product .price,
-      #main .shop__card__product .brand,
-      #main .shop__card__product .like {
-        position: absolute;
-        top: 5%;
-        padding: .3rem 1rem;
-        box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.7);
-        font-family: "Oswald", sans-serif;
-        color: black;
-        font-weight: 600;
-        font-size: 1.2rem; }
-      #main .shop__card__product .price {
-        background-color: white; }
-      #main .shop__card__product .brand {
-        top: 12%;
-        font-weight: 300;
-        color: white; }
-      #main .shop__card__product .like {
-        top: 72%;
-        right: 5%;
-        border-radius: 50%;
-        width: 32px;
-        height: 32px;
-        background-color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: all .3s ease-in-out; }
-        #main .shop__card__product .like:hover {
-          background-color: red; }
-          #main .shop__card__product .like:hover iconify-icon {
-            color: white; }
-      #main .shop__card__product p {
-        position: absolute;
-        width: 90%;
-        top: 73%;
-        left: 2%;
-        text-align: left;
-        font-family: "Oswald", sans-serif;
-        font-weight: 400;
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-        text-transform: uppercase;
-        color: white; }
-      #main .shop__card__product a {
-        display: block;
-        text-decoration: none;
-        width: 33%;
-        margin: 0 auto;
-        text-align: center;
+.modal__product {
+  position: fixed;
+  width: 25vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  top: 0;
+  right: 12%;
+  transform: translate(100%, 0%);
+  transition: all .4s ease-in-out;
+  z-index: 9999;
+  opacity: 0; }
+  .modal__product__active {
+    transform: translate(50%, 0%);
+    opacity: 1;
+    z-index: 9998; }
+  .modal__product .modal__carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem; }
+    .modal__product .modal__carrito h3 {
+      color: white;
+      font-family: "Zilla Slab", serif;
+      font-weight: bolder;
+      text-transform: uppercase;
+      padding-left: .5rem; }
+    .modal__product .modal__carrito #close {
+      background-color: transparent;
+      border: none;
+      padding-right: 1rem; }
+      .modal__product .modal__carrito #close iconify-icon {
         color: white;
-        padding: 0.5rem 1rem;
-        background-color: black;
-        font-family: "Oswald", sans-serif;
-        font-weight: 400;
-        font-size: 1rem;
-        border: 1px solid black;
-        text-transform: uppercase;
-        transition: all .3s ease-in-out; }
-        #main .shop__card__product a:hover {
-          background-color: transparent;
+        font-size: 1.75rem;
+        transition: all .3s ease; }
+        .modal__product .modal__carrito #close iconify-icon:hover {
+          color: #ee7500; }
+  .modal__product .productoEnCarrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; }
+    .modal__product .productoEnCarrito p {
+      color: white;
+      font-family: "Rubik", sans-serif;
+      font-weight: 300;
+      font-size: .8rem;
+      padding: 0 .5rem;
+      margin: 0; }
+    .modal__product .productoEnCarrito button {
+      padding-right: 1.5rem;
+      background-color: transparent;
+      border: none;
+      color: white;
+      transition: all .3s ease; }
+      .modal__product .productoEnCarrito button:hover {
+        color: red; }
+    .modal__product .productoEnCarrito hr {
+      color: white;
+      width: 75%;
+      margin: .75rem auto; }
+
+#main {
+  position: relative; }
+  #main h1 {
+    font-family: "Zilla Slab", serif;
+    color: #212121; }
+  #main .shop {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    #main .shop__card {
+      width: 32%;
+      position: relative;
+      margin-bottom: 3rem; }
+      #main .shop__card .overlay_product {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        overflow: hidden; }
+      #main .shop__card .style {
+        font-family: sans-serif; }
+        #main .shop__card .style .img-container {
+          position: relative;
+          height: 380px;
+          overflow: hidden;
+          object-position: 100px 50px; }
+          #main .shop__card .style .img-container img {
+            width: 100%;
+            position: absolute;
+            top: 20%;
+            transition: all .3s ease-in-out; }
+      #main .shop__card__product {
+        position: relative; }
+        #main .shop__card__product .price,
+        #main .shop__card__product .brand,
+        #main .shop__card__product .like {
+          position: absolute;
+          top: 5%;
+          padding: .3rem 1rem;
+          box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.7);
+          font-family: "Oswald", sans-serif;
           color: black;
+          font-weight: 600;
+          font-size: 1.2rem; }
+        #main .shop__card__product .price {
+          background-color: white; }
+        #main .shop__card__product .brand {
+          top: 12%;
+          font-weight: 300;
+          color: white;
+          width: 50%; }
+        #main .shop__card__product .like {
+          display: block;
+          top: 70%;
+          right: 45%;
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          background-color: white;
+          cursor: pointer;
+          transition: all .3s ease-in-out; }
+          #main .shop__card__product .like:hover {
+            background-color: red; }
+            #main .shop__card__product .like:hover iconify-icon {
+              color: white; }
+        #main .shop__card__product p {
+          position: absolute;
+          width: 100%;
+          top: 38%;
+          text-align: center;
+          font-family: "Oswald", sans-serif;
+          font-weight: 400;
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+          text-transform: uppercase;
+          color: white; }
+        #main .shop__card__product .description {
+          position: absolute;
+          top: 43%;
+          padding: 1rem;
+          font-family: "Rubik", sans-serif;
+          color: white;
+          font-weight: 300;
+          font-size: .9rem;
+          font-style: italic;
+          text-align: center; }
+        #main .shop__card__product a {
+          display: block;
+          text-decoration: none;
+          width: 40%;
+          margin: 0 auto;
+          text-align: center;
+          color: white;
+          padding: 0.5rem 1rem;
+          background-color: black;
+          font-family: "Oswald", sans-serif;
+          font-weight: 400;
+          font-size: 1rem;
           border: 1px solid black;
-          border-radius: 5px; }
+          text-transform: uppercase;
+          transition: all .3s ease-in-out; }
+          #main .shop__card__product a:hover {
+            background-color: transparent;
+            color: black;
+            border: 1px solid black;
+            border-radius: 5px; }

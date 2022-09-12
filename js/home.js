@@ -1,37 +1,36 @@
 //Pintar en Home los productos
 
-let container = document.getElementById("shop");
+const container = document.getElementById("shop");
 
-for (const producto of productos) {
+productos.forEach(producto => {
     let articulo = document.createElement("article");
     articulo.classList.add("shop__card");
 
-    articulo.innerHTML = `<div class="shop__card__product style">
-                            <div class="img-container">
-                                <img src="http://placekitten.com/g/640/380">
-                            </div>
-                            <span class="price">$${producto.precio}</span>
-                            <span class="brand brand-${producto.categoria}">${producto.marca}</span>
-                            <span class="like">
-                                <iconify-icon icon="ant-design:heart-outlined"></iconify-icon>
-                                <!-- <iconify-icon icon="ant-design:heart-filled"></iconify-icon> -->
-                            </span>
-                            <p>${producto.nombre}</p>
-                            <a class="d-flex justify-content-around align-items-center" href="#">
-                                <iconify-icon class="market" icon="map:grocery-or-supermarket"></iconify-icon>
-                                <span>Agregar</span>
-                            </a>
+    articulo.innerHTML += `<div class="shop__card__product style">
+                                <div class="img-container">
+                                    <img src="${producto.img}">
+                                    <div class="overlay_product"></div>
+                                </div>
+                                <span class="price">$${producto.precio}</span>
+                                <span class="brand brand-${producto.categoria}">${producto.marca}</span>
+                                <div class="like d-flex justify-content-center align-items-center">
+                                    <iconify-icon icon="ant-design:heart-outlined"></iconify-icon>
+                                </div>
+                                <p>${producto.nombre}</p>
+                                <span class="description">${producto.descripcion}</span>
+                                <a href="#" id="btn-${producto.id}" class="d-flex justify-content-around align-items-center mt-3">
+                                    <iconify-icon class="market" icon="map:grocery-or-supermarket"></iconify-icon>
+                                    <span>Agregar</span>
+                                </a>
+                          </div>`;
 
-                        </div>`;
-
-    container.append(articulo);
+    container.appendChild(articulo);
 
     //Eventos
     const boton = document.getElementById(`btn-${producto.id}`);
 
-    boton.addEventListener('click', () => {
-        alert(`Has agregado ${producto.nombre}`);
-    })
-
-}
+    boton.addEventListener("click", () => {
+        carritoIndex(producto.id);
+    });
+});
 
