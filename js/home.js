@@ -1,5 +1,4 @@
 //Pintar en Home los productos
-
 const container = document.getElementById("shop");
 
 productos.forEach(producto => {
@@ -18,18 +17,18 @@ productos.forEach(producto => {
                                 </div>
                                 <p>${producto.nombre}</p>
                                 <span class="description">${producto.descripcion}</span>
-                                <a href="#" id="btn-${producto.id}" class="d-flex justify-content-around align-items-center mt-3">
+                                <button id="btn-${producto.id}" class="d-flex justify-content-around align-items-center mt-3">
                                     <iconify-icon class="market" icon="map:grocery-or-supermarket"></iconify-icon>
                                     <span>Agregar</span>
-                                </a>
+                                </button>
                           </div>`;
 
     container.appendChild(articulo);
 
     //Eventos
-    const boton = document.getElementById(`btn-${producto.id}`);
+    const btn = document.getElementById(`btn-${producto.id}`);
 
-    boton.addEventListener("click", () => {
+    btn.addEventListener("click", () => {
         carritoIndex(producto.id);
     });
 });
