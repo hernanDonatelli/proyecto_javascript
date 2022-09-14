@@ -11,6 +11,14 @@ class Producto {
         this.categoria = obj.categoria;
     }
 
+    sinStock(){
+        if(this.stock <= 0){
+            return 'Sin stock';
+        }else{
+            return '';
+        }
+    }
+
     vendido(cantidad) {
         this.stock = this.stock - cantidad;
         this.vendidos = this.vendidos + cantidad;

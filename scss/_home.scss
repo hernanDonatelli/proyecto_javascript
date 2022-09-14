@@ -120,6 +120,7 @@
                     height: 380px;
                     overflow: hidden;
                     object-position: 100px 50px;
+                    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .7);
 
                     img{
                         width: 100%;
@@ -187,6 +188,17 @@
                     color: white;
                 }
 
+                .stock{
+                    background-color: rgb(252, 74, 74);
+                    font-family: $fuente-Rubik;
+                    font-size: .75rem;
+                    color: white;
+                    position: absolute;
+                    top: 2%;
+                    right: 2%;
+                    padding: .2rem .5rem;
+                }
+
                 .description{
                     position: absolute;
                     top: 43%;
@@ -220,7 +232,14 @@
                         color: black;
                         border: 1px solid black;
                         border-radius: 5px;
+
+                        &:disabled{
+                            background-color: rgb(165, 165, 165);
+                            color: rgb(82, 82, 82);
+                            border: 1px solid rgb(165, 165, 165);
+                        }
                     }
+
                 }
             }
 

@@ -12,6 +12,9 @@ productos.forEach(producto => {
                                 </div>
                                 <span class="price">$${producto.precio}</span>
                                 <span class="brand brand-${producto.categoria}">${producto.marca}</span>
+
+                                <span id="stock-${producto.id}">${producto.sinStock()}</span>
+
                                 <div class="like d-flex justify-content-center align-items-center">
                                     <iconify-icon icon="ant-design:heart-outlined"></iconify-icon>
                                 </div>
@@ -21,15 +24,23 @@ productos.forEach(producto => {
                                     <iconify-icon class="market" icon="map:grocery-or-supermarket"></iconify-icon>
                                     <span>Agregar</span>
                                 </button>
-                          </div>`;
+                            </div>`;
 
     container.appendChild(articulo);
 
     //Eventos
     const btn = document.getElementById(`btn-${producto.id}`);
 
+    const span = document.getElementById(`stock-${producto.id}`);
+    if (producto.sinStock()) {
+        span.classList.add("stock");
+        btn.setAttribute("disabled", "");
+    }
+
     btn.addEventListener("click", () => {
         carritoIndex(producto.id);
     });
+
 });
+
 
