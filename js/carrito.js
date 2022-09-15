@@ -1,23 +1,16 @@
 const carrito = [];
 
 const carritoIndex = (productoId) => {
-  const contenedorCarrito = document.getElementById("carritoContainer");
+    const contenedorCarrito = document.getElementById("carritoContainer");
 
-  const renderProductosCarrito = () => {
-    let producto = productos.find(producto => producto.id === productoId);
-
-    //Verifico si hay stock
-    if (producto.stock <= 0) {
-        alert(`No hay stock disponible`);
-    } else {
-        const existe = carrito.some(producto => producto.id === productoId);
-        //console.log(existe);
+    const renderProductosCarrito = () => {
+        let producto = productos.find((producto) => producto.id === productoId);
+        const existe = carrito.some((producto) => producto.id === productoId);
 
         if (existe) {
             alert("El producto ingresado ya existe en el carrito");
         } else {
             carrito.push(producto);
-            //console.log(carrito);
 
             producto.cantidad = 1;
             producto.vendido(producto.cantidad);
@@ -37,12 +30,12 @@ const carritoIndex = (productoId) => {
 
             contenedorCarrito.appendChild(div);
         }
+    };
 
-    }
+    renderProductosCarrito();
 
-  }
+    const total = document.getElementById("total");
+    total.innerText = 'Total: $' + carrito.reduce((total, producto) => (total += producto.precio), 0);
 
-  renderProductosCarrito();
-}
-
+};
 

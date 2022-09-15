@@ -11,6 +11,7 @@
     transition: all .4s ease-in-out;
     z-index: 9999;
     opacity: 0;
+    overflow-y: auto;
 
     &__active{
         transform: translate(50%, 0%);
@@ -18,7 +19,7 @@
         z-index: 9998;
     }
 
-    .modal__carrito__header{
+    .modal__carrito{
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -82,10 +83,18 @@
             margin: .75rem auto;
         }
     }
+
+    #total{
+        font-family: $fuente-Rubik;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-align: center;
+    }
 }
 
 #main{
-    position: relative;
+    position: relative;;
 
     h1{
         font-family: $fuente-Zilla;
@@ -188,7 +197,7 @@
                     color: white;
                 }
 
-                .stock{
+                .sinStock{
                     background-color: rgb(252, 74, 74);
                     font-family: $fuente-Rubik;
                     font-size: .75rem;

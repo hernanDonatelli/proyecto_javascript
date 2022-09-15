@@ -33,7 +33,7 @@ productos.forEach(producto => {
 
     const span = document.getElementById(`stock-${producto.id}`);
     if (producto.sinStock()) {
-        span.classList.add("stock");
+        span.classList.add("sinStock");
         btn.setAttribute("disabled", "");
     }
 
