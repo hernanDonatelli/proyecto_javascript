@@ -39,8 +39,9 @@ productos.forEach(producto => {
 
     btn.addEventListener("click", () => {
         carritoIndex(producto.id);
+
+        //Pintar cantidades en carrito
+        const totalCarrito = document.getElementById("countCart");
+        totalCarrito.innerText = carrito.length;
     });
-
 });
-
-

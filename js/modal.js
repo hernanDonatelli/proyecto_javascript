@@ -11,12 +11,12 @@ cerrarModal.addEventListener("click", () => {
   modalContainer.classList.remove("modal__product__active");
 });
 
-modalContainer.addEventListener("click", () => {
+/* modalContainer.addEventListener("click", () => {
   cerrarModal.click();
-});
+}); */
 
-modalCarrito.addEventListener("click", (e) => {
+/* modalCarrito.addEventListener("click", (e) => {
   if(modalCarrito){
     e.stopPropagation();
   }
-});
+}); */
