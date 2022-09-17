@@ -12,9 +12,11 @@ h1{
     padding: 0;
 
     .navbar{
-        position: absolute;
-        width: 50%;
-        z-index: 10;
+        // position: absolute;
+        // width: 50%;
+        // z-index: 10;
+        background-color: #f3f3f3;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .5);
 
         &-collapse{
             width: 100%;
@@ -36,13 +38,12 @@ h1{
                 .nav-link{
                     color: $color-gris-oscuro;
                     text-transform: uppercase;
-                    font-weight: 600;
-                    font-family: $fuente-Zilla;
-                    font-size: 1.10rem;
-                    letter-spacing: 0.1rem;
+                    font-weight: 400;
+                    font-family: $fuente-Inter;
+                    font-size: 1rem;
 
                     &:hover{
-                        color: $color-persimmon;
+                        color: $color-violet;
                     }
                 }
 
@@ -65,8 +66,8 @@ h1{
                     }
 
                     &:hover{
-                        background-color: $color-persimmon;
-                        border: 1px solid $color-persimmon;
+                        background-color: $color-violet;
+                        border: 1px solid $color-violet;
 
                         iconify-icon,
                         span{
@@ -97,14 +98,14 @@ h1{
         }
 
         p{
-            font-family: $fuente-Rubik;
-            font-size: 1.2rem;
+            font-family: $fuente-Inter;
+            font-size: 1rem;
             line-height: 1.2;
         }
 
         &__down a{
             font-size: 3rem;
-            color: $color-persimmon;
+            color: $color-violet;
 
             .animate__shakeY{
                 --animate-duration: 5s;

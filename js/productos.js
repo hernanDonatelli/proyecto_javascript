@@ -45,7 +45,7 @@ let producto1 = new Producto({
     nombre: "Ilumine",
     img: "./img/ilumine.png",
     descripcion:
-        "Breakfast Tea que combina un té negro de Ceylon cosechado en altura bajo el sol tibio y aire puro, con notas bien definidas de un té negro de Assam que le dan cuerpo, sabor y aroma a la taza.",
+        "Breakfast Tea que combina un té negro de Ceylon cosechado en altura y aire puro, con notas bien definidas de un té negro de Assam que le dan cuerpo, sabor y aroma a la taza.",
     precio: 254.45,
     stock: 200,
     vendidos: 0,

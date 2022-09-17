@@ -1,22 +1,23 @@
 /* MAIN */
 .modal__product{
     position: fixed;
-    width: 33vw;
-    height: 100vh;
+    width: 50vw;
+    height: 75vh;
     background-color: rgba(0, 0, 0, .95);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, .3);
-    top: 0;
-    right: 12%;
-    transform: translate(100%, 0%);
+    bottom: 0%;
+    right: 25%;
+    transform: translate(0%, 100%);
     transition: all .4s ease-in-out;
     z-index: 9999;
     opacity: 0;
     overflow-y: auto;
 
     &__active{
-        transform: translate(36%, 0%);
+        transform: translate(0%, -10%);
         opacity: 1;
         z-index: 9998;
+        box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .8);
     }
 
     .modal__carrito{
@@ -44,7 +45,7 @@
                 transition: all .3s ease;
 
                 &:hover{
-                    color: $color-persimmon;
+                    color: $color-fuxia;
                 }
             }
         }
@@ -55,10 +56,11 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+        transition: all .3s ease-in-out;
 
         p{
             color: white;
-            font-family: $fuente-Rubik;
+            font-family: $fuente-Roboto;
             font-weight: 300;
             font-size: .8rem;
             padding: 0 .5rem;
@@ -77,6 +79,19 @@
             }
         }
 
+        input[type="number"]{
+            width: 15%;
+            text-align: center;
+            background-color: #ededed;
+            border-radius: 10%;
+            border: 1px solid #ededed;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
         hr{
             color: white;
             width: 75%;
@@ -85,7 +100,7 @@
     }
 
     #total{
-        font-family: $fuente-Rubik;
+        font-family: $fuente-Roboto;
         color: white;
         font-size: 1.1rem;
         font-weight: bold;
@@ -107,34 +122,59 @@
         flex-wrap: wrap;
 
         &__card{
-            width: 32%;
+            width: 30%;
             position: relative;
             margin-bottom: 3rem;
 
-            .overlay_product{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, .80);
-                overflow: hidden;
+            button{
+                display: block;
+                text-decoration: none;
+                width: 40%;
+                margin: 0 auto;
+                text-align: center;
+                color: white;
+                padding: 0.5rem 1rem;
+                background-color: black;
+                font-family: $fuente-Montserrat;
+                font-weight: 400;
+                font-size: .9rem;
+                border: 1px solid black;
+                text-transform: uppercase;
+                transition: all .3s ease-in-out;
+
+                &:hover{
+                    background-color: transparent;
+                    color: black;
+                    border: 1px solid black;
+                    border-radius: 5px;
+
+                    &:disabled{
+                        background-color: rgb(165, 165, 165);
+                        color: rgb(82, 82, 82);
+                        border: 1px solid rgb(165, 165, 165);
+                    }
+                }
+
             }
 
             .style{
+                height: 450px;
                 font-family: sans-serif;
+                border: 1px solid rgb(226, 226, 226);
+                border-radius: 2%;
+
 
                 .img-container{
-                    position: relative;
-                    height: 380px;
+                    height: 250px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
                     overflow: hidden;
                     object-position: 100px 50px;
-                    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .7);
 
                     img{
-                        width: 100%;
-                        position: absolute;
-                        top: 20%;
+                        display: block;
+                        width: 75%;
                         transition: all .3s ease-in-out;
                     }
                 }
@@ -142,6 +182,7 @@
 
             &__product{
                 position: relative;
+                background-color: white;
 
                 .price,
                 .brand,
@@ -149,34 +190,42 @@
                     position: absolute;
                     top: 5%;
                     padding: .3rem 1rem;
-                    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .7);
-                    font-family: $fuente-Oswald;
+                    // box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .7);
+                    font-family: $fuente-Roboto;
                     color: black;
                     font-weight: 600;
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                 }
                 .price{
-                    background-color: white;
+                    top: 0%;
+                    color: grey;
+                    letter-spacing: -.1rem;
+                    font-family: $fuente-Roboto;
+                    font-size: 1.7rem;
+                    font-weight: 700;
                 }
                 .brand{
-                    top: 12%;
+                    top: 10%;
                     font-weight: 300;
                     color: white;
                     width: 50%;
                 }
                 .like{
                     display: block;
-                    top: 70%;
+                    top: 90%;
                     right: 45%;
                     border-radius: 50%;
                     width: 32px;
                     height: 32px;
                     background-color: white;
+                    box-shadow: unset;
+                    border: 1px solid black;
                     cursor: pointer;
                     transition: all .3s ease-in-out;
 
                     &:hover{
-                        background-color: red;
+                        background-color: $color-fuxia;
+                        border-color: $color-fuxia;
 
                         iconify-icon{
                             color: white;
@@ -187,19 +236,19 @@
                 p{
                     position: absolute;
                     width: 100%;
-                    top: 38%;
+                    top: 55%;
                     text-align: center;
-                    font-family: $fuente-Oswald;
-                    font-weight: 400;
-                    font-size: 1.5rem;
-                    line-height: 1.5rem;
+                    font-family: $fuente-Montserrat;
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                    line-height: 1.2rem;
                     text-transform: uppercase;
-                    color: white;
+                    color: black;
                 }
 
                 .sinStock{
                     background-color: rgb(252, 74, 74);
-                    font-family: $fuente-Rubik;
+                    font-family: $fuente-Roboto;
                     font-size: .75rem;
                     color: white;
                     position: absolute;
@@ -210,50 +259,18 @@
 
                 .description{
                     position: absolute;
-                    top: 43%;
+                    top: 63%;
                     padding: 1rem;
-                    font-family: $fuente-Rubik;
-                    color: white;
+                    font-family: $fuente-Inter;
+                    color: black;
                     font-weight: 300;
-                    font-size: .9rem;
-                    font-style: italic;
+                    font-size: .85rem;
                     text-align: center;
                 }
 
-                button{
-                    display: block;
-                    text-decoration: none;
-                    width: 40%;
-                    margin: 0 auto;
-                    text-align: center;
-                    color: white;
-                    padding: 0.5rem 1rem;
-                    background-color: black;
-                    font-family: $fuente-Oswald;
-                    font-weight: 400;
-                    font-size: 1rem;
-                    border: 1px solid black;
-                    text-transform: uppercase;
-                    transition: all .3s ease-in-out;
-
-                    &:hover{
-                        background-color: transparent;
-                        color: black;
-                        border: 1px solid black;
-                        border-radius: 5px;
-
-                        &:disabled{
-                            background-color: rgb(165, 165, 165);
-                            color: rgb(82, 82, 82);
-                            border: 1px solid rgb(165, 165, 165);
-                        }
-                    }
-
-                }
             }
 
         }
-
 
     }
 }

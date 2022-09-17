@@ -22,7 +22,7 @@ const carritoIndex = (productoId) => {
                                 <p>Nombre: ${producto.nombre}</p>
                                 <p>Precio: ${producto.precio}</p>
                                 <p>
-                                    Cantidad: <input id="cantidad-${producto.id}" type="number" value="${producto.cantidad}">
+                                    Cantidad: <input id="cantidad-${producto.id}" min="1" type="number" value="${producto.cantidad}">
                                 </p>
                             </div>
                             <button id="btn-eliminar-${producto.id}" class="btn-eliminar">
@@ -42,6 +42,7 @@ const carritoIndex = (productoId) => {
                 carrito.splice(carrito.indexOf(producto), 1);
                 total.innerText = 'Total: $' + carrito.reduce((total, producto) => (total += producto.precio), 0);
                 div.remove();
+                totalCarrito.innerText = carrito.length;
             });
 
             //Agregar cantidades
@@ -50,6 +51,7 @@ const carritoIndex = (productoId) => {
 
             agregar.addEventListener("click", () => {
                 producto.cantidad = producto.cantidad + valor;
+                console.log(producto.cantidad);
             });
 
         }
