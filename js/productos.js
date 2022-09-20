@@ -29,10 +29,6 @@ class Producto {
 
     }
 
-    imprimirProducto() {
-        console.log(`Producto ${this.id}\nNombre: ${this.nombre}\nMarca: ${this.marca}\nCategoria: ${this.categoria}\nPrecio: ${this.precio}\nVendidos: ${this.vendidos}\nStock: ${this.stock}
-    `);
-    }
 }
 
 ////////////////////////////////////////////////////////////////////

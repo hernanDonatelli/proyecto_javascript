@@ -1,6 +1,7 @@
 //Pintar en Home los productos
 const container = document.getElementById("shop");
-const totalCarrito = document.getElementById("countCart");
+let totalCarrito = document.getElementById("countCart");
+let carrito = [];
 
 productos.forEach(producto => {
     let articulo = document.createElement("article");
@@ -32,6 +33,7 @@ productos.forEach(producto => {
     //Eventos
     const btn = document.getElementById(`btn-${producto.id}`);
     const span = document.getElementById(`stock-${producto.id}`);
+
     if (producto.sinStock()) {
         span.classList.add("sinStock");
         btn.setAttribute("disabled", "");
@@ -40,7 +42,38 @@ productos.forEach(producto => {
     btn.addEventListener("click", () => {
         carritoIndex(producto.id);
 
-        //Pintar cantidades en carrito
-        totalCarrito.innerText = carrito.length;
     });
 });
+
+//LocalStorage
+const contenedorCarrito = document.getElementById("carritoContainer");
+let getCarrito = JSON.parse(localStorage.getItem("cartStorage")) || [];
+
+if(getCarrito.length === 0){
+    let div = document.createElement("div");
+    div.classList.add("productoEnCarrito");
+    div.innerHTML = `<p>No hay productos en el carrito</p>`;
+    contenedorCarrito.append(div);
+}else{
+    getCarrito.forEach(item => {
+        let div = document.createElement("div");
+        div.classList.add("productoEnCarrito");
+        item.cantidad = 1;
+        div.innerHTML = `<div class="inCart">
+                            <p>Nombre: ${item.nombre}</p>
+                            <p>Precio: ${item.precio}</p>
+                            <p>
+                                Cantidad: <input id="cantidad-${item.id}" min="1" type="number" value="${item.cantidad}">
+                            </p>
+                        </div>
+                        <button id="btn-eliminar-${item.id}" class="btn-eliminar">
+                            <iconify-icon icon="bi:trash"></iconify-icon>
+                        </button>
+                        <hr>`;
+
+        contenedorCarrito.appendChild(div);
+
+    });
+}
+
+totalCarrito.innerText = getCarrito.length;

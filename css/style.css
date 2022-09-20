@@ -140,6 +140,7 @@ h1 {
         .modal__product .modal__carrito #close iconify-icon:hover {
           color: #e700c1; }
   .modal__product .productoEnCarrito {
+    width: 65%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -172,14 +173,13 @@ h1 {
       margin: 0; }
     .modal__product .productoEnCarrito hr {
       color: white;
-      width: 75%;
-      margin: .75rem auto; }
+      width: 100%;
+      margin: .75rem; }
   .modal__product #total {
     font-family: "Roboto", sans-serif;
     color: white;
     font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center; }
+    font-weight: bold; }
 
 #main {
   position: relative; }
