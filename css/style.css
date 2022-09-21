@@ -25,7 +25,7 @@
 /* HEADER */
 h1 {
   font-family: "Zilla Slab", serif;
-  font-size: 2.7rem;
+  font-size: 2.3rem;
   color: #212121;
   text-transform: uppercase;
   font-weight: bolder; }
@@ -328,58 +328,6 @@ h1 {
 
 @media screen and (min-width: 1365.98px) {
   /* HEADER */
-  h1 {
-    font-family: "Zilla Slab", serif;
-    font-size: 2.7rem;
-    color: #212121;
-    text-transform: uppercase;
-    font-weight: bolder; }
-  .container-fluid.header {
-    padding-left: 0;
-    padding-right: 0; }
-    .container-fluid.header .navbar {
-      background-color: #f3f3f3;
-      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5); }
-      .container-fluid.header .navbar-collapse {
-        width: 100%; }
-        .container-fluid.header .navbar-collapse .navbar-nav {
-          width: 100%;
-          justify-content: center;
-          align-items: center;
-          margin-right: 0; }
-          .container-fluid.header .navbar-collapse .navbar-nav li:nth-child(4) {
-            width: 100px;
-            text-align: right; }
-        .container-fluid.header .navbar-collapse .nav-item .nav-link {
-          color: #212121;
-          font-weight: 400;
-          font-family: "Inter", sans-serif;
-          font-size: 1.1rem; }
-          .container-fluid.header .navbar-collapse .nav-item .nav-link:hover {
-            color: #7b00ee; }
-        .container-fluid.header .navbar-collapse .nav-item .shop-car {
-          color: #212121;
-          text-decoration: none;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: 1px solid black;
-          border-radius: 50%;
-          width: 55px;
-          height: 55px;
-          margin: 0 auto;
-          transition: all .3s ease-in-out; }
-          .container-fluid.header .navbar-collapse .nav-item .shop-car iconify-icon {
-            font-size: 1.25rem;
-            padding-right: 5px; }
-          .container-fluid.header .navbar-collapse .nav-item .shop-car:hover {
-            background-color: #7b00ee;
-            border: 1px solid #7b00ee; }
-            .container-fluid.header .navbar-collapse .nav-item .shop-car:hover iconify-icon,
-            .container-fluid.header .navbar-collapse .nav-item .shop-car:hover span {
-              color: white; }
-      .container-fluid.header .navbar.fixed-top {
-        max-width: 100%; }
   .start {
     padding-left: 0;
     padding-right: 0; }
@@ -392,14 +340,8 @@ h1 {
       font-size: 2rem;
       margin-top: 2rem; }
     .start__pyme p {
-      font-family: "Inter", sans-serif;
       font-size: 1rem;
       line-height: 1.2; }
-    .start__pyme__down a {
-      font-size: 3rem;
-      color: #7b00ee; }
-      .start__pyme__down a .animate__shakeY {
-        --animate-duration: 5s; }
     .start__shop {
       max-width: 100%;
       height: 100vh;
@@ -409,211 +351,44 @@ h1 {
       background-size: cover; }
   /* MAIN */
   .modal__product {
-    position: fixed;
     width: 50vw;
     height: 75vh;
     bottom: 0%;
-    right: 25%;
-    transform: translate(0%, 100%);
-    transition: all .4s ease-in-out;
-    z-index: 9999;
-    opacity: 0;
-    overflow-y: auto; }
+    right: 25%; }
     .modal__product__active {
-      transform: translate(0%, -10%);
-      opacity: 1;
-      z-index: 9998;
-      box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.8); }
-    .modal__product .modal__carrito {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 1rem; }
-      .modal__product .modal__carrito h3 {
-        color: #212121;
-        font-family: "Zilla Slab", serif;
-        font-weight: bolder;
-        text-transform: uppercase;
-        padding-left: .5rem; }
-      .modal__product .modal__carrito #close {
-        background-color: transparent;
-        border: none;
-        padding-right: 1rem; }
-        .modal__product .modal__carrito #close iconify-icon {
-          color: #212121;
-          font-size: 1.75rem;
-          transition: all .3s ease; }
-          .modal__product .modal__carrito #close iconify-icon:hover {
-            color: #e700c1; }
+      transform: translate(0%, -10%); }
     .modal__product .productoEnCarrito {
-      width: 100%;
-      display: flex;
       flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      flex-wrap: wrap;
-      transition: all .3s ease-in-out; }
-      .modal__product .productoEnCarrito p {
-        color: #212121;
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-size: .9rem;
-        padding: 0 .5rem;
-        margin: 0; }
-      .modal__product .productoEnCarrito button {
-        font-size: 1.7rem;
-        padding-right: 1.4rem;
-        background-color: transparent;
-        border: none;
-        color: #212121;
-        transition: all .3s ease; }
-        .modal__product .productoEnCarrito button:hover {
-          color: #e700c1; }
+      justify-content: flex-start; }
       .modal__product .productoEnCarrito hr {
-        color: #636363;
-        width: 100%;
-        margin: .75rem; }
+        width: 100%; }
       .modal__product .productoEnCarrito p.cantidades {
         width: 40%;
-        display: flex;
-        align-items: center;
         justify-content: space-evenly; }
-        .modal__product .productoEnCarrito p.cantidades .btn-cantidades {
-          font-size: 1.3rem;
-          padding: 0;
-          line-height: 1rem; }
       .modal__product .productoEnCarrito .inCart {
         width: 40%;
-        border-left: 5px solid #e700c1;
         margin-left: .5rem; }
-    .modal__product #total {
-      font-family: "Roboto", sans-serif;
-      color: #212121;
-      font-size: 1.1rem;
-      padding: 0 .5rem;
-      font-weight: bold; }
-  #main {
-    position: relative; }
-    #main h1 {
-      font-family: "Zilla Slab", serif;
-      color: #212121; }
-    #main .shop {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap; }
-      #main .shop__card {
-        width: 30%;
-        position: relative;
-        margin: 0;
-        margin-bottom: 3rem; }
-        #main .shop__card button {
-          display: block;
-          text-decoration: none;
-          width: 40%;
-          margin: 0 auto;
-          text-align: center;
-          color: white;
-          padding: 0.5rem 1rem;
-          background-color: black;
-          font-family: "Montserrat", sans-serif;
-          font-weight: 400;
-          font-size: .9rem;
-          border: 1px solid black;
-          text-transform: uppercase;
-          transition: all .3s ease-in-out; }
-          #main .shop__card button:hover {
-            background-color: transparent;
-            color: black;
-            border: 1px solid black;
-            border-radius: 5px; }
-            #main .shop__card button:hover:disabled {
-              background-color: #a5a5a5;
-              color: #525252;
-              border: 1px solid #a5a5a5; }
-        #main .shop__card .style {
-          height: 450px;
-          font-family: sans-serif;
-          border: 1px solid #e2e2e2;
-          border-radius: 2%; }
-          #main .shop__card .style .img-container {
-            height: 250px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            overflow: hidden;
-            object-position: 100px 50px; }
-            #main .shop__card .style .img-container img {
-              display: block;
-              width: 75%;
-              transition: all .3s ease-in-out; }
-        #main .shop__card__product {
-          position: relative;
-          background-color: white; }
-          #main .shop__card__product .price,
-          #main .shop__card__product .brand,
-          #main .shop__card__product .like {
-            position: absolute;
-            top: 5%;
-            padding: .3rem 1rem;
-            font-family: "Roboto", sans-serif;
-            color: black;
-            font-weight: 600;
-            font-size: 1rem; }
-          #main .shop__card__product .price {
-            top: 0%;
-            color: #212121;
-            letter-spacing: -.1rem;
-            font-family: "Roboto", sans-serif;
-            font-size: 2rem;
-            font-weight: 300; }
-          #main .shop__card__product .brand {
-            top: 10%;
-            font-weight: 300;
-            color: white;
-            width: 50%; }
-          #main .shop__card__product .like {
-            display: block;
-            top: 90%;
-            right: 45%;
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            background-color: white;
-            box-shadow: unset;
-            border: 1px solid black;
-            cursor: pointer;
-            transition: all .3s ease-in-out; }
-            #main .shop__card__product .like:hover {
-              background-color: #e700c1;
-              border-color: #e700c1; }
-              #main .shop__card__product .like:hover iconify-icon {
-                color: white; }
-          #main .shop__card__product p {
-            position: absolute;
-            width: 100%;
-            top: 55%;
-            text-align: center;
-            font-family: "Montserrat", sans-serif;
-            font-weight: 500;
-            font-size: 1.2rem;
-            line-height: 1.2rem;
-            text-transform: uppercase;
-            color: black; }
-          #main .shop__card__product .sinStock {
-            background-color: #fc4a4a;
-            font-family: "Roboto", sans-serif;
-            font-size: .75rem;
-            color: white;
-            position: absolute;
-            top: 2%;
-            right: 2%;
-            padding: .2rem .5rem; }
-          #main .shop__card__product .description {
-            position: absolute;
-            top: 63%;
-            padding: 1rem;
-            font-family: "Inter", sans-serif;
-            color: black;
-            font-weight: 300;
-            font-size: .85rem;
-            text-align: center; } }
+  #main .shop__card {
+    width: 30%;
+    margin: 0;
+    margin-bottom: 3rem; }
+    #main .shop__card .style {
+      height: 450px; }
+      #main .shop__card .style .img-container {
+        height: 250px; }
+    #main .shop__card__product .price,
+    #main .shop__card__product .brand,
+    #main .shop__card__product .like {
+      top: 5%; }
+    #main .shop__card__product .price {
+      top: 0%; }
+    #main .shop__card__product .brand {
+      top: 10%;
+      width: 50%; }
+    #main .shop__card__product .like {
+      top: 90%;
+      right: 45%; }
+    #main .shop__card__product p {
+      top: 55%; }
+    #main .shop__card__product .description {
+      top: 63%; } }
