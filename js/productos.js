@@ -8,6 +8,7 @@ class Producto {
         this.precio = obj.precio;
         this.stock = obj.stock;
         this.vendidos = obj.vendidos;
+        this.cantidad = obj.cantidad;
         this.categoria = obj.categoria;
     }
 
@@ -58,6 +59,7 @@ let producto1 = new Producto({
     precio: 254.45,
     stock: 200,
     vendidos: 0,
+    cantidad: 0,
     categoria: "Infusiones",
 });
 let producto2 = new Producto({
@@ -70,6 +72,7 @@ let producto2 = new Producto({
     precio: 254.45,
     stock: 0,
     vendidos: 0,
+    cantidad: 0,
     categoria: "Infusiones",
 });
 let producto3 = new Producto({
@@ -82,6 +85,7 @@ let producto3 = new Producto({
     precio: 210.23,
     stock: 0,
     vendidos: 0,
+    cantidad: 0,
     categoria: "Chocolates",
 });
 let producto4 = new Producto({
@@ -94,6 +98,7 @@ let producto4 = new Producto({
     precio: 225.78,
     stock: 240,
     vendidos: 0,
+    cantidad: 0,
     categoria: "Chocolates",
 });
 let producto5 = new Producto({
@@ -106,6 +111,7 @@ let producto5 = new Producto({
     precio: 255.78,
     stock: 360,
     vendidos: 0,
+    cantidad: 0,
     categoria: "Leches",
 });
 let producto6 = new Producto({
@@ -118,6 +124,7 @@ let producto6 = new Producto({
     precio: 255.78,
     stock: 120,
     vendidos: 0,
+    cantidad: 0,
     categoria: "Leches",
 });
 let producto7 = new Producto({
@@ -130,6 +137,7 @@ let producto7 = new Producto({
     precio: 278.25,
     stock: 0,
     vendidos: 0,
+    cantidad: 0,
     categoria: "Leches",
 });
 

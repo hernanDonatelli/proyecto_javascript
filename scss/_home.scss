@@ -61,6 +61,10 @@
         flex-wrap: wrap;
         transition: all .3s ease-in-out;
 
+        #noProduct.hide{
+            display: none;
+        }
+
         p{
             color: $color-gris-oscuro;
             font-family: $fuente-Roboto;

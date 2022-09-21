@@ -1,7 +1,6 @@
 //Pintar en Home los productos
 const container = document.getElementById("shop");
 let totalCarrito = document.getElementById("countCart");
-let carrito = [];
 
 productos.forEach(producto => {
     let articulo = document.createElement("article");
@@ -46,40 +45,81 @@ productos.forEach(producto => {
     });
 });
 
+//Pintar carrito
+let printCart = (producto) => {
+    let div = document.createElement("div");
+    div.classList.add("productoEnCarrito");
+
+    div.innerHTML = `<div class="inCart">
+                                    <p>Producto: ${producto.nombre}</p>
+                                    <p>Precio: ${producto.precio}</p>
+                                </div>
+                                <p class="cantidades mt-2">
+                                    <span>Cantidad: <span id="cantidades-${producto.id}">${producto.cantidad}</span></span>
+                                    <button id="agregarCantidad-${producto.id}" class="btn-cantidades" type="button">
+                                    <iconify-icon icon="carbon:shopping-cart-plus"></iconify-icon>
+                                    </button>
+                                    <button id="quitarCantidad-${producto.id}" class="btn-cantidades" type="button">
+                                        <iconify-icon icon="carbon:shopping-cart-minus"></iconify-icon>
+                                    </button>
+                                </p>
+                                <button id="btn-eliminar-${producto.id}" class="btn-eliminar">
+                                    <iconify-icon icon="bi:trash"></iconify-icon>
+                                </button>
+                                <hr>`;
+
+    contenedorCarrito.appendChild(div);
+
+    //Agregar o quitar cantidades
+    let agregarCantidad = document.getElementById(`agregarCantidad-${producto.id}`);
+    let quitarCantidad = document.getElementById(`quitarCantidad-${producto.id}`);
+    let cantidad = document.getElementById(`cantidades-${producto.id}`);
+
+    producto.cantidad = 1;
+
+    agregarCantidad.addEventListener("click", () => {
+        cantidad.innerText = parseInt(cantidad.innerText) + producto.cantidad;
+    });
+
+    quitarCantidad.addEventListener("click", () => {
+        if (cantidad.innerText <= 1) {
+            alert('El pedido minimo es 1 unidad.');
+        } else {
+            cantidad.innerText = parseInt(cantidad.innerText) - producto.cantidad;
+        }
+    });
+
+
+    //Eliminar producto del carrito
+    const btn_eliminar = document.getElementById(`btn-eliminar-${producto.id}`);
+    btn_eliminar.addEventListener("click", () => {
+        getCarrito.splice(getCarrito.indexOf(producto), 1);
+        total.innerText = 'Total: $' + getCarrito.reduce((total, producto) => (total += producto.precio), 0);
+        div.remove();
+        totalCarrito.innerText = getCarrito.length;
+    });
+    /* Seguir aca para sacar el item del storage
+    function deleteItemStorage(productoID){
+        let elemento = JSON.parse(localStorage.getItem("cartStorage"));
+        let indiceElemento = elemento.findIndex(element => element.id === productoID);
+        indiceElemento.splice(indiceElemento, 1);
+    }
+    */
+}
+
 //LocalStorage
 const contenedorCarrito = document.getElementById("carritoContainer");
 let getCarrito = JSON.parse(localStorage.getItem("cartStorage")) || [];
 
-if(getCarrito.length === 0){
+if (getCarrito.length === 0) {
     let div = document.createElement("div");
     div.classList.add("productoEnCarrito");
-    div.innerHTML = `<p>No hay productos en el carrito</p>`;
+    div.innerHTML = `<p id="noProduct">No hay productos en el carrito</p>`;
     contenedorCarrito.append(div);
-}else{
+} else {
     getCarrito.forEach(item => {
-        let div = document.createElement("div");
-        div.classList.add("productoEnCarrito");
-        item.cantidad = 1;
-        div.innerHTML = `<div class="inCart">
-                            <p>Producto: ${item.nombre}</p>
-                            <p>Precio: ${item.precio}</p>
-                        </div>
-                        <p class="cantidades mt-2">
-                            <span>Cantidad: <span>${item.cantidad}</span></span>
-                            <button id="masCantidad-${item.id}" class="btn-cantidades" type="button">
-                            <iconify-icon icon="carbon:shopping-cart-plus"></iconify-icon>
-                            </button>
-                            <button id="menosCantidad-${item.id}" class="btn-cantidades" type="button">
-                                <iconify-icon icon="carbon:shopping-cart-minus"></iconify-icon>
-                            </button>
-                        </p>
-                        <button id="btn-eliminar-${item.id}" class="btn-eliminar">
-                            <iconify-icon icon="bi:trash"></iconify-icon>
-                        </button>
-                        <hr>`;
-
-        contenedorCarrito.appendChild(div);
-
+        item.cantidad = 1
+        printCart(item);
     });
 
     //Total de la compra

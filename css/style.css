@@ -154,6 +154,8 @@ h1 {
     align-items: center;
     flex-wrap: wrap;
     transition: all .3s ease-in-out; }
+    .modal__product .productoEnCarrito #noProduct.hide {
+      display: none; }
     .modal__product .productoEnCarrito p {
       color: #212121;
       font-family: "Roboto", sans-serif;
