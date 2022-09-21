@@ -20,19 +20,28 @@ const carritoIndex = (productoId) => {
             div.classList.add("productoEnCarrito");
 
             div.innerHTML = `<div class="inCart">
-                                    <p>Nombre: ${producto.nombre}</p>
-                                    <p>Precio: ${producto.precio}</p>
-                                    <p>
-                                        Cantidad: <input id="cantidad-${producto.id}" min="1" type="number" value="${producto.cantidad}">
-                                    </p>
-                                </div>
-                                <button id="btn-eliminar-${producto.id}" class="btn-eliminar">
-                                    <iconify-icon icon="bi:trash"></iconify-icon>
+                                <p>Producto: ${producto.nombre}</p>
+                                <p>Precio: ${producto.precio}</p>
+                            </div>
+                            <p class="cantidades mt-2">
+                                <span>Cantidad: <span>${producto.cantidad}</span></span>
+                                <button id="masCantidad-${producto.id}" class="btn-cantidades" type="button">
+                                <iconify-icon icon="carbon:shopping-cart-plus"></iconify-icon>
                                 </button>
-                                <hr>`;
+                                <button id="menosCantidad-${producto.id}" class="btn-cantidades" type="button">
+                                    <iconify-icon icon="carbon:shopping-cart-minus"></iconify-icon>
+                                </button>
+                            </p>
+                            <button id="btn-eliminar-${producto.id}" class="btn-eliminar">
+                                <iconify-icon icon="bi:trash"></iconify-icon>
+                            </button>
+                            <hr>`;
 
             contenedorCarrito.appendChild(div);
 
+            //Total de la compra
+            let total = document.getElementById("total");
+            total.innerText = 'Subtotal: $' + getCarrito.reduce((total, producto) => (total += producto.precio), 0);
         }
 
         /*
@@ -57,9 +66,4 @@ const carritoIndex = (productoId) => {
 
     };
     renderProductosCarrito();
-
-    //Total de la compra
-    let total = document.getElementById("total");
-    total.innerText = 'Subtotal: $' + getCarrito.reduce((total, producto) => (total += producto.precio), 0);
-
 };

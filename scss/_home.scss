@@ -1,12 +1,12 @@
 /* MAIN */
 .modal__product{
     position: fixed;
-    width: 50vw;
+    width: 90vw;
     height: 75vh;
-    background-color: rgba(0, 0, 0, .95);
+    background-color: rgba(255, 255, 255, 0.97);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, .3);
     bottom: 0%;
-    right: 25%;
+    right: 0%;
     transform: translate(0%, 100%);
     transition: all .4s ease-in-out;
     z-index: 9999;
@@ -14,7 +14,7 @@
     overflow-y: auto;
 
     &__active{
-        transform: translate(0%, -10%);
+        transform: translate(-5%, -10%);
         opacity: 1;
         z-index: 9998;
         box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .8);
@@ -27,7 +27,7 @@
         padding-top: 1rem;
 
         h3{
-            color: white;
+            color: $color-gris-oscuro;
             font-family: $fuente-Zilla;
             font-weight: bolder;
             text-transform: uppercase;
@@ -40,7 +40,7 @@
             padding-right: 1rem;
 
             iconify-icon{
-                color: white;
+                color: $color-gris-oscuro;
                 font-size: 1.75rem;
                 transition: all .3s ease;
 
@@ -52,58 +52,78 @@
     }
 
     .productoEnCarrito{
-        width: 65%;
+        position: relative;
+        width: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         transition: all .3s ease-in-out;
 
         p{
-            color: white;
+            color: $color-gris-oscuro;
             font-family: $fuente-Roboto;
-            font-weight: 300;
-            font-size: .8rem;
+            font-weight: 400;
+            font-size: .9rem;
             padding: 0 .5rem;
             margin: 0;
         }
 
         button{
-            padding-right: 1.5rem;
+            font-size: 1.7rem;
+            padding-right: 1.4rem;
             background-color: transparent;
             border: none;
-            color: white;
+            color: $color-gris-oscuro;
             transition: all .3s ease;
 
             &:hover{
-                color: red;
+                color: $color-fuxia;
             }
         }
 
-        input[type="number"]{
-            width: 15%;
-            text-align: center;
-            background-color: #ededed;
-            border-radius: 10%;
-            border: 1px solid #ededed;
-        }
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
+        .btn-eliminar{
+            position: absolute;
+            top: 20%;
+            right: 5%;
+            padding: 0;
         }
 
         hr{
-            color: white;
-            width: 100%;
-            margin: .75rem;
+            color: $color-gris;
+            width: 90%;
+            margin: .75rem auto;
+        }
+
+        p.cantidades{
+            width: 95%;
+            display: flex;
+            align-items: center;
+            padding: 0;
+
+            span{
+                margin-right: .4rem;
+            }
+
+            .btn-cantidades{
+                font-size: 1.3rem;
+                padding: 0 .3rem;
+                line-height: 1rem;
+            }
+        }
+
+        .inCart{
+            width: 95%;
+            border-left: 5px solid $color-fuxia;
         }
     }
 
     #total{
         font-family: $fuente-Roboto;
-        color: white;
+        color: $color-gris-oscuro;
         font-size: 1.1rem;
+        padding: 0 .5rem;
         font-weight: bold;
     }
 }
@@ -112,6 +132,7 @@
     position: relative;;
 
     h1{
+        font-size: 2rem;
         font-family: $fuente-Zilla;
         color: $color-gris-oscuro;
     }
@@ -122,9 +143,9 @@
         flex-wrap: wrap;
 
         &__card{
-            width: 30%;
+            width: 90%;
             position: relative;
-            margin-bottom: 3rem;
+            margin: 0 1.5rem;
 
             button{
                 display: block;
@@ -158,14 +179,14 @@
             }
 
             .style{
-                height: 450px;
+                height: 460px;
                 font-family: sans-serif;
                 border: 1px solid rgb(226, 226, 226);
                 border-radius: 2%;
 
 
                 .img-container{
-                    height: 250px;
+                    height: 230px;
                     display: flex;
                     justify-content: center;
                     align-items: flex-end;
@@ -190,30 +211,29 @@
                     position: absolute;
                     top: 5%;
                     padding: .3rem 1rem;
-                    // box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .7);
                     font-family: $fuente-Roboto;
                     color: black;
                     font-weight: 600;
                     font-size: 1rem;
                 }
                 .price{
-                    top: 0%;
-                    color: grey;
+                    top: -1%;
+                    color: $color-gris-oscuro;
                     letter-spacing: -.1rem;
                     font-family: $fuente-Roboto;
-                    font-size: 1.7rem;
-                    font-weight: 700;
+                    font-size: 2rem;
+                    font-weight: 300;
                 }
                 .brand{
-                    top: 10%;
+                    top: 90%;
                     font-weight: 300;
                     color: white;
-                    width: 50%;
+                    width: 65%;
                 }
                 .like{
                     display: block;
                     top: 90%;
-                    right: 45%;
+                    right: 3%;
                     border-radius: 50%;
                     width: 32px;
                     height: 32px;
@@ -236,7 +256,7 @@
                 p{
                     position: absolute;
                     width: 100%;
-                    top: 55%;
+                    top: 53%;
                     text-align: center;
                     font-family: $fuente-Montserrat;
                     font-weight: 500;
@@ -259,7 +279,7 @@
 
                 .description{
                     position: absolute;
-                    top: 63%;
+                    top: 59%;
                     padding: 1rem;
                     font-family: $fuente-Inter;
                     color: black;

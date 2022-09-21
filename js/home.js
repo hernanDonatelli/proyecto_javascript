@@ -6,6 +6,7 @@ let carrito = [];
 productos.forEach(producto => {
     let articulo = document.createElement("article");
     articulo.classList.add("shop__card");
+    articulo.classList.add("my-3");
 
     articulo.innerHTML += `<div class="shop__card__product style">
                                 <div class="img-container">
@@ -60,12 +61,18 @@ if(getCarrito.length === 0){
         div.classList.add("productoEnCarrito");
         item.cantidad = 1;
         div.innerHTML = `<div class="inCart">
-                            <p>Nombre: ${item.nombre}</p>
+                            <p>Producto: ${item.nombre}</p>
                             <p>Precio: ${item.precio}</p>
-                            <p>
-                                Cantidad: <input id="cantidad-${item.id}" min="1" type="number" value="${item.cantidad}">
-                            </p>
                         </div>
+                        <p class="cantidades mt-2">
+                            <span>Cantidad: <span>${item.cantidad}</span></span>
+                            <button id="masCantidad-${item.id}" class="btn-cantidades" type="button">
+                            <iconify-icon icon="carbon:shopping-cart-plus"></iconify-icon>
+                            </button>
+                            <button id="menosCantidad-${item.id}" class="btn-cantidades" type="button">
+                                <iconify-icon icon="carbon:shopping-cart-minus"></iconify-icon>
+                            </button>
+                        </p>
                         <button id="btn-eliminar-${item.id}" class="btn-eliminar">
                             <iconify-icon icon="bi:trash"></iconify-icon>
                         </button>
@@ -74,6 +81,10 @@ if(getCarrito.length === 0){
         contenedorCarrito.appendChild(div);
 
     });
+
+    //Total de la compra
+    let total = document.getElementById("total");
+    total.innerText = 'Subtotal: $' + getCarrito.reduce((total, producto) => (total += producto.precio), 0);
 }
 
 totalCarrito.innerText = getCarrito.length;

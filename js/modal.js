@@ -5,7 +5,7 @@ const modalCarrito = document.querySelector(".modal__carrito");
 
 abrirModal.addEventListener("click", (e) => {
   e.preventDefault();
-  modalContainer.classList.toggle("modal__product__active")
+  modalContainer.classList.toggle("modal__product__active");
 });
 
 cerrarModal.addEventListener("click", (e) => {
