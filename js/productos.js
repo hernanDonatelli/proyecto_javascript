@@ -32,19 +32,6 @@ class Producto {
 
 }
 
-class Carrito{
-    constructor(productos, total, impuestos, descuento10, descuento30, tresCuotas, seisCuotas, doceCuotas){
-        this.productos = productos;
-        this.total = total;
-        this.impuestos = impuestos;
-        this.descuento10 = descuento10;
-        this.descuento30 = descuento30;
-        this.tresCuotas = tresCuotas;
-        this.seisCuotas = seisCuotas;
-        this.doceCuotas = doceCuotas;
-    }
-}
-
 ////////////////////////////////////////////////////////////////////
 /* ARRAY DE PRODUCTOS */
 let productos = [];

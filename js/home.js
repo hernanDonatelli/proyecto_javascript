@@ -79,6 +79,8 @@ let printCart = (producto) => {
 
     agregarCantidad.addEventListener("click", () => {
         cantidad.innerText = parseInt(cantidad.innerText) + producto.cantidad;
+        let subtotal = cantidad.innerText * producto.precio;
+        console.log(subtotal);
     });
 
     quitarCantidad.addEventListener("click", () => {
@@ -86,25 +88,34 @@ let printCart = (producto) => {
             alert('El pedido minimo es 1 unidad.');
         } else {
             cantidad.innerText = parseInt(cantidad.innerText) - producto.cantidad;
+            subtotal = cantidad.innerText * producto.precio;
+            console.log(subtotal);
         }
     });
 
 
-    //Eliminar producto del carrito
-    const btn_eliminar = document.getElementById(`btn-eliminar-${producto.id}`);
-    btn_eliminar.addEventListener("click", () => {
-        getCarrito.splice(getCarrito.indexOf(producto), 1);
-        total.innerText = 'Total: $' + getCarrito.reduce((total, producto) => (total += producto.precio), 0);
-        div.remove();
-        totalCarrito.innerText = getCarrito.length;
-    });
-    /* Seguir aca para sacar el item del storage
-    function deleteItemStorage(productoID){
-        let elemento = JSON.parse(localStorage.getItem("cartStorage"));
-        let indiceElemento = elemento.findIndex(element => element.id === productoID);
-        indiceElemento.splice(indiceElemento, 1);
+    //Eliminar producto del carrito y del Storage
+    let deleteItemStorage = (productoID) => {
+
+        const btn_eliminar = document.getElementById(`btn-eliminar-${productoID}`);
+        btn_eliminar.addEventListener("click", () => {
+            let index = getCarrito.indexOf(producto);
+            getCarrito.splice(index, 1);
+
+            let elemento = JSON.parse(localStorage.getItem("cartStorage"));
+            elemento.splice(index, 1);
+            let elementoJSON = JSON.stringify(elemento);
+            localStorage.setItem("cartStorage", elementoJSON)
+
+            total.innerText = 'Total: $' + getCarrito.reduce((total, producto) => (total += producto.precio), 0);
+            div.remove();
+            totalCarrito.innerText = getCarrito.length;
+        });
+
     }
-    */
+
+    deleteItemStorage(producto.id);
+
 }
 
 //LocalStorage
