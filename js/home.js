@@ -43,6 +43,7 @@ productos.forEach(producto => {
         carritoIndex(producto.id);
 
     });
+
 });
 
 //Pintar carrito
@@ -51,22 +52,23 @@ let printCart = (producto) => {
     div.classList.add("productoEnCarrito");
 
     div.innerHTML = `<div class="inCart">
-                                    <p>Producto: ${producto.nombre}</p>
-                                    <p>Precio: ${producto.precio}</p>
-                                </div>
-                                <p class="cantidades mt-2">
-                                    <span>Cantidad: <span id="cantidades-${producto.id}">${producto.cantidad}</span></span>
-                                    <button id="agregarCantidad-${producto.id}" class="btn-cantidades" type="button">
-                                    <iconify-icon icon="carbon:shopping-cart-plus"></iconify-icon>
-                                    </button>
-                                    <button id="quitarCantidad-${producto.id}" class="btn-cantidades" type="button">
-                                        <iconify-icon icon="carbon:shopping-cart-minus"></iconify-icon>
-                                    </button>
-                                </p>
-                                <button id="btn-eliminar-${producto.id}" class="btn-eliminar">
-                                    <iconify-icon icon="bi:trash"></iconify-icon>
-                                </button>
-                                <hr>`;
+                        <p>Producto: ${producto.nombre}</p>
+                        <p>Precio: $${producto.precio}</p>
+                        <p id="unitario-${producto.id}">Subtotal: $${producto.precio}</p>
+                    </div>
+                    <p class="cantidades mt-2">
+                        <span>Cantidad: <span id="cantidades-${producto.id}">${producto.cantidad = 1}</span></span>
+                        <button id="agregarCantidad-${producto.id}" class="btn-cantidades" type="button">
+                        <iconify-icon icon="carbon:shopping-cart-plus"></iconify-icon>
+                        </button>
+                        <button id="quitarCantidad-${producto.id}" class="btn-cantidades" type="button">
+                            <iconify-icon icon="carbon:shopping-cart-minus"></iconify-icon>
+                        </button>
+                    </p>
+                    <button id="btn-eliminar-${producto.id}" class="btn-eliminar">
+                        <iconify-icon icon="bi:trash"></iconify-icon>
+                    </button>
+                    <hr>`;
 
     contenedorCarrito.appendChild(div);
 
@@ -75,24 +77,31 @@ let printCart = (producto) => {
     let quitarCantidad = document.getElementById(`quitarCantidad-${producto.id}`);
     let cantidad = document.getElementById(`cantidades-${producto.id}`);
 
-    producto.cantidad = 1;
-
     agregarCantidad.addEventListener("click", () => {
-        cantidad.innerText = parseInt(cantidad.innerText) + producto.cantidad;
-        let subtotal = cantidad.innerText * producto.precio;
-        console.log(subtotal);
+        producto.cantidad++;
+        cantidad.innerText = producto.cantidad;
+        let subtotal = (parseInt(cantidad.innerText) * producto.precio).toFixed(2);
+
+        let printSubTotal = document.getElementById(`unitario-${producto.id}`);
+        printSubTotal.innerText = `Subtotal: $${subtotal}`;
+
+        total.innerText = 'Total: $' + getCarrito.reduce((total, producto) => total += producto.precio * producto.cantidad, 0);
     });
 
     quitarCantidad.addEventListener("click", () => {
         if (cantidad.innerText <= 1) {
             alert('El pedido minimo es 1 unidad.');
         } else {
-            cantidad.innerText = parseInt(cantidad.innerText) - producto.cantidad;
-            subtotal = cantidad.innerText * producto.precio;
-            console.log(subtotal);
+            producto.cantidad--;
+            cantidad.innerText = producto.cantidad;
+            let subtotal = (cantidad.innerText * producto.precio).toFixed(2);
+            let printSubTotal = document.getElementById(`unitario-${producto.id}`);
+
+            printSubTotal.innerText = `Subtotal: $${subtotal}`;
+
+            total.innerText = 'Total: $' + getCarrito.reduce((total, producto) => total += producto.precio * producto.cantidad, 0);
         }
     });
-
 
     //Eliminar producto del carrito y del Storage
     let deleteItemStorage = (productoID) => {
@@ -129,13 +138,17 @@ if (getCarrito.length === 0) {
     contenedorCarrito.append(div);
 } else {
     getCarrito.forEach(item => {
-        item.cantidad = 1
+        // item.cantidad = 1
         printCart(item);
     });
 
     //Total de la compra
     let total = document.getElementById("total");
-    total.innerText = 'Subtotal: $' + getCarrito.reduce((total, producto) => (total += producto.precio), 0);
+    total.innerText = 'Total: $' + getCarrito.reduce((total, producto) => (total += producto.precio), 0);
+
 }
 
 totalCarrito.innerText = getCarrito.length;
+
+
+

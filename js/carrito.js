@@ -13,8 +13,6 @@ const carritoIndex = (productoId) => {
 
             totalCarrito.innerText = getCarrito.length;
 
-            producto.cantidad = 1;
-
             printCart(producto);
 
             let noProduct = document.getElementById("noProduct");
@@ -22,7 +20,7 @@ const carritoIndex = (productoId) => {
 
             //Total de la compra
             let total = document.getElementById("total");
-            total.innerText = 'Subtotal: $' + getCarrito.reduce((total, producto) => (total += producto.precio), 0);
+            total.innerText = 'Total: $' + getCarrito.reduce((total, producto) => total += producto.precio * producto.cantidad, 0);
 
         }
     };

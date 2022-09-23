@@ -10,6 +10,12 @@ class Producto {
         this.vendidos = obj.vendidos;
         this.cantidad = obj.cantidad;
         this.categoria = obj.categoria;
+        this.subtotal = obj.subtotal;
+    }
+
+    subtotales(){
+        this.precio = this.precio * this.cantidad;
+        console.log(this.precio);
     }
 
     sinStock(){
@@ -20,12 +26,16 @@ class Producto {
         }
     }
 
-    vendido(cantidad) {
-        this.stock = this.stock - cantidad;
-        this.vendidos = this.vendidos + cantidad;
+    cantidad(){
+        return this.cantidad;
+    }
+
+    vendido() {
+        this.stock = this.stock - this.cantidad;
+        this.vendidos = this.vendidos + this.cantidad;
 
         alert(
-            `Agregado al carrito!\n${cantidad} unidad/es de ${this.nombre}\nQuedan ${this.stock} unidades disponibles`
+            `Agregado al carrito!\n${this.cantidad} unidad/es de ${this.nombre}\nQuedan ${this.stock} unidades disponibles`
         );
 
     }
@@ -44,10 +54,11 @@ let producto1 = new Producto({
     descripcion:
         "Breakfast Tea que combina un té negro de Ceylon cosechado en altura y aire puro, con notas bien definidas de un té negro de Assam que le dan cuerpo, sabor y aroma a la taza.",
     precio: 254.45,
-    stock: 200,
+    stock: 5,
     vendidos: 0,
     cantidad: 0,
     categoria: "Infusiones",
+    subtotal: 0
 });
 let producto2 = new Producto({
     id: 2,
@@ -61,6 +72,7 @@ let producto2 = new Producto({
     vendidos: 0,
     cantidad: 0,
     categoria: "Infusiones",
+    subtotal: 0
 });
 let producto3 = new Producto({
     id: 3,
@@ -74,6 +86,7 @@ let producto3 = new Producto({
     vendidos: 0,
     cantidad: 0,
     categoria: "Chocolates",
+    subtotal: 0
 });
 let producto4 = new Producto({
     id: 4,
@@ -87,6 +100,7 @@ let producto4 = new Producto({
     vendidos: 0,
     cantidad: 0,
     categoria: "Chocolates",
+    subtotal: 0
 });
 let producto5 = new Producto({
     id: 5,
@@ -100,6 +114,7 @@ let producto5 = new Producto({
     vendidos: 0,
     cantidad: 0,
     categoria: "Leches",
+    subtotal: 0
 });
 let producto6 = new Producto({
     id: 6,
@@ -113,6 +128,7 @@ let producto6 = new Producto({
     vendidos: 0,
     cantidad: 0,
     categoria: "Leches",
+    subtotal: 0
 });
 let producto7 = new Producto({
     id: 7,
@@ -126,6 +142,7 @@ let producto7 = new Producto({
     vendidos: 0,
     cantidad: 0,
     categoria: "Leches",
+    subtotal: 0
 });
 
 productos.push(producto1);
@@ -135,3 +152,4 @@ productos.push(producto4);
 productos.push(producto5);
 productos.push(producto6);
 productos.push(producto7);
+
