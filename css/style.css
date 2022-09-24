@@ -14,17 +14,17 @@
 /*Fuentes*/
 /*Colores*/
 .brand-Infusiones {
-  background-color: #028309; }
+  background-color: #57aa5b; }
 
 .brand-Chocolates {
-  background-color: #856203; }
+  background-color: #856f34; }
 
 .brand-Leches {
-  background-color: #670385; }
+  background-color: #7d438f; }
 
 /* HEADER */
 h1 {
-  font-family: "Zilla Slab", serif;
+  font-family: "Roboto", sans-serif;
   font-size: 2.3rem;
   color: #212121;
   text-transform: uppercase;
@@ -87,13 +87,16 @@ h1 {
     margin: 0 auto;
     text-align: center;
     font-size: 2rem;
-    margin-top: 2rem; }
+    margin-top: 2rem;
+    font-weight: 900; }
+    .start__pyme h1 span {
+      font-weight: 300; }
   .start__pyme p {
     font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    line-height: 1.2; }
+    font-size: .9rem;
+    line-height: 1; }
   .start__pyme__down a {
-    font-size: 3rem;
+    font-size: 2rem;
     color: #7b00ee; }
     .start__pyme__down a .animate__shakeY {
       --animate-duration: 5s; }
@@ -145,6 +148,13 @@ h1 {
         transition: all .3s ease; }
         .modal__product .modal__carrito #close iconify-icon:hover {
           color: #e700c1; }
+  .modal__product #noProducto p {
+    color: #212121;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: .9rem;
+    padding: 0 0.5rem;
+    margin: 0; }
   .modal__product .productoEnCarrito {
     position: relative;
     width: 100%;
@@ -154,8 +164,6 @@ h1 {
     align-items: center;
     flex-wrap: wrap;
     transition: all .3s ease-in-out; }
-    .modal__product .productoEnCarrito #noProduct.hide {
-      display: none; }
     .modal__product .productoEnCarrito p {
       color: #212121;
       font-family: "Roboto", sans-serif;
@@ -195,19 +203,22 @@ h1 {
     .modal__product .productoEnCarrito .inCart {
       width: 95%;
       border-left: 5px solid #e700c1; }
-  .modal__product #total {
+  .modal__product #total,
+  .modal__product #impuestos {
     font-family: "Roboto", sans-serif;
     color: #212121;
-    font-size: 1.1rem;
-    padding: 0 .5rem;
-    font-weight: bold; }
+    font-size: .95rem;
+    padding: 0 .5rem; }
 
 #main {
   position: relative; }
   #main h1 {
     font-size: 2rem;
-    font-family: "Zilla Slab", serif;
-    color: #212121; }
+    font-family: "Roboto", sans-serif;
+    color: #212121;
+    font-weight: 900; }
+    #main h1 span {
+      font-weight: 300; }
   #main .shop {
     display: flex;
     justify-content: space-between;
@@ -328,6 +339,24 @@ h1 {
           font-size: .85rem;
           text-align: center; }
 
+@media screen and (min-width: 575.98px) {
+  .start__pyme h1 {
+    font-size: 3rem; }
+  .start__pyme p {
+    font-size: 1rem; }
+  #main h1 {
+    font-size: 3rem; }
+  #main .shop__card {
+    width: 40%; } }
+
+@media screen and (min-width: 767.98px) {
+  #main .shop__card {
+    width: 44%; } }
+
+@media screen and (min-width: 1279.98px) {
+  #main .shop__card {
+    width: 29%; } }
+
 @media screen and (min-width: 1365.98px) {
   /* HEADER */
   .start {
@@ -339,7 +368,7 @@ h1 {
     .start__pyme h1 {
       margin: 0 auto;
       text-align: center;
-      font-size: 2rem;
+      font-size: 3rem;
       margin-top: 2rem; }
     .start__pyme p {
       font-size: 1rem;

@@ -1,3 +1,61 @@
+@media screen and (min-width: 575.98px) {
+    .start {
+
+        &__pyme {
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    #main {
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        .shop {
+
+            &__card {
+                width: 40%;
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width: 767.98px) {
+
+    #main {
+
+        .shop {
+
+            &__card {
+                width: 44%;
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width: 1279.98px) {
+
+    #main {
+        .shop {
+
+            &__card {
+                width: 29%;
+            }
+
+        }
+    }
+}
+
 @media screen and (min-width: 1365.98px) {
 
     /* HEADER */
@@ -15,7 +73,7 @@
             h1 {
                 margin: 0 auto;
                 text-align: center;
-                font-size: 2rem;
+                font-size: 3rem;
                 margin-top: 2rem;
             }
 

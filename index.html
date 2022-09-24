@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&family=Zilla+Slab:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&family=Zilla+Slab:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./css/style.css">
@@ -50,7 +50,7 @@
         <div class="start container-fluid mt-5">
             <div class="row">
                 <div class="start__pyme col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
-                    <h1>Shopping Gourmet</h1>
+                    <h1><span>Shopping</span>Gourmet</h1>
                     <p class="w-75 mx-auto text-center my-3">
                         Comercializamos productos gourmet de calidad comprobada.
                     </p>
@@ -73,22 +73,27 @@
 
     <!-- Contenido -->
     <main id="main" class="container-fluid mb-5">
-        <h1 class="py-4">El Shop</h1>
-        <section id="shop" class="shop container col-12">
+        <h1 class="py-4 text-center mt-3"><span>El</span>Shop</h1>
+        <section id="shop" class="shop container col-12 col-sm-9 col-md-12 col-lg-10 col-xl-12">
             <!-- Productos desde js -->
         </section>
 
         <!-- Modal lateral -->
         <div id="modal__product" class="modal__product">
             <div class="modal__carrito mb-3">
-                <h3>Carrito</h3>
+                <h3><span>Tu</span> Carrito</h3>
                 <button id="close">
                     <iconify-icon icon="ant-design:close-circle-outlined"></iconify-icon>
                 </button>
             </div>
             <!-- Contenido del carrito por JS -->
-            <div id="carritoContainer"></div>
+            <div id="carritoContainer">
+                <div id="noProducto">
+                    <p>No hay productos en el carrito</p>
+                </div>
+            </div>
             <div id="total"></div>
+            <div id="impuestos"></div>
         </div>
     </main>
 

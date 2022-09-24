@@ -15,12 +15,9 @@ const carritoIndex = (productoId) => {
 
             printCart(producto);
 
-            let noProduct = document.getElementById("noProduct");
-            noProduct ? noProduct.classList.add("hide") : '';
+            divSinProducto ? divSinProducto.style.display = "none" : '';
 
-            //Total de la compra
-            let total = document.getElementById("total");
-            total.innerText = 'Total: $' + getCarrito.reduce((total, producto) => total += producto.precio * producto.cantidad, 0);
+            calculoPrecioTotal(getCarrito);
 
         }
     };

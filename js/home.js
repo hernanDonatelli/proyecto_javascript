@@ -1,11 +1,35 @@
 //Pintar en Home los productos
 const container = document.getElementById("shop");
+let getCarrito = [];
 let totalCarrito = document.getElementById("countCart");
+let total = document.getElementById("total");
+let impuestos = document.getElementById("impuestos");
+let containerTotales = document.getElementById("total");
+let containerImpuestos = document.getElementById("impuestos");
+let div = document.createElement("div");
+let divSinProducto = document.getElementById("noProducto");
+
+const agregarQuitarItem = (producto) => {
+    let cantidad = document.getElementById(`cantidades-${producto.id}`);
+    cantidad.innerText = producto.cantidad;
+    let subtotal = (parseInt(cantidad.innerText) * producto.precio).toFixed(2);
+
+    let printSubTotal = document.getElementById(`unitario-${producto.id}`);
+    printSubTotal.innerText = `Subtotal: $${subtotal}`;
+}
+
+const calculoPrecioTotal = (arrayCarrito) => {
+    let printTotal = (arrayCarrito.reduce((total, producto) => total += producto.precio * producto.cantidad, 0)).toFixed(2);
+    total.innerText = `Subtotal: $${printTotal}`;
+
+    let printImpuestos = (printTotal * 0.21).toFixed(2);
+    impuestos.innerText = `IVA 21%: $${printImpuestos}`;
+}
 
 productos.forEach(producto => {
     let articulo = document.createElement("article");
     articulo.classList.add("shop__card");
-    articulo.classList.add("my-3");
+    articulo.classList.add("my-4");
 
     articulo.innerHTML += `<div class="shop__card__product style">
                                 <div class="img-container">
@@ -41,13 +65,16 @@ productos.forEach(producto => {
 
     btn.addEventListener("click", () => {
         carritoIndex(producto.id);
-
     });
 
 });
 
 //Pintar carrito
 let printCart = (producto) => {
+    divSinProducto ? divSinProducto.style.display = "none" : '';
+    containerTotales.style.display = "block";
+    containerImpuestos.style.display = "block";
+
     let div = document.createElement("div");
     div.classList.add("productoEnCarrito");
 
@@ -75,31 +102,22 @@ let printCart = (producto) => {
     //Agregar o quitar cantidades
     let agregarCantidad = document.getElementById(`agregarCantidad-${producto.id}`);
     let quitarCantidad = document.getElementById(`quitarCantidad-${producto.id}`);
-    let cantidad = document.getElementById(`cantidades-${producto.id}`);
 
     agregarCantidad.addEventListener("click", () => {
         producto.cantidad++;
-        cantidad.innerText = producto.cantidad;
-        let subtotal = (parseInt(cantidad.innerText) * producto.precio).toFixed(2);
-
-        let printSubTotal = document.getElementById(`unitario-${producto.id}`);
-        printSubTotal.innerText = `Subtotal: $${subtotal}`;
-
-        total.innerText = 'Total: $' + getCarrito.reduce((total, producto) => total += producto.precio * producto.cantidad, 0);
+        agregarQuitarItem(producto);
+        calculoPrecioTotal(getCarrito);
     });
 
     quitarCantidad.addEventListener("click", () => {
+        cantidad = document.getElementById(`cantidades-${producto.id}`);
+
         if (cantidad.innerText <= 1) {
             alert('El pedido minimo es 1 unidad.');
         } else {
             producto.cantidad--;
-            cantidad.innerText = producto.cantidad;
-            let subtotal = (cantidad.innerText * producto.precio).toFixed(2);
-            let printSubTotal = document.getElementById(`unitario-${producto.id}`);
-
-            printSubTotal.innerText = `Subtotal: $${subtotal}`;
-
-            total.innerText = 'Total: $' + getCarrito.reduce((total, producto) => total += producto.precio * producto.cantidad, 0);
+            agregarQuitarItem(producto);
+            calculoPrecioTotal(getCarrito);
         }
     });
 
@@ -116,9 +134,20 @@ let printCart = (producto) => {
             let elementoJSON = JSON.stringify(elemento);
             localStorage.setItem("cartStorage", elementoJSON)
 
-            total.innerText = 'Total: $' + getCarrito.reduce((total, producto) => (total += producto.precio), 0);
+            calculoPrecioTotal(getCarrito);
+
             div.remove();
+
             totalCarrito.innerText = getCarrito.length;
+
+            if (getCarrito.length === 0) {
+                divSinProducto ? divSinProducto.style.display = "block" : '';
+                containerTotales.style.display = "none";
+                containerImpuestos.style.display = "none";
+            }else{
+                calculoPrecioTotal(getCarrito);
+            }
+
         });
 
     }
@@ -129,22 +158,17 @@ let printCart = (producto) => {
 
 //LocalStorage
 const contenedorCarrito = document.getElementById("carritoContainer");
-let getCarrito = JSON.parse(localStorage.getItem("cartStorage")) || [];
+getCarrito = JSON.parse(localStorage.getItem("cartStorage")) || [];
 
 if (getCarrito.length === 0) {
-    let div = document.createElement("div");
-    div.classList.add("productoEnCarrito");
-    div.innerHTML = `<p id="noProduct">No hay productos en el carrito</p>`;
-    contenedorCarrito.append(div);
+    divSinProducto ? divSinProducto.style.display = "block" : '';
 } else {
     getCarrito.forEach(item => {
         // item.cantidad = 1
         printCart(item);
     });
 
-    //Total de la compra
-    let total = document.getElementById("total");
-    total.innerText = 'Total: $' + getCarrito.reduce((total, producto) => (total += producto.precio), 0);
+    calculoPrecioTotal(getCarrito);
 
 }
 
