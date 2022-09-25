@@ -31,6 +31,17 @@
   background-color: rgba(0, 0, 0, 0.8);
   display: none; }
 
+.warningToasty,
+.successToasty {
+  font-family: "Inter", sans-serif;
+  font-size: .8rem;
+  border-radius: 25px;
+  background: #ff8585;
+  color: black; }
+
+.successToasty {
+  background: #85ff8b; }
+
 /* HEADER */
 h1 {
   font-family: "Roboto", sans-serif;
@@ -256,13 +267,13 @@ h1 {
     right: 5%;
     transform: translate(0%, 100%);
     transition: all .7s ease-in-out;
-    z-index: 9999;
+    z-index: 10;
     opacity: 0;
     overflow-y: auto; }
     #main .modal__product__active {
       transform: translate(0%, -10%);
       opacity: 1;
-      z-index: 9998;
+      z-index: 1050;
       box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.8); }
     #main .modal__product .modal__carrito {
       display: flex;
@@ -343,11 +354,15 @@ h1 {
         width: 95%;
         border-left: 5px solid #e700c1; }
     #main .modal__product #total,
-    #main .modal__product #impuestos {
+    #main .modal__product #impuestos,
+    #main .modal__product #totalFinal {
       font-family: "Roboto", sans-serif;
       color: #212121;
       font-size: .95rem;
       padding: 0 .5rem; }
+    #main .modal__product #totalFinal {
+      font-size: 1.1rem;
+      font-weight: 700; }
 
 @media screen and (min-width: 575.98px) {
   .start__pyme h1 {

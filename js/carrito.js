@@ -5,7 +5,18 @@ const carritoIndex = (productoId) => {
         const existe = getCarrito.some((producto) => producto.id === productoId);
 
         if (existe) {
-            alert("El producto ingresado ya existe en el carrito");
+            Toastify({
+                className: "warningToasty",
+                text: "El producto ya existe en el carrito",
+                node: "section",
+                offset: {
+                    x: 50,
+                    y: 10
+                },
+                duration: 2000,
+                gravity: "top",
+                position: "center",
+            }).showToast();
         } else {
             getCarrito.push(producto);
 

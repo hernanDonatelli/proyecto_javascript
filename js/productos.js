@@ -64,11 +64,11 @@ let producto2 = new Producto({
     id: 2,
     marca: "Inti Zen",
     nombre: "Inti Grey",
-    img: "./img/ilumine.png",
+    img: "./img/intiGrey.png",
     descripcion:
         "Clásico Earl Grey sutilmente perfumado con bergamota, prensada a frío, que aporta notas cítricas a la base de té negro de Oriente. Cada taza es un encuentro con la tradición.",
     precio: 254.45,
-    stock: 0,
+    stock: 10,
     vendidos: 0,
     cantidad: 0,
     categoria: "Infusiones",

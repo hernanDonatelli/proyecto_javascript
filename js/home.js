@@ -1,13 +1,14 @@
 //Pintar en Home los productos
 const container = document.getElementById("shop");
 let getCarrito = [];
-let totalCarrito = document.getElementById("countCart");
-let total = document.getElementById("total");
-let impuestos = document.getElementById("impuestos");
-let containerTotales = document.getElementById("total");
-let containerImpuestos = document.getElementById("impuestos");
-let div = document.createElement("div");
-let divSinProducto = document.getElementById("noProducto");
+const totalCarrito = document.getElementById("countCart");
+const total = document.getElementById("total");
+const impuestos = document.getElementById("impuestos");
+const totalFinal = document.getElementById("totalFinal");
+const containerTotales = document.getElementById("total");
+const containerImpuestos = document.getElementById("impuestos");
+const div = document.createElement("div");
+const divSinProducto = document.getElementById("noProducto");
 
 const agregarQuitarItem = (producto) => {
     let cantidad = document.getElementById(`cantidades-${producto.id}`);
@@ -24,6 +25,9 @@ const calculoPrecioTotal = (arrayCarrito) => {
 
     let printImpuestos = (printTotal * 0.21).toFixed(2);
     impuestos.innerText = `IVA 21%: $${printImpuestos}`;
+
+    let printTotalFinal = parseFloat(printTotal * 1.21).toFixed(2);
+    totalFinal.innerText = `Total: $${printTotalFinal}`;
 }
 
 productos.forEach(producto => {
@@ -99,21 +103,58 @@ let printCart = (producto) => {
 
     contenedorCarrito.appendChild(div);
 
+    Toastify({
+        className: "successToasty",
+        text: "Producto agregado!",
+        offset: {
+            x: 50,
+            y: 10
+        },
+        duration: 2000,
+        gravity: "top",
+        position: "center",
+    }).showToast();
+
     //Agregar o quitar cantidades
     let agregarCantidad = document.getElementById(`agregarCantidad-${producto.id}`);
     let quitarCantidad = document.getElementById(`quitarCantidad-${producto.id}`);
 
     agregarCantidad.addEventListener("click", () => {
-        producto.cantidad++;
-        agregarQuitarItem(producto);
-        calculoPrecioTotal(getCarrito);
+        if (producto.stock > producto.cantidad){
+            producto.cantidad++;
+            agregarQuitarItem(producto);
+            calculoPrecioTotal(getCarrito);
+        }else{
+            Toastify({
+                className: "warningToasty",
+                text: `Por el momento solo contamos con ${producto.stock} unidades de ${producto.nombre}.`,
+                offset: {
+                    x: 50,
+                    y: 10
+                },
+                duration: 3500,
+                gravity: "top",
+                position: "center",
+            }).showToast();
+        }
+
     });
 
     quitarCantidad.addEventListener("click", () => {
         cantidad = document.getElementById(`cantidades-${producto.id}`);
 
         if (cantidad.innerText <= 1) {
-            alert('El pedido minimo es 1 unidad.');
+            Toastify({
+                className: "warningToasty",
+                text: "El pedido minimo es 1 unidad",
+                offset: {
+                    x: 50,
+                    y: 10
+                },
+                duration: 2000,
+                gravity: "top",
+                position: "center",
+            }).showToast();
         } else {
             producto.cantidad--;
             agregarQuitarItem(producto);
@@ -126,27 +167,46 @@ let printCart = (producto) => {
 
         const btn_eliminar = document.getElementById(`btn-eliminar-${productoID}`);
         btn_eliminar.addEventListener("click", () => {
-            let index = getCarrito.indexOf(producto);
-            getCarrito.splice(index, 1);
+            Swal.fire({
+                title: 'Desea eliminar este producto del Carrito?',
+                text: "Una vez eliminado se recalculan los precios",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
 
-            let elemento = JSON.parse(localStorage.getItem("cartStorage"));
-            elemento.splice(index, 1);
-            let elementoJSON = JSON.stringify(elemento);
-            localStorage.setItem("cartStorage", elementoJSON)
+                    let index = getCarrito.indexOf(producto);
+                    getCarrito.splice(index, 1);
 
-            calculoPrecioTotal(getCarrito);
+                    let elemento = JSON.parse(localStorage.getItem("cartStorage"));
+                    elemento.splice(index, 1);
+                    let elementoJSON = JSON.stringify(elemento);
+                    localStorage.setItem("cartStorage", elementoJSON)
 
-            div.remove();
+                    calculoPrecioTotal(getCarrito);
 
-            totalCarrito.innerText = getCarrito.length;
+                    div.remove();
 
-            if (getCarrito.length === 0) {
-                divSinProducto ? divSinProducto.style.display = "block" : '';
-                containerTotales.style.display = "none";
-                containerImpuestos.style.display = "none";
-            }else{
-                calculoPrecioTotal(getCarrito);
-            }
+                    totalCarrito.innerText = getCarrito.length;
+
+                    if (getCarrito.length === 0) {
+                        divSinProducto ? divSinProducto.style.display = "block" : '';
+                        containerTotales.style.display = "none";
+                        containerImpuestos.style.display = "none";
+                    } else {
+                        calculoPrecioTotal(getCarrito);
+                    }
+
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
+            })
 
         });
 
