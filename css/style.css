@@ -22,6 +22,15 @@
 .brand-Leches {
   background-color: #7d438f; }
 
+.cart__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100VW;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none; }
+
 /* HEADER */
 h1 {
   font-family: "Roboto", sans-serif;
@@ -88,9 +97,9 @@ h1 {
     text-align: center;
     font-size: 2rem;
     margin-top: 2rem;
-    font-weight: 900; }
+    font-weight: 400; }
     .start__pyme h1 span {
-      font-weight: 300; }
+      font-weight: 100; }
   .start__pyme p {
     font-family: "Inter", sans-serif;
     font-size: .9rem;
@@ -109,116 +118,15 @@ h1 {
     background-size: cover; }
 
 /* MAIN */
-.modal__product {
-  position: fixed;
-  width: 90vw;
-  height: 75vh;
-  background-color: rgba(255, 255, 255, 0.97);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  bottom: 0%;
-  right: 0%;
-  transform: translate(0%, 100%);
-  transition: all .4s ease-in-out;
-  z-index: 9999;
-  opacity: 0;
-  overflow-y: auto; }
-  .modal__product__active {
-    transform: translate(-5%, -10%);
-    opacity: 1;
-    z-index: 9998;
-    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.8); }
-  .modal__product .modal__carrito {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1rem; }
-    .modal__product .modal__carrito h3 {
-      color: #212121;
-      font-family: "Zilla Slab", serif;
-      font-weight: bolder;
-      text-transform: uppercase;
-      padding-left: .5rem; }
-    .modal__product .modal__carrito #close {
-      background-color: transparent;
-      border: none;
-      padding-right: 1rem; }
-      .modal__product .modal__carrito #close iconify-icon {
-        color: #212121;
-        font-size: 1.75rem;
-        transition: all .3s ease; }
-        .modal__product .modal__carrito #close iconify-icon:hover {
-          color: #e700c1; }
-  .modal__product #noProducto p {
-    color: #212121;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: .9rem;
-    padding: 0 0.5rem;
-    margin: 0; }
-  .modal__product .productoEnCarrito {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    transition: all .3s ease-in-out; }
-    .modal__product .productoEnCarrito p {
-      color: #212121;
-      font-family: "Roboto", sans-serif;
-      font-weight: 400;
-      font-size: .9rem;
-      padding: 0 .5rem;
-      margin: 0; }
-    .modal__product .productoEnCarrito button {
-      font-size: 1.7rem;
-      padding-right: 1.4rem;
-      background-color: transparent;
-      border: none;
-      color: #212121;
-      transition: all .3s ease; }
-      .modal__product .productoEnCarrito button:hover {
-        color: #e700c1; }
-    .modal__product .productoEnCarrito .btn-eliminar {
-      position: absolute;
-      top: 20%;
-      right: 5%;
-      padding: 0; }
-    .modal__product .productoEnCarrito hr {
-      color: #636363;
-      width: 90%;
-      margin: .75rem auto; }
-    .modal__product .productoEnCarrito p.cantidades {
-      width: 95%;
-      display: flex;
-      align-items: center;
-      padding: 0; }
-      .modal__product .productoEnCarrito p.cantidades span {
-        margin-right: .4rem; }
-      .modal__product .productoEnCarrito p.cantidades .btn-cantidades {
-        font-size: 1.3rem;
-        padding: 0 .3rem;
-        line-height: 1rem; }
-    .modal__product .productoEnCarrito .inCart {
-      width: 95%;
-      border-left: 5px solid #e700c1; }
-  .modal__product #total,
-  .modal__product #impuestos {
-    font-family: "Roboto", sans-serif;
-    color: #212121;
-    font-size: .95rem;
-    padding: 0 .5rem; }
-
 #main {
   position: relative; }
   #main h1 {
     font-size: 2rem;
     font-family: "Roboto", sans-serif;
     color: #212121;
-    font-weight: 900; }
+    font-weight: 400; }
     #main h1 span {
-      font-weight: 300; }
+      font-weight: 100; }
   #main .shop {
     display: flex;
     justify-content: space-between;
@@ -254,7 +162,7 @@ h1 {
       #main .shop__card .style {
         height: 460px;
         font-family: sans-serif;
-        border: 1px solid #e2e2e2;
+        border: 1px solid #d8d8d8;
         border-radius: 2%; }
         #main .shop__card .style .img-container {
           height: 230px;
@@ -338,6 +246,108 @@ h1 {
           font-weight: 300;
           font-size: .85rem;
           text-align: center; }
+  #main .modal__product {
+    position: fixed;
+    width: 90vw;
+    height: 75vh;
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    bottom: 0%;
+    right: 5%;
+    transform: translate(0%, 100%);
+    transition: all .7s ease-in-out;
+    z-index: 9999;
+    opacity: 0;
+    overflow-y: auto; }
+    #main .modal__product__active {
+      transform: translate(0%, -10%);
+      opacity: 1;
+      z-index: 9998;
+      box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.8); }
+    #main .modal__product .modal__carrito {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem; }
+      #main .modal__product .modal__carrito h3 {
+        color: #212121;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding-left: .5rem; }
+        #main .modal__product .modal__carrito h3 span {
+          font-weight: 100; }
+      #main .modal__product .modal__carrito #close {
+        background-color: transparent;
+        border: none;
+        padding-right: 1rem; }
+        #main .modal__product .modal__carrito #close iconify-icon {
+          color: #212121;
+          font-size: 1.75rem;
+          transition: all .3s ease; }
+          #main .modal__product .modal__carrito #close iconify-icon:hover {
+            color: #e700c1; }
+    #main .modal__product #noProducto p {
+      color: #212121;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: .9rem;
+      padding: 0 0.5rem;
+      margin: 0; }
+    #main .modal__product .productoEnCarrito {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      transition: all .3s ease-in-out; }
+      #main .modal__product .productoEnCarrito p {
+        color: #212121;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: .9rem;
+        padding: 0 .5rem;
+        margin: 0; }
+      #main .modal__product .productoEnCarrito button {
+        font-size: 1.7rem;
+        padding-right: 1.4rem;
+        background-color: transparent;
+        border: none;
+        color: #212121;
+        transition: all .3s ease; }
+        #main .modal__product .productoEnCarrito button:hover {
+          color: #e700c1; }
+      #main .modal__product .productoEnCarrito .btn-eliminar {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        padding: 0; }
+      #main .modal__product .productoEnCarrito hr {
+        color: #636363;
+        width: 90%;
+        margin: .75rem auto; }
+      #main .modal__product .productoEnCarrito p.cantidades {
+        width: 95%;
+        display: flex;
+        align-items: center;
+        padding: 0; }
+        #main .modal__product .productoEnCarrito p.cantidades span {
+          margin-right: .4rem; }
+        #main .modal__product .productoEnCarrito p.cantidades .btn-cantidades {
+          font-size: 1.3rem;
+          padding: 0 .3rem;
+          line-height: 1rem; }
+      #main .modal__product .productoEnCarrito .inCart {
+        width: 95%;
+        border-left: 5px solid #e700c1; }
+    #main .modal__product #total,
+    #main .modal__product #impuestos {
+      font-family: "Roboto", sans-serif;
+      color: #212121;
+      font-size: .95rem;
+      padding: 0 .5rem; }
 
 @media screen and (min-width: 575.98px) {
   .start__pyme h1 {
@@ -345,17 +355,39 @@ h1 {
   .start__pyme p {
     font-size: 1rem; }
   #main h1 {
-    font-size: 3rem; }
-  #main .shop__card {
-    width: 40%; } }
+    font-size: 3rem; } }
 
 @media screen and (min-width: 767.98px) {
   #main .shop__card {
-    width: 44%; } }
+    width: 44%; }
+  #main .modal__product .productoEnCarrito {
+    flex-direction: row;
+    padding-left: .5rem; }
+    #main .modal__product .productoEnCarrito .inCart {
+      width: 40%; }
+    #main .modal__product .productoEnCarrito p.cantidades {
+      width: 55%; } }
+
+@media screen and (min-width: 991.98px) {
+  #main .shop__card {
+    width: 44%; }
+  #main .modal__product {
+    width: 75%;
+    right: 12%; }
+    #main .modal__product .productoEnCarrito {
+      flex-direction: row; }
+      #main .modal__product .productoEnCarrito .inCart {
+        width: 40%; }
+      #main .modal__product .productoEnCarrito p.cantidades {
+        width: 55%; }
+    #main .modal__product__active {
+      transform: translate(0%, -10%); } }
 
 @media screen and (min-width: 1279.98px) {
   #main .shop__card {
-    width: 29%; } }
+    width: 29%; }
+  #main .modal__product {
+    right: 13%; } }
 
 @media screen and (min-width: 1365.98px) {
   /* HEADER */
@@ -381,24 +413,6 @@ h1 {
       background-repeat: no-repeat;
       background-size: cover; }
   /* MAIN */
-  .modal__product {
-    width: 50vw;
-    height: 75vh;
-    bottom: 0%;
-    right: 25%; }
-    .modal__product__active {
-      transform: translate(0%, -10%); }
-    .modal__product .productoEnCarrito {
-      flex-direction: row;
-      justify-content: flex-start; }
-      .modal__product .productoEnCarrito hr {
-        width: 100%; }
-      .modal__product .productoEnCarrito p.cantidades {
-        width: 40%;
-        justify-content: space-evenly; }
-      .modal__product .productoEnCarrito .inCart {
-        width: 40%;
-        margin-left: .5rem; }
   #main .shop__card {
     width: 30%;
     margin: 0;
@@ -422,4 +436,19 @@ h1 {
     #main .shop__card__product p {
       top: 55%; }
     #main .shop__card__product .description {
-      top: 63%; } }
+      top: 63%; }
+  #main .modal__product {
+    width: 60vw;
+    height: 75vh;
+    bottom: 0%;
+    right: 20%; }
+    #main .modal__product .productoEnCarrito {
+      flex-direction: row;
+      justify-content: flex-start; }
+      #main .modal__product .productoEnCarrito .inCart {
+        width: 40%; }
+      #main .modal__product .productoEnCarrito p.cantidades {
+        justify-content: space-evenly;
+        width: 40%; }
+    #main .modal__product__active {
+      transform: translate(0%, -10%); } }

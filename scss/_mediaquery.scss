@@ -19,13 +19,6 @@
             font-size: 3rem;
         }
 
-        .shop {
-
-            &__card {
-                width: 40%;
-            }
-
-        }
     }
 }
 
@@ -40,6 +33,57 @@
             }
 
         }
+
+        .modal__product{
+
+            .productoEnCarrito{
+                flex-direction: row;
+                padding-left: .5rem;
+
+                .inCart{
+                    width: 40%;
+                }
+
+                p.cantidades{
+                    width: 55%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 991.98px) {
+
+    #main {
+
+        .shop {
+
+            &__card {
+                width: 44%;
+            }
+
+        }
+
+        .modal__product{
+            width: 75%;
+            right: 12%;
+
+            .productoEnCarrito{
+                flex-direction: row;
+
+                .inCart{
+                    width: 40%;
+                }
+
+                p.cantidades{
+                    width: 55%;
+                }
+            }
+
+            &__active{
+                transform: translate(0%, -10%);
+            }
+        }
     }
 }
 
@@ -52,6 +96,10 @@
                 width: 29%;
             }
 
+        }
+
+        .modal__product{
+            right: 13%;
         }
     }
 }
@@ -95,36 +143,6 @@
 
 
     /* MAIN */
-    .modal__product {
-        width: 50vw;
-        height: 75vh;
-        bottom: 0%;
-        right: 25%;
-
-        &__active {
-            transform: translate(0%, -10%);
-        }
-
-        .productoEnCarrito {
-            flex-direction: row;
-            justify-content: flex-start;
-
-            hr {
-                width: 100%;
-            }
-
-            p.cantidades {
-                width: 40%;
-                justify-content: space-evenly;
-            }
-
-            .inCart {
-                width: 40%;
-                margin-left: .5rem;
-            }
-        }
-    }
-
     #main {
 
         .shop {
@@ -176,6 +194,31 @@
 
             }
 
+        }
+
+        .modal__product{
+            width: 60vw;
+            height: 75vh;
+            bottom: 0%;
+            right: 20%;
+
+            .productoEnCarrito{
+                flex-direction: row;
+                justify-content: flex-start;
+
+                .inCart{
+                    width: 40%;
+                }
+
+                p.cantidades{
+                    justify-content: space-evenly;
+                    width: 40%;
+                }
+            }
+
+            &__active{
+                transform: translate(0%, -10%);
+            }
         }
     }
 }

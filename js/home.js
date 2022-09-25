@@ -164,7 +164,6 @@ if (getCarrito.length === 0) {
     divSinProducto ? divSinProducto.style.display = "block" : '';
 } else {
     getCarrito.forEach(item => {
-        // item.cantidad = 1
         printCart(item);
     });
 
