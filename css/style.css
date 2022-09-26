@@ -430,6 +430,30 @@ h1 {
       font-size: 1.3rem;
       font-weight: 700; }
 
+.swal2-popup .swal2-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem; }
+
+.swal2-popup .swal2-html-container {
+  font-family: "Inter", sans-serif;
+  font-size: .9rem;
+  color: #212121; }
+
+.swal2-popup .swal2-actions .swal2-styled.swal2-confirm {
+  border: 1px solid #212121;
+  border-radius: 0.25em;
+  background: initial;
+  font-family: Roboto;
+  text-transform: none;
+  background-color: white;
+  color: #212121;
+  font-size: 1em;
+  padding: 0.25rem 2.5rem;
+  transition: background-color .3s ease-in-out; }
+  .swal2-popup .swal2-actions .swal2-styled.swal2-confirm:hover {
+    background-color: #85ff8b;
+    border-color: #4c924f; }
+
 @media screen and (min-width: 575.98px) {
   .start__pyme h1 {
     font-size: 3rem; }

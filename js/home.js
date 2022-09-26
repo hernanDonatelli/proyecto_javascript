@@ -174,12 +174,12 @@ let printCart = (producto) => {
         btn_eliminar.addEventListener("click", () => {
             Swal.fire({
                 title: 'Desea eliminar este producto del Carrito?',
-                text: "Una vez eliminado se recalculan los precios",
+                // text: "Una vez eliminado se recalculan los precios",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
+                confirmButtonText: 'Si, borrarlo!'
             }).then((result) => {
                 if (result.isConfirmed) {
 
@@ -209,8 +209,8 @@ let printCart = (producto) => {
                     }
 
                     Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
+                        'Eliminado!',
+                        'El producto ha sido eliminado del carrito',
                         'success'
                     )
                 }
