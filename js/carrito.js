@@ -10,7 +10,7 @@ const carritoIndex = (productoId) => {
                 text: "El producto ya existe en el carrito",
                 node: "section",
                 offset: {
-                    x: 50,
+                    x: 0,
                     y: 10
                 },
                 duration: 2000,
@@ -25,6 +25,18 @@ const carritoIndex = (productoId) => {
             totalCarrito.innerText = getCarrito.length;
 
             printCart(producto);
+
+            Toastify({
+                className: "successToasty",
+                text: "Producto agregado!",
+                offset: {
+                    x: 0,
+                    y: 10
+                },
+                duration: 2000,
+                gravity: "top",
+                position: "center",
+            }).showToast();
 
             divSinProducto ? divSinProducto.style.display = "none" : '';
 

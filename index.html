@@ -12,13 +12,14 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.33/sweetalert2.css" integrity="sha512-e+TwvhjDvKqpzQLJ7zmtqqz+5jF9uIOa+5s1cishBRfmapg7mqcEzEl44ufb04BXOsEbccjHK9V0IVukORmO8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.33/sweetalert2.css"
+        integrity="sha512-e+TwvhjDvKqpzQLJ7zmtqqz+5jF9uIOa+5s1cishBRfmapg7mqcEzEl44ufb04BXOsEbccjHK9V0IVukORmO8w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
     <title>Proyecto Javascript - Tienda Gourmet</title>
 </head>
 
 <body>
-    <div id="cart__overlay" class="cart__overlay"></div>
     <!-- Header -->
     <header class="container-fluid header">
         <nav class="navbar navbar-expand-lg fixed-top">
@@ -81,23 +82,51 @@
             <!-- Productos desde js -->
         </section>
 
-        <!-- Modal lateral -->
+        <!-- Modal Carrito -->
         <div id="modal__product" class="modal__product">
             <div class="modal__carrito mb-3">
                 <h3><span>Mi</span>Carrito</h3>
+                <button id="btn-vaciar-carrito" class="btn-vaciar-carrito">
+                    Vaciar Carrito
+                </button>
                 <button id="close">
                     <iconify-icon icon="ant-design:close-circle-outlined"></iconify-icon>
                 </button>
             </div>
             <!-- Contenido del carrito por JS -->
             <div id="carritoContainer">
-                <div id="noProducto">
-                    <p>No hay productos en el carrito</p>
+            </div>
+            <div id="noProducto">
+                <p>No hay productos en el carrito</p>
+            </div>
+            <div class="resumen d-flex flex-column align-items-center mt-3">
+                <div class="costo col-12 d-flex align-items-center justify-content-center justify-content-md-evenly">
+                    <div id="total"></div>
+                    <div id="impuestos"></div>
+                    <div id="totalFinal"></div>
+                </div>
+                <div id="pagoEnCuotas" class="cuotas mt-3 col-12 mt-md-4">
+                    <p>
+                        <iconify-icon icon="emojione-monotone:money-with-wings"></iconify-icon>
+                        Efectivo (10% descuento)
+                        <span id="efectivo10">256.57</span>
+                    </p>
+                    <p>
+                        <iconify-icon icon="emojione-monotone:credit-card"></iconify-icon>
+                        3 Cuotas (15% recargo)
+                        <span id="tarjeta3">256.57</span>
+                    </p>
+                    <p>
+                        <iconify-icon icon="emojione-monotone:credit-card"></iconify-icon>
+                        6 Cuotas (30% recargo)
+                        <span id="tarjeta6">256.57</span>
+                    </p>
                 </div>
             </div>
-            <div id="total"></div>
-            <div id="impuestos"></div>
-            <div id="totalFinal"></div>
+            <div class="finalizarCompra mt-3 mb-4">
+                <button id="btn-end" type="submit">Finalizar Compra</button>
+            </div>
+
         </div>
     </main>
 

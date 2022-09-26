@@ -26,16 +26,6 @@ $color-deg-cocoon: linear-gradient(-180deg, #a5045d, #72013f);
     background-color: rgb(125, 67, 143);
 }
 
-.cart__overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100VW;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, .8);
-    display: none;
-}
-
 .warningToasty,
 .successToasty{
     font-family: $fuente-Inter;

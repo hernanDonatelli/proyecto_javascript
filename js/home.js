@@ -7,8 +7,15 @@ const impuestos = document.getElementById("impuestos");
 const totalFinal = document.getElementById("totalFinal");
 const containerTotales = document.getElementById("total");
 const containerImpuestos = document.getElementById("impuestos");
-const div = document.createElement("div");
+const containerTotalFinal = document.getElementById("totalFinal");
 const divSinProducto = document.getElementById("noProducto");
+const efectivo10 = document.getElementById("efectivo10");
+const tarjeta3 = document.getElementById("tarjeta3");
+const tarjeta6 = document.getElementById("tarjeta6");
+const divCuotas = document.getElementById("pagoEnCuotas");
+const btnEnd = document.getElementById("btn-end");
+const btnVaciarCarrito = document.getElementById("btn-vaciar-carrito");
+
 
 const agregarQuitarItem = (producto) => {
     let cantidad = document.getElementById(`cantidades-${producto.id}`);
@@ -28,6 +35,15 @@ const calculoPrecioTotal = (arrayCarrito) => {
 
     let printTotalFinal = parseFloat(printTotal * 1.21).toFixed(2);
     totalFinal.innerText = `Total: $${printTotalFinal}`;
+
+    let printEfectivo10 = (printTotalFinal * 0.9).toFixed(2);
+    efectivo10.innerText = `Total: $${printEfectivo10}`;
+
+    let printTarjeta3 = (printTotalFinal * 1.15).toFixed(2);
+    tarjeta3.innerText = `Total: $${printTarjeta3}`;
+
+    let printTarjeta6 = (printTotalFinal * 1.30).toFixed(2);
+    tarjeta6.innerText = `Total: $${printTarjeta6}`;
 }
 
 productos.forEach(producto => {
@@ -75,13 +91,15 @@ productos.forEach(producto => {
 
 //Pintar carrito
 let printCart = (producto) => {
-    divSinProducto ? divSinProducto.style.display = "none" : '';
+    // carritoContainer.innerHTML = ' ';
     containerTotales.style.display = "block";
     containerImpuestos.style.display = "block";
+    containerTotalFinal.style.display = "block";
+    divCuotas.style.display = "flex";
+    btnEnd.style.display = "block";
 
     let div = document.createElement("div");
     div.classList.add("productoEnCarrito");
-
     div.innerHTML = `<div class="inCart">
                         <p>Producto: ${producto.nombre}</p>
                         <p>Precio: $${producto.precio}</p>
@@ -101,35 +119,23 @@ let printCart = (producto) => {
                     </button>
                     <hr>`;
 
-    contenedorCarrito.appendChild(div);
-
-    Toastify({
-        className: "successToasty",
-        text: "Producto agregado!",
-        offset: {
-            x: 50,
-            y: 10
-        },
-        duration: 2000,
-        gravity: "top",
-        position: "center",
-    }).showToast();
+    contenedorCarrito.append(div);
 
     //Agregar o quitar cantidades
     let agregarCantidad = document.getElementById(`agregarCantidad-${producto.id}`);
     let quitarCantidad = document.getElementById(`quitarCantidad-${producto.id}`);
 
     agregarCantidad.addEventListener("click", () => {
-        if (producto.stock > producto.cantidad){
+        if (producto.stock > producto.cantidad) {
             producto.cantidad++;
             agregarQuitarItem(producto);
             calculoPrecioTotal(getCarrito);
-        }else{
+        } else {
             Toastify({
                 className: "warningToasty",
                 text: `Por el momento solo contamos con ${producto.stock} unidades de ${producto.nombre}.`,
                 offset: {
-                    x: 50,
+                    x: 0,
                     y: 10
                 },
                 duration: 3500,
@@ -148,7 +154,7 @@ let printCart = (producto) => {
                 className: "warningToasty",
                 text: "El pedido minimo es 1 unidad",
                 offset: {
-                    x: 50,
+                    x: 0,
                     y: 10
                 },
                 duration: 2000,
@@ -196,6 +202,9 @@ let printCart = (producto) => {
                         divSinProducto ? divSinProducto.style.display = "block" : '';
                         containerTotales.style.display = "none";
                         containerImpuestos.style.display = "none";
+                        containerTotalFinal.style.display = "none";
+                        divCuotas.style.display = "none";
+                        btnEnd.style.display = "none";
                     } else {
                         calculoPrecioTotal(getCarrito);
                     }
@@ -209,29 +218,48 @@ let printCart = (producto) => {
             })
 
         });
-
     }
-
     deleteItemStorage(producto.id);
-
 }
+
+//Vaciar Carrito
+let deleteCarrito = () => {
+    btnVaciarCarrito.addEventListener("click", () => {
+        localStorage.clear("cartStorage");
+        getCarrito = JSON.parse(localStorage.getItem("cartStorage")) || [];
+
+        divSinProducto ? divSinProducto.style.display = "block" : '';
+        containerTotales.style.display = "none";
+        containerImpuestos.style.display = "none";
+        containerTotalFinal.style.display = "none";
+        divCuotas.style.display = "none";
+        btnEnd.style.display = "none";
+        let carritoContainer = document.getElementById("carritoContainer");
+
+        while (carritoContainer.firstChild) {
+            carritoContainer.removeChild(carritoContainer.firstChild);
+        }
+
+        totalCarrito.innerText = getCarrito.length;
+    });
+}
+deleteCarrito();
 
 //LocalStorage
 const contenedorCarrito = document.getElementById("carritoContainer");
 getCarrito = JSON.parse(localStorage.getItem("cartStorage")) || [];
 
-if (getCarrito.length === 0) {
-    divSinProducto ? divSinProducto.style.display = "block" : '';
-} else {
-    getCarrito.forEach(item => {
-        printCart(item);
-    });
+getCarrito.length === 0 && divSinProducto ? divSinProducto.style.display = "block" : '';
+containerTotales.style.display = "none";
+containerImpuestos.style.display = "none";
+containerTotalFinal.style.display = "none";
+divCuotas.style.display = "none";
+btnEnd.style.display = "none";
 
-    calculoPrecioTotal(getCarrito);
+getCarrito.forEach(item => {
+    printCart(item);
+});
 
-}
+calculoPrecioTotal(getCarrito);
 
 totalCarrito.innerText = getCarrito.length;
-
-
-

@@ -8,6 +8,7 @@ h1{
 }
 
 .container-fluid.header{
+    background-color: $color-gris-oscuro;
     padding-left: 0;
     padding-right: 0;
 
@@ -92,6 +93,7 @@ h1{
     &__pyme{
 
         h1{
+            color: white;
             margin: 0 auto;
             text-align: center;
             font-size: 2rem;
@@ -104,14 +106,16 @@ h1{
         }
 
         p{
-            font-family: $fuente-Inter;
+            font-family: $fuente-Roboto;
             font-size: .9rem;
+            font-weight: 300;
+            color: white;
             line-height: 1;
         }
 
         &__down a{
             font-size: 2rem;
-            color: $color-violet;
+            color: $color-fuxia;
 
             .animate__shakeY{
                 --animate-duration: 5s;

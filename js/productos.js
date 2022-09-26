@@ -7,32 +7,20 @@ class Producto {
         this.descripcion = obj.descripcion;
         this.precio = obj.precio;
         this.stock = obj.stock;
-        this.vendidos = obj.vendidos;
         this.cantidad = obj.cantidad;
         this.categoria = obj.categoria;
-        this.subtotal = obj.subtotal;
     }
 
     subtotales(){
         this.precio = this.precio * this.cantidad;
-        console.log(this.precio);
     }
 
     sinStock(){
-        if(this.stock <= 0){
-            return 'Sin stock';
-        }else{
-            return '';
-        }
-    }
-
-    cantidad(){
-        return this.cantidad;
+        return this.stock <= 0 ? 'Sin Stock' : '';
     }
 
     vendido() {
         this.stock = this.stock - this.cantidad;
-        this.vendidos = this.vendidos + this.cantidad;
 
         alert(
             `Agregado al carrito!\n${this.cantidad} unidad/es de ${this.nombre}\nQuedan ${this.stock} unidades disponibles`
@@ -55,10 +43,8 @@ let producto1 = new Producto({
         "Breakfast Tea que combina un té negro de Ceylon cosechado en altura y aire puro, con notas bien definidas de un té negro de Assam que le dan cuerpo, sabor y aroma a la taza.",
     precio: 254.45,
     stock: 5,
-    vendidos: 0,
     cantidad: 0,
-    categoria: "Infusiones",
-    subtotal: 0
+    categoria: "Infusiones"
 });
 let producto2 = new Producto({
     id: 2,
@@ -69,10 +55,8 @@ let producto2 = new Producto({
         "Clásico Earl Grey sutilmente perfumado con bergamota, prensada a frío, que aporta notas cítricas a la base de té negro de Oriente. Cada taza es un encuentro con la tradición.",
     precio: 254.45,
     stock: 10,
-    vendidos: 0,
     cantidad: 0,
-    categoria: "Infusiones",
-    subtotal: 0
+    categoria: "Infusiones"
 });
 let producto3 = new Producto({
     id: 3,
@@ -83,10 +67,8 @@ let producto3 = new Producto({
         "El clásico chocolate en tabletas de 100gr para disfrutar de un buen desayuno y/o merienda. Chocolate semiamargo aromatizado con vainillina, libre de gluten, SIN TACC.",
     precio: 210.23,
     stock: 0,
-    vendidos: 0,
     cantidad: 0,
-    categoria: "Chocolates",
-    subtotal: 0
+    categoria: "Chocolates"
 });
 let producto4 = new Producto({
     id: 4,
@@ -97,10 +79,8 @@ let producto4 = new Producto({
         "Sin agregado de azúcar. No es un alimento libre de azúcares, contiene azúcares propios de los ingredientes. No es un alimento reducido en calorías.",
     precio: 225.78,
     stock: 240,
-    vendidos: 0,
     cantidad: 0,
-    categoria: "Chocolates",
-    subtotal: 0
+    categoria: "Chocolates"
 });
 let producto5 = new Producto({
     id: 5,
@@ -111,10 +91,8 @@ let producto5 = new Producto({
         "Bebida de almendras con verdadero sabor a almendras. Sin azúcar, sin saborizantes, sin aditivos artificiales. ¡Naturalmente rica!",
     precio: 255.78,
     stock: 360,
-    vendidos: 0,
     cantidad: 0,
-    categoria: "Leches",
-    subtotal: 0
+    categoria: "Leches"
 });
 let producto6 = new Producto({
     id: 6,
@@ -125,10 +103,8 @@ let producto6 = new Producto({
         "100% natural, de extractos vegetales. Nuestra bebida original es la alternativa saludable y liviana para agregarle a tu café o disfrutarla sola, tomala bien fría!",
     precio: 255.78,
     stock: 120,
-    vendidos: 0,
     cantidad: 0,
-    categoria: "Leches",
-    subtotal: 0
+    categoria: "Leches"
 });
 let producto7 = new Producto({
     id: 7,
@@ -139,10 +115,8 @@ let producto7 = new Producto({
         "Disfrutá del mejor sabor a chocolate intenso en nuestra chocolatada de almendras. Un sabor equilibrado y liviano para los amantes de lo dulce, y sin culpa!",
     precio: 278.25,
     stock: 0,
-    vendidos: 0,
     cantidad: 0,
-    categoria: "Leches",
-    subtotal: 0
+    categoria: "Leches"
 });
 
 productos.push(producto1);

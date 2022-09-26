@@ -2,6 +2,7 @@ const modalContainer = document.querySelector(".modal__product");
 const abrirModal = document.getElementById("open");
 const cerrarModal = document.getElementById("close");
 const modalCarrito = document.querySelector(".modal__carrito");
+const cartOverlay = document.querySelector(".cart__overlay");
 
 abrirModal.addEventListener("click", (e) => {
   e.preventDefault();

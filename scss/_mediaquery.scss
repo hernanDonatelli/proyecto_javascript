@@ -1,4 +1,5 @@
 @media screen and (min-width: 575.98px) {
+
     .start {
 
         &__pyme {
@@ -19,6 +20,31 @@
             font-size: 3rem;
         }
 
+        .shop__card button {
+            font-size: 1rem;
+
+            iconify-icon{
+                margin-right: 0;
+            }
+        }
+
+        .modal__product{
+            .resumen #pagoEnCuotas{
+                p{
+                    iconify-icon{
+                        left: 25%;
+                    }
+                }
+            }
+
+            .modal__carrito{
+                .btn-vaciar-carrito{
+                    font-size: .8rem;
+                    padding: .30rem .55rem;
+                }
+            }
+        }
+
     }
 }
 
@@ -29,7 +55,15 @@
         .shop {
 
             &__card {
-                width: 44%;
+                width: 42%;
+
+                button{
+                    width: 50%;
+
+                    iconify-icon{
+                        margin-right: 0.5rem;
+                    }
+                }
             }
 
         }
@@ -48,6 +82,25 @@
                     width: 55%;
                 }
             }
+
+            .resumen #pagoEnCuotas{
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+
+                p{
+                    display: inline-block;
+
+                    iconify-icon{
+                        left: -21%;
+                    }
+                }
+
+            }
+
+            #btn-end{
+                width: 50%;
+            }
         }
     }
 }
@@ -60,6 +113,13 @@
 
             &__card {
                 width: 44%;
+
+                button{
+                    width: 45%;
+                    iconify-icon{
+                        margin-right: 0rem;
+                    }
+                }
             }
 
         }
