@@ -91,7 +91,6 @@ productos.forEach(producto => {
 
 //Pintar carrito
 let printCart = (producto) => {
-    // carritoContainer.innerHTML = ' ';
     containerTotales.style.display = "block";
     containerImpuestos.style.display = "block";
     containerTotalFinal.style.display = "block";
@@ -199,7 +198,7 @@ let printCart = (producto) => {
                     totalCarrito.innerText = getCarrito.length;
 
                     if (getCarrito.length === 0) {
-                        divSinProducto ? divSinProducto.style.display = "block" : '';
+                        divSinProducto.style.display = "block";
                         containerTotales.style.display = "none";
                         containerImpuestos.style.display = "none";
                         containerTotalFinal.style.display = "none";
@@ -249,17 +248,21 @@ deleteCarrito();
 const contenedorCarrito = document.getElementById("carritoContainer");
 getCarrito = JSON.parse(localStorage.getItem("cartStorage")) || [];
 
-getCarrito.length === 0 && divSinProducto ? divSinProducto.style.display = "block" : '';
+
+getCarrito === 0 && divSinProducto ? divSinProducto.style.display = 'block' : '';
+
 containerTotales.style.display = "none";
 containerImpuestos.style.display = "none";
 containerTotalFinal.style.display = "none";
 divCuotas.style.display = "none";
 btnEnd.style.display = "none";
 
+divSinProducto.style.display = "none";
 getCarrito.forEach(item => {
     printCart(item);
 });
 
 calculoPrecioTotal(getCarrito);
+
 
 totalCarrito.innerText = getCarrito.length;
