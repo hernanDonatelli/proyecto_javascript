@@ -160,6 +160,17 @@
                     padding: .2rem .5rem;
                 }
 
+                .enStock{
+                    font-family: $fuente-Roboto;
+                    font-size: .75rem;
+                    position: absolute;
+                    top: 2%;
+                    right: 2%;
+                    padding: .2rem .5rem;
+                    background-color: unset;
+                    color: #212121;
+                }
+
                 .description{
                     position: absolute;
                     top: 59%;

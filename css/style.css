@@ -248,6 +248,15 @@ h1 {
           top: 2%;
           right: 2%;
           padding: .2rem .5rem; }
+        #main .shop__card__product .enStock {
+          font-family: "Roboto", sans-serif;
+          font-size: .75rem;
+          position: absolute;
+          top: 2%;
+          right: 2%;
+          padding: .2rem .5rem;
+          background-color: unset;
+          color: #212121; }
         #main .shop__card__product .description {
           position: absolute;
           top: 59%;

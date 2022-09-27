@@ -58,7 +58,7 @@ productos.forEach(producto => {
                                 <span class="price">$${producto.precio}</span>
                                 <span class="brand brand-${producto.categoria}">${producto.marca}</span>
 
-                                <span id="stock-${producto.id}">${producto.sinStock()}</span>
+                                <span id="stock-${producto.id}"></span>
 
                                 <div class="like d-flex justify-content-center align-items-center">
                                     <iconify-icon icon="ant-design:heart-outlined"></iconify-icon>
@@ -78,9 +78,13 @@ productos.forEach(producto => {
     const btn = document.getElementById(`btn-${producto.id}`);
     const span = document.getElementById(`stock-${producto.id}`);
 
-    if (producto.sinStock()) {
+    if (producto.stock < 1) {
         span.classList.add("sinStock");
+        span.innerText = `Sin Stock`;
         btn.setAttribute("disabled", "");
+    }else{
+        span.innerText = `Stock: ${producto.stock}un.`;
+        span.classList.add("enStock");
     }
 
     btn.addEventListener("click", () => {
@@ -125,14 +129,17 @@ let printCart = (producto) => {
     let quitarCantidad = document.getElementById(`quitarCantidad-${producto.id}`);
 
     agregarCantidad.addEventListener("click", () => {
-        if (producto.stock > producto.cantidad) {
+        if (producto.stock > 1) {
+            const span = document.getElementById(`stock-${producto.id}`);
             producto.cantidad++;
+            producto.stock--;
+            span.innerText = `Stock: ${producto.stock}un.`;
             agregarQuitarItem(producto);
             calculoPrecioTotal(getCarrito);
         } else {
             Toastify({
                 className: "warningToasty",
-                text: `Por el momento solo contamos con ${producto.stock} unidades de ${producto.nombre}.`,
+                text: `No tenemos suficiente stock de ${(producto.nombre)}.`,
                 offset: {
                     x: 0,
                     y: 10
@@ -147,6 +154,7 @@ let printCart = (producto) => {
 
     quitarCantidad.addEventListener("click", () => {
         cantidad = document.getElementById(`cantidades-${producto.id}`);
+        const span = document.getElementById(`stock-${producto.id}`);
 
         if (cantidad.innerText <= 1) {
             Toastify({
@@ -162,6 +170,8 @@ let printCart = (producto) => {
             }).showToast();
         } else {
             producto.cantidad--;
+            producto.stock++;
+            span.innerText = `Stock: ${producto.stock}un.`;
             agregarQuitarItem(producto);
             calculoPrecioTotal(getCarrito);
         }

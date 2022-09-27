@@ -15,10 +15,6 @@ class Producto {
         this.precio = this.precio * this.cantidad;
     }
 
-    sinStock(){
-        return this.stock <= 0 ? 'Sin Stock' : '';
-    }
-
     vendido() {
         this.stock = this.stock - this.cantidad;
 
