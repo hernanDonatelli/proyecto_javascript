@@ -19,65 +19,80 @@
     <title>Proyecto Javascript - Tienda Gourmet</title>
 </head>
 
-<body>
+<body id="body">
     <!-- Header -->
     <header class="container-fluid header">
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav my-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
-                        </li>
-                        <li class="nav-item pl-5">
-                            <a href="#" class="shop-car" id="open">
-                                <iconify-icon icon="map:grocery-or-supermarket"></iconify-icon>
-                                <span id="countCart">0</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <div class="start container-fluid mt-5">
-            <div class="row">
-                <div class="start__pyme col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
-                    <h1><span>Shopping</span>Gourmet</h1>
-                    <p class="w-75 mx-auto text-center my-3">
-                        Comercializamos productos gourmet de calidad comprobada.
-                    </p>
-                    <p class="w-75 mx-auto text-center">
-                        Accede a nuestra tienda online y comprá con las mejores marcas del mercado.
-                    </p>
-                    <div class="start__pyme__down mt-2">
-                        <a href="#main">
-                            <iconify-icon class="animate__animated animate__shakeY animate__infinite"
-                                icon="bi:box-arrow-down"></iconify-icon>
-                        </a>
-                    </div>
-                </div>
-                <div class="start__shop col-12 col-lg-6">
-
-                </div>
-            </div>
+        <div id="btn-open-menu" class="header__bars">
+            <iconify-icon icon="codicon:three-bars"></iconify-icon>
         </div>
     </header>
 
+    <div class="start container-fluid">
+        <div class="row">
+            <div class="start__pyme col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                <h1><span>Shopping</span>Gourmet</h1>
+                <p class="w-75 mx-auto text-center my-3">
+                    Comercializamos productos gourmet de calidad comprobada.
+                </p>
+                <p class="w-75 mx-auto text-center">
+                    Accede a nuestra tienda online y comprá con las mejores marcas del mercado.
+                </p>
+                <div class="start__pyme__down mt-2">
+                    <a href="#main">
+                        <iconify-icon class="animate__animated animate__shakeY animate__infinite"
+                            icon="bi:box-arrow-down"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+            <div class="start__shop col-12 col-lg-6">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="menu__side" class="menu__side">
+        <div class="menu__side__page">
+            <iconify-icon icon="bi:shop"></iconify-icon>
+            <h1><span>Shopping</span>Gourmet</h1>
+        </div>
+
+        <div class="menu__side__options">
+            <a href="#" class="selected">
+                <div class="option">
+                    <iconify-icon icon="ant-design:home-outlined" title="inicio"></iconify-icon>
+                    <h2>Inicio</h2>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <iconify-icon icon="gridicons:product"></iconify-icon>
+                    <h2>Productos</h2>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <iconify-icon icon="wpf:geo-fence"></iconify-icon>
+                    <h2>Tiendas</h2>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <iconify-icon icon="fluent:contact-card-16-regular"></iconify-icon>
+                    <h2>Contacto</h2>
+                </div>
+            </a>
+            <a id="open" href="#">
+                <div class="option shop-car">
+                    <iconify-icon icon="bi:cart"></iconify-icon>
+                    <span id="countCart">0</span>
+                    <h2>Carrito</h2>
+                </div>
+            </a>
+        </div>
+    </div>
     <!-- Contenido -->
     <main id="main" class="container-fluid mb-5">
-        <h1 class="py-4 text-center mt-3"><span>La</span>Tienda</h1>
+        <h1 class="pt-4 text-center"><span>La</span>Tienda</h1>
         <section id="shop" class="shop container col-12 col-sm-9 col-md-12 col-lg-10 col-xl-12">
             <!-- Productos desde js -->
         </section>

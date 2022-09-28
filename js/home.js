@@ -1,3 +1,19 @@
+//Navbar
+const menuSide = document.getElementById("menu__side");
+const btnOpen = document.getElementById("btn-open-menu");
+const body = document.getElementById("body");
+
+const open_close_menu = () => {
+    body.classList.toggle("body__move");
+    menuSide.classList.toggle("menu__side__move");
+}
+btnOpen.addEventListener("click", open_close_menu);
+
+if(window.innerWidth < 760){
+    body.classList.add("body__move");
+    menuSide.classList.add("menu__side__move");
+}
+
 //Pintar en Home los productos
 const container = document.getElementById("shop");
 let getCarrito = [];
@@ -58,7 +74,7 @@ productos.forEach(producto => {
                                 <span class="price">$${producto.precio}</span>
                                 <span class="brand brand-${producto.categoria}">${producto.marca}</span>
 
-                                <span id="stock-${producto.id}"></span>
+                                <span id="stock-${producto.id}">${producto.stock}</span>
 
                                 <div class="like d-flex justify-content-center align-items-center">
                                     <iconify-icon icon="ant-design:heart-outlined"></iconify-icon>
@@ -89,6 +105,9 @@ productos.forEach(producto => {
 
     btn.addEventListener("click", () => {
         carritoIndex(producto.id);
+        const span = document.getElementById(`stock-${producto.id}`);
+        producto.stock = producto.stock - 1;
+        span.innerText = `Stock: ${producto.stock}un.`;
     });
 
 });
@@ -129,7 +148,7 @@ let printCart = (producto) => {
     let quitarCantidad = document.getElementById(`quitarCantidad-${producto.id}`);
 
     agregarCantidad.addEventListener("click", () => {
-        if (producto.stock > 1) {
+        if (producto.stock > 0) {
             const span = document.getElementById(`stock-${producto.id}`);
             producto.cantidad++;
             producto.stock--;
@@ -156,10 +175,16 @@ let printCart = (producto) => {
         cantidad = document.getElementById(`cantidades-${producto.id}`);
         const span = document.getElementById(`stock-${producto.id}`);
 
-        if (cantidad.innerText <= 1) {
+        if (cantidad.innerText > 0) {
+            producto.cantidad--;
+            producto.stock++;
+            span.innerText = `Stock: ${producto.stock}un.`;
+            agregarQuitarItem(producto);
+            calculoPrecioTotal(getCarrito);
+        } else {
             Toastify({
                 className: "warningToasty",
-                text: "El pedido minimo es 1 unidad",
+                text: "No hay cantidad para eliminar.",
                 offset: {
                     x: 0,
                     y: 10
@@ -168,12 +193,6 @@ let printCart = (producto) => {
                 gravity: "top",
                 position: "center",
             }).showToast();
-        } else {
-            producto.cantidad--;
-            producto.stock++;
-            span.innerText = `Stock: ${producto.stock}un.`;
-            agregarQuitarItem(producto);
-            calculoPrecioTotal(getCarrito);
         }
     });
 
@@ -225,7 +244,6 @@ let printCart = (producto) => {
                     )
                 }
             })
-
         });
     }
     deleteItemStorage(producto.id);
