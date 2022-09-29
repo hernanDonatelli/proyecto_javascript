@@ -9,10 +9,22 @@ const open_close_menu = () => {
 }
 btnOpen.addEventListener("click", open_close_menu);
 
-if(window.innerWidth < 760){
+if (window.innerWidth < 767.98) {
     body.classList.add("body__move");
     menuSide.classList.add("menu__side__move");
 }
+
+//Resize de pantalla
+window.addEventListener("resize", () => {
+    if(window.innerWidth > 767.98){
+        body.classList.remove("body__move");
+        menuSide.classList.remove("menu__side__move");
+    }
+    if(window.innerWidth < 767.98){
+        body.classList.add("body__move");
+        menuSide.classList.add("menu__side__move");
+    }
+});
 
 //Pintar en Home los productos
 const container = document.getElementById("shop");
@@ -62,12 +74,16 @@ const calculoPrecioTotal = (arrayCarrito) => {
     tarjeta6.innerText = `Total: $${printTarjeta6}`;
 }
 
-productos.forEach(producto => {
-    let articulo = document.createElement("article");
-    articulo.classList.add("shop__card");
-    articulo.classList.add("my-4");
+const traerDatos = async () => {
+    const respuesta = await fetch("./js/json/data.json");
+    const data = await respuesta.json();
 
-    articulo.innerHTML += `<div class="shop__card__product style">
+    data.forEach(producto => {
+        let articulo = document.createElement("article");
+        articulo.classList.add("shop__card");
+        articulo.classList.add("my-4");
+
+        articulo.innerHTML += `<div class="shop__card__product style">
                                 <div class="img-container">
                                     <img src="${producto.img}">
                                 </div>
@@ -88,29 +104,31 @@ productos.forEach(producto => {
                             </button>
                             `;
 
-    container.appendChild(articulo);
+        container.appendChild(articulo);
 
-    //Eventos
-    const btn = document.getElementById(`btn-${producto.id}`);
-    const span = document.getElementById(`stock-${producto.id}`);
-
-    if (producto.stock < 1) {
-        span.classList.add("sinStock");
-        span.innerText = `Sin Stock`;
-        btn.setAttribute("disabled", "");
-    }else{
-        span.innerText = `Stock: ${producto.stock}un.`;
-        span.classList.add("enStock");
-    }
-
-    btn.addEventListener("click", () => {
-        carritoIndex(producto.id);
+        //Eventos
+        const btn = document.getElementById(`btn-${producto.id}`);
         const span = document.getElementById(`stock-${producto.id}`);
-        producto.stock = producto.stock - 1;
-        span.innerText = `Stock: ${producto.stock}un.`;
-    });
 
-});
+        if (producto.stock < 1) {
+            span.classList.add("sinStock");
+            span.innerText = `Sin Stock`;
+            btn.setAttribute("disabled", "");
+        } else {
+            span.innerText = `Stock: ${producto.stock}un.`;
+            span.classList.add("enStock");
+        }
+
+        btn.addEventListener("click", () => {
+            carritoIndex(producto.id);
+            const span = document.getElementById(`stock-${producto.id}`);
+            producto.stock = producto.stock - 1;
+            span.innerText = `Stock: ${producto.stock}un.`;
+        });
+
+    });
+}
+traerDatos();
 
 //Pintar carrito
 let printCart = (producto) => {
