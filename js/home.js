@@ -2,15 +2,17 @@
 const menuSide = document.getElementById("menu__side");
 const btnOpen = document.getElementById("btn-open-menu");
 const body = document.getElementById("body");
+const buscador = document.getElementById("search");
 
 const open_close_menu = () => {
-    body.classList.toggle("body__move");
     menuSide.classList.toggle("menu__side__move");
+    body.classList.toggle("body__move");
+    buscador.classList.toggle("search__move");
 }
 btnOpen.addEventListener("click", open_close_menu);
 
-if (window.innerWidth < 767.98) {
-    body.classList.add("body__move");
+/* if (window.innerWidth < 767.98) {
+    /* body.classList.add("body__move");
     menuSide.classList.add("menu__side__move");
 }
 
@@ -24,7 +26,7 @@ window.addEventListener("resize", () => {
         body.classList.add("body__move");
         menuSide.classList.add("menu__side__move");
     }
-});
+}); */
 
 //Pintar en Home los productos
 const container = document.getElementById("shop");

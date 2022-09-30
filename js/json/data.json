@@ -8,6 +8,7 @@
         "precio": 254.45,
         "stock": 5,
         "cantidad": 0,
+        "vendidos": 215,
         "categoria": "Infusiones"
     },
     {
@@ -19,6 +20,7 @@
         "precio": 254.45,
         "stock": 10,
         "cantidad": 0,
+        "vendidos": 130,
         "categoria": "Infusiones"
     },
     {
@@ -30,6 +32,7 @@
         "precio": 210.23,
         "stock": 0,
         "cantidad": 0,
+        "vendidos": 210,
         "categoria": "Chocolates"
     },
     {
@@ -41,6 +44,7 @@
         "precio": 225.78,
         "stock": 240,
         "cantidad": 0,
+        "vendidos": 75,
         "categoria": "Chocolates"
     },
     {
@@ -52,6 +56,7 @@
         "precio": 255.78,
         "stock": 360,
         "cantidad": 0,
+        "vendidos": 187,
         "categoria": "Leches"
     },
     {
@@ -63,6 +68,7 @@
         "precio": 255.78,
         "stock": 120,
         "cantidad": 0,
+        "vendidos": 213,
         "categoria": "Leches"
     },
     {
@@ -74,6 +80,7 @@
         "precio": 278.25,
         "stock": 0,
         "cantidad": 0,
+        "vendidos": 154,
         "categoria": "Leches"
     }
 ]

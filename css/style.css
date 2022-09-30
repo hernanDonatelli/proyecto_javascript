@@ -37,7 +37,7 @@ body {
   margin-left: 0;
   margin-top: 80px;
   background-color: #eaf1f1;
-  transition: margin-left 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
 
 /* HEADER */
 h1 {
@@ -50,11 +50,13 @@ h1 {
     font-weight: 300; }
 
 .header {
+  position: relative;
   width: 100%;
   height: 80px;
   background: #644336;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   z-index: 200;
@@ -71,6 +73,42 @@ h1 {
       font-size: 1.5rem;
       cursor: pointer;
       position: absolute; }
+  .header #search {
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    margin-right: 5%;
+    font-size: .8rem;
+    transition: margin-right 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+    .header #search .btn-buscar {
+      font-family: "Roboto", sans-serif;
+      font-size: .9rem;
+      border: unset;
+      color: #ecd1a7;
+      padding: .15rem .75rem;
+      background-color: transparent; }
+      .header #search .btn-buscar iconify-icon {
+        position: absolute;
+        top: 28%;
+        right: 0;
+        color: #ecd1a7;
+        font-size: 1.2rem;
+        transition: font-size 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+        .header #search .btn-buscar iconify-icon:hover {
+          font-size: 1.4rem; }
+    .header #search input {
+      font-size: .9rem;
+      background-color: transparent;
+      border: unset;
+      border-bottom: 1px solid #ecd1a7;
+      border-radius: 0;
+      color: #ecd1a7; }
+      .header #search input::placeholder {
+        color: #ecd1a7;
+        font-style: italic;
+        font-weight: 200;
+        font-size: .8rem; }
+      .header #search input:focus {
+        box-shadow: unset; }
 
 .menu__side {
   width: 80px;
@@ -83,7 +121,7 @@ h1 {
   color: #ecd1a7;
   z-index: 300;
   overflow-x: hidden;
-  transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   scrollbar-width: none; }
   .menu__side::-webkit-scrollbar {
     display: none; }
@@ -206,18 +244,56 @@ h1 {
   width: 80px;
   left: 0; }
 
+.header #search.search__move {
+  margin-right: 22%; }
+
 /* MAIN */
 #main {
   background-color: #eaf1f1;
   position: relative; }
   #main h1 {
-    font-size: 2rem;
+    font-size: 1.65rem;
     font-family: "Roboto", sans-serif;
     color: #644336;
     font-weight: 400;
-    padding-top: 80px; }
+    padding: 80px 0 20px; }
     #main h1 span {
       font-weight: 100; }
+  #main #destacados {
+    background-color: #644336; }
+    #main #destacados .carousel .carousel-inner {
+      height: 550px;
+      padding: 1.5rem 0; }
+      #main #destacados .carousel .carousel-inner img {
+        display: block;
+        width: 250px;
+        height: auto;
+        margin: 0 auto; }
+      #main #destacados .carousel .carousel-inner .carousel-item {
+        position: relative; }
+        #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption {
+          position: relative; }
+          #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption h5 {
+            font-family: "Montserrat", sans-serif;
+            text-transform: uppercase;
+            width: 100%;
+            position: relative;
+            right: 15%; }
+          #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption p {
+            font-family: "Roboto", sans-serif;
+            font-size: .9rem;
+            font-weight: 300;
+            position: relative;
+            right: 15%;
+            width: 100%;
+            padding: .5rem; }
+          #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption .price {
+            position: relative;
+            right: 15%;
+            font-family: "Inter", sans-serif;
+            color: #ecd1a7;
+            font-size: 2rem;
+            font-weight: 200; }
   #main .shop {
     display: flex;
     justify-content: space-between;
@@ -576,7 +652,33 @@ h1 {
     left: 25%; }
   #main .modal__product .modal__carrito .btn-vaciar-carrito {
     font-size: .8rem;
-    padding: .30rem .55rem; } }
+    padding: .30rem .55rem; }
+  #main #destacados {
+    background-color: #644336; }
+    #main #destacados .carousel .carousel-inner {
+      height: 350px;
+      padding: 1.5rem 0; }
+      #main #destacados .carousel .carousel-inner img {
+        width: 275px;
+        height: auto;
+        position: relative;
+        left: -30%; }
+      #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption {
+        top: 0; }
+        #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption h5 {
+          width: 50%;
+          position: absolute;
+          top: -565%;
+          right: 25%; }
+        #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption p {
+          position: absolute;
+          top: -430%;
+          right: 20%;
+          width: 60%; }
+        #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption .price {
+          position: absolute;
+          top: -170%;
+          right: 40%; } }
 
 @media screen and (min-width: 767.98px) {
   #main .shop {
@@ -604,16 +706,46 @@ h1 {
         left: -21%; }
   #main .modal__product #btn-end {
     width: 50%; }
+  #main #destacados .carousel .carousel-inner {
+    height: 320px;
+    padding: 1.5rem 0; }
+    #main #destacados .carousel .carousel-inner img {
+      width: 250px;
+      height: auto; }
+    #main #destacados .carousel .carousel-inner .carousel-item {
+      height: 320px;
+      position: relative; }
+      #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption {
+        position: absolute;
+        top: 0; }
+        #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption h5 {
+          position: absolute;
+          top: 9%;
+          right: -15%;
+          width: 100%; }
+        #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption p {
+          position: absolute;
+          top: 25%;
+          right: -5%;
+          width: 80%; }
+        #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption .price {
+          position: absolute;
+          top: 60%;
+          right: 22%; }
   #body {
     margin-left: 230px; }
     #body.body__move {
-      margin-left: 80px; }
+      margin-left: 0px; }
   .menu__side {
     left: 0;
     width: 230px; }
   .menu__side__move {
-    width: 80px;
-    left: 0; } }
+    width: 0px;
+    left: -230px; }
+  .header #search {
+    right: 27%; }
+  .header #search.search__move {
+    right: -20%; } }
 
 @media screen and (min-width: 991.98px) {
   #main .shop__card {
@@ -622,6 +754,35 @@ h1 {
       width: 45%; }
       #main .shop__card button iconify-icon {
         margin-right: 0rem; }
+  #main #destacados .carousel .carousel-inner {
+    height: 400px;
+    padding: 1.5rem 0; }
+    #main #destacados .carousel .carousel-inner img {
+      display: block;
+      width: 300px;
+      height: auto;
+      left: -26%; }
+    #main #destacados .carousel .carousel-inner .carousel-item {
+      height: 320px;
+      position: relative; }
+      #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption {
+        position: absolute;
+        top: 0; }
+        #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption h5 {
+          position: absolute;
+          top: 20%;
+          right: -25%;
+          width: 100%; }
+        #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption p {
+          position: absolute;
+          top: 30%;
+          right: -10%;
+          width: 70%;
+          margin-bottom: 0; }
+        #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption .price {
+          position: absolute;
+          top: 60%;
+          right: 16%; }
   #main .modal__product {
     width: 75%;
     right: 12%; }
@@ -632,13 +793,72 @@ h1 {
       #main .modal__product .productoEnCarrito p.cantidades {
         width: 55%; }
     #main .modal__product__active {
-      transform: translate(0%, -10%); } }
+      transform: translate(0%, -10%); }
+  #body {
+    margin-left: 80px; }
+    #body.body__move {
+      margin-left: 230px; }
+  .menu__side {
+    left: 0;
+    width: 80px; }
+    .menu__side__page {
+      width: 215px; }
+  .menu__side__move {
+    width: 230px;
+    left: 0px; }
+  .header #search {
+    right: 5%; }
+  .header #search.search__move {
+    right: 3%; } }
 
 @media screen and (min-width: 1279.98px) {
   #main .shop__card {
     width: 29%; }
   #main .modal__product {
-    right: 13%; } }
+    right: 13%; }
+  #main #destacados .carousel .carousel-inner {
+    height: 450px;
+    padding: 1.5rem 0; }
+    #main #destacados .carousel .carousel-inner img {
+      display: block;
+      width: 350px;
+      height: auto;
+      left: -16%; }
+    #main #destacados .carousel .carousel-inner .carousel-item {
+      height: 320px;
+      position: relative; }
+      #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption {
+        position: absolute;
+        top: 0; }
+        #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption h5 {
+          position: absolute;
+          top: 35%;
+          right: -25%;
+          width: 100%; }
+        #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption p {
+          position: absolute;
+          top: 45%;
+          right: 5%;
+          width: 40%;
+          margin-bottom: 0; }
+        #main #destacados .carousel .carousel-inner .carousel-item .carousel-caption .price {
+          position: absolute;
+          top: 80%;
+          right: 17%; }
+  #body {
+    margin-left: 230px; }
+    #body.body__move {
+      margin-left: 80px; }
+  .menu__side {
+    left: 0;
+    width: 230px; }
+  .menu__side__move {
+    width: 80px;
+    left: 0px; }
+  .header #search {
+    right: 15%; }
+  .header #search.search__move {
+    right: -14%; } }
 
 @media screen and (min-width: 1365.98px) {
   /* HEADER */

@@ -62,7 +62,51 @@
                 }
             }
         }
+        #destacados{
+            background-color: $color-Marron;
 
+            .carousel{
+
+                .carousel-inner{
+                    height: 350px;
+                    padding: 1.5rem 0;
+
+                    img{
+                        width: 275px;
+                        height: auto;
+                        position: relative;
+                        left: -30%;
+                    }
+
+                    .carousel-item{
+
+                        .carousel-caption{
+                            top: 0;
+
+                            h5{
+                                width: 50%;
+                                position: absolute;
+                                top: -565%;
+                                right: 25%;
+                            }
+
+                            p{
+                                position: absolute;
+                                top: -430%;
+                                right: 20%;
+                                width: 60%;
+                            }
+
+                            .price{
+                                position: absolute;
+                                top: -170%;
+                                right: 40%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -121,13 +165,59 @@
                 width: 50%;
             }
         }
+
+        #destacados{
+
+            .carousel{
+
+                .carousel-inner{
+                    height: 320px;
+                    padding: 1.5rem 0;
+
+                    img{
+                        width: 250px;
+                        height: auto;
+                    }
+
+                    .carousel-item{
+                        height: 320px;
+                        position: relative;
+
+                        .carousel-caption{
+                            position: absolute;
+                            top: 0;
+
+                            h5{
+                                position: absolute;
+                                top: 9%;
+                                right: -15%;
+                                width: 100%;
+                            }
+
+                            p{
+                                position: absolute;
+                                top: 25%;
+                                right: -5%;
+                                width: 80%;
+                            }
+
+                            .price{
+                                position: absolute;
+                                top: 60%;
+                                right: 22%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     #body {
         margin-left: 230px;
 
         &.body__move {
-            margin-left: 80px;
+            margin-left: 0px;
         }
     }
 
@@ -137,9 +227,18 @@
     }
 
     .menu__side__move {
-        width: 80px;
-        left: 0;
+        width: 0px;
+        left: -230px;
     }
+
+    .header #search {
+        right: 27%;
+    }
+
+    .header #search.search__move {
+        right: -20%;
+    }
+
 }
 
 @media screen and (min-width: 991.98px) {
@@ -160,6 +259,54 @@
                 }
             }
 
+        }
+
+        #destacados{
+            .carousel{
+
+                .carousel-inner{
+                    height: 400px;
+                    padding: 1.5rem 0;
+
+                    img{
+                        display: block;
+                        width: 300px;
+                        height: auto;
+                        left: -26%;
+                    }
+
+                    .carousel-item{
+                        height: 320px;
+                        position: relative;
+
+                        .carousel-caption{
+                            position: absolute;
+                            top: 0;
+
+                            h5{
+                                position: absolute;
+                                top: 20%;
+                                right: -25%;
+                                width: 100%;
+                            }
+
+                            p{
+                                position: absolute;
+                                top: 30%;
+                                right: -10%;
+                                width: 70%;
+                                margin-bottom: 0;
+                            }
+
+                            .price{
+                                position: absolute;
+                                top: 60%;
+                                right: 16%;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .modal__product {
@@ -183,6 +330,37 @@
             }
         }
     }
+
+    #body {
+        margin-left: 80px;
+
+        &.body__move {
+            margin-left: 230px;
+        }
+    }
+
+    .menu__side {
+        left: 0;
+        width: 80px;
+
+        &__page {
+            width: 215px;
+        }
+    }
+
+    .menu__side__move {
+        width: 230px;
+        left: 0px;
+    }
+
+    .header #search {
+        right: 5%;
+    }
+
+    .header #search.search__move {
+        right: 3%;
+    }
+
 }
 
 @media screen and (min-width: 1279.98px) {
@@ -199,8 +377,84 @@
         .modal__product {
             right: 13%;
         }
+
+        #destacados{
+            .carousel{
+
+                .carousel-inner{
+                    height: 450px;
+                    padding: 1.5rem 0;
+
+                    img{
+                        display: block;
+                        width: 350px;
+                        height: auto;
+                        left: -16%;
+                    }
+
+                    .carousel-item{
+                        height: 320px;
+                        position: relative;
+
+                        .carousel-caption{
+                            position: absolute;
+                            top: 0;
+
+                            h5{
+                                position: absolute;
+                                top: 35%;
+                                right: -25%;
+                                width: 100%;
+                            }
+
+                            p{
+                                position: absolute;
+                                top: 45%;
+                                right: 5%;
+                                width: 40%;
+                                margin-bottom: 0;
+                            }
+
+                            .price{
+                                position: absolute;
+                                top: 80%;
+                                right: 17%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
+
+    #body {
+        margin-left: 230px;
+
+        &.body__move {
+            margin-left: 80px;
+        }
+    }
+
+    .menu__side {
+        left: 0;
+        width: 230px;
+    }
+
+    .menu__side__move {
+        width: 80px;
+        left: 0px;
+    }
+
+    .header #search {
+        right: 15%;
+    }
+
+    .header #search.search__move {
+        right: -14%;
+    }
+
 }
+
 
 @media screen and (min-width: 1365.98px) {
 
@@ -238,7 +492,6 @@
             background-size: cover;
         }
     }
-
 
     /* MAIN */
     #main {

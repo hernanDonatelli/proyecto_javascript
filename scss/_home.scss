@@ -4,14 +4,68 @@
     position: relative;
 
     h1{
-        font-size: 2rem;
+        font-size: 1.65rem;
         font-family: $fuente-Roboto;
         color: $color-Marron;
         font-weight: 400;
-        padding-top: 80px;
+        padding: 80px 0 20px;
 
         span{
             font-weight: 100;
+        }
+    }
+
+    #destacados{
+        background-color: $color-Marron;
+
+        .carousel{
+
+            .carousel-inner{
+                height: 550px;
+                padding: 1.5rem 0;
+
+                img{
+                    display: block;
+                    width: 250px;
+                    height: auto;
+                    margin: 0 auto;
+                }
+
+                .carousel-item{
+                    position: relative;
+
+                    .carousel-caption{
+                        position: relative;
+
+                        h5{
+                            font-family: $fuente-Montserrat;
+                            text-transform: uppercase;
+                            width: 100%;
+                            position: relative;
+                            right: 15%;
+                        }
+
+                        p{
+                            font-family: $fuente-Roboto;
+                            font-size: .9rem;
+                            font-weight: 300;
+                            position: relative;
+                            right: 15%;
+                            width: 100%;
+                            padding: .5rem;
+                        }
+
+                        .price{
+                            position: relative;
+                            right: 15%;
+                            font-family: $fuente-Inter;
+                            color: $color-BeigeSuave;
+                            font-size: 2rem;
+                            font-weight: 200;
+                        }
+                    }
+                }
+            }
         }
     }
 
