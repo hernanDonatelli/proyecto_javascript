@@ -1,13 +1,14 @@
 /* MAIN */
 #main{
+    background-color: $color-Plata;
     position: relative;
-    margin-top: 5rem;
 
     h1{
         font-size: 2rem;
         font-family: $fuente-Roboto;
-        color: $color-gris-oscuro;
+        color: $color-Marron;
         font-weight: 400;
+        padding-top: 80px;
 
         span{
             font-weight: 100;
@@ -31,13 +32,13 @@
                 width: 50%;
                 margin: 0 auto;
                 text-align: center;
-                color: $color-gris-oscuro;
+                color: $color-BeigeSuave;
                 padding: 0.25rem 1rem;
-                background-color: $color-BeigeSuave;
+                background-color: $color-Marron;
                 font-family: $fuente-Montserrat;
                 font-weight: 400;
                 font-size: .9rem;
-                border: 1px solid $color-BeigeSuave;
+                border: 1px solid $color-Plata-II;
                 text-transform: uppercase;
                 transition: all .3s ease-in-out;
 
@@ -46,9 +47,9 @@
                 }
 
                 &:hover{
-                    background-color: $color-Amarillo;
-                    color: $color-gris-oscuro;
-                    border: 1px solid $color-Amarillo;
+                    background-color: $color-BeigeSuave;
+                    color: $color-Marron;
+                    border: 1px solid $color-BeigeSuave;
                     border-radius: 5px;
 
                     &:disabled{
@@ -69,7 +70,7 @@
             .style{
                 height: 460px;
                 font-family: sans-serif;
-                border: 1px solid rgb(231, 231, 231);
+                border: 1px solid $color-Marron-Bordes;
                 border-radius: 2%;
 
 
@@ -91,7 +92,7 @@
 
             &__product{
                 position: relative;
-                background-color: white;
+                background-color: transparent;
 
                 .price,
                 .brand,
@@ -124,19 +125,19 @@
                     border-radius: 50%;
                     width: 32px;
                     height: 32px;
-                    background-color: white;
+                    background-color: $color-Plata;
                     box-shadow: unset;
-                    border: 1px solid $color-BeigeSuave;
+                    border: 1px solid $color-Marron;
                     cursor: pointer;
                     transition: all .3s ease-in-out;
 
                     iconify-icon{
-                        color: $color-BeigeSuave;
+                        color: $color-Marron;
                     }
 
                     &:hover{
-                        background-color: $color-Amarillo;
-                        border-color: $color-Amarillo;
+                        background-color: $color-Marron;
+                        border-color: $color-Marron;
 
                         iconify-icon{
                             color: white;
@@ -200,7 +201,7 @@
         position: fixed;
         width: 90vw;
         height: 90vh;
-        background-color: $color-gris-oscuro;
+        background-color: $color-Plata;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, .3);
         bottom: 0%;
         right: 5%;
@@ -224,7 +225,7 @@
             padding-top: 1rem;
 
             h3{
-                color: $color-BeigeSuave;
+                color: $color-Marron;
                 font-family: $fuente-Roboto;
                 font-weight: 400;
                 text-transform: uppercase;
@@ -240,7 +241,7 @@
                 font-family: $fuente-Montserrat;
                 font-weight: 500;
                 text-transform: uppercase;
-                color: $color-gris-oscuro;
+                color: $color-Marron;
                 border-radius: 20px;
                 font-size: .6rem;
                 padding: .25rem .5rem;
@@ -251,7 +252,6 @@
                 &:hover{
                     background-color: rgb(252, 74, 74);
                     border: 1px solid rgb(252, 74, 74);
-                    font-weight: 600;
                     color: white;
                 }
             }
@@ -262,7 +262,7 @@
                 width: 10%;
 
                 iconify-icon{
-                    color: $color-BeigeSuave;
+                    color: $color-Marron;
                     font-size: 1.75rem;
                     transition: all .3s ease;
 
@@ -275,7 +275,7 @@
 
         #noProducto{
             p{
-                color: $color-BeigeSuave;
+                color: $color-Marron;
                 font-family: "Roboto", sans-serif;
                 font-weight: 400;
                 font-size: .9rem;
@@ -295,7 +295,7 @@
             transition: all .3s ease-in-out;
 
             p{
-                color: $color-BeigeSuave;
+                color: $color-Marron;
                 font-family: $fuente-Roboto;
                 font-weight: 400;
                 font-size: .9rem;
@@ -304,15 +304,15 @@
             }
 
             button{
-                font-size: 1.7rem;
+                font-size: 1.6rem;
                 padding-right: 1.4rem;
                 background-color: transparent;
                 border: none;
-                color: $color-BeigeSuave;
+                color: $color-Marron;
                 transition: all .3s ease;
 
                 &:hover{
-                    color: $color-Amarillo;
+                    color: $color-Naranja;
                 }
             }
 
@@ -324,7 +324,7 @@
             }
 
             hr{
-                color: $color-BeigeSuave;
+                color: $color-Marron;
                 width: 90%;
                 margin: .75rem auto;
             }
@@ -340,7 +340,7 @@
                 }
 
                 .btn-cantidades{
-                    font-size: 1.3rem;
+                    font-size: 1.5rem;
                     padding: 0 .3rem;
                     line-height: 1rem;
                 }
@@ -348,7 +348,7 @@
 
             .inCart{
                 width: 95%;
-                border-left: 5px solid $color-BeigeSuave;
+                border-left: 5px solid $color-Naranja;
             }
         }
 
@@ -362,7 +362,7 @@
                 font-size: .95rem;
                 text-align: center;
                 line-height: 1;
-                color: $color-BeigeSuave;
+                color: $color-Marron;
 
                 iconify-icon{
                     position: absolute;
@@ -372,7 +372,7 @@
                     margin-right: .2rem;
                     font-size: 1.8rem;
                     line-height: 1;
-                    color: $color-BeigeSuave;
+                    color: $color-Naranja;
                 }
 
                 span{
@@ -381,7 +381,7 @@
                     text-align: center;
                     padding-top: .3rem;
                     font-weight: bold;
-                    color: $color-BeigeSuave;
+                    color: $color-Marron;
                 }
             }
         }
@@ -393,21 +393,21 @@
             width: 70%;
             margin: 0 auto;
             text-align: center;
-            color: $color-BeigeSuave;
+            color: $color-Marron;
             padding: 0.5rem 1rem;
             background-color: transparent;
             font-family: $fuente-Montserrat;
             font-weight: 600;
             font-size: .9rem;
-            border: 1px solid rgb(214, 214, 214);
+            border: 1px solid $color-Marron;
             text-transform: uppercase;
             transition: all .3s ease-in-out;
 
             &:hover{
-                background-color: rgb(0, 151, 8);
-                border: 1px solid rgb(0, 151, 8);
+                background-color: rgb(0, 128, 6);
+                border: 1px solid rgb(0, 128, 6);
                 border-radius: 5px;
-                color: $color-gris-oscuro;
+                color: $color-Plata;
 
             }
 
@@ -423,7 +423,7 @@
         #impuestos,
         #totalFinal{
             font-family: $fuente-Roboto;
-            color: $color-BeigeSuave;
+            color: $color-Marron;
             font-size: 1rem;
             padding: 0 .5rem;
             text-align: center;
