@@ -27,7 +27,7 @@
         "id": 3,
         "marca": "Chocolate Colonial",
         "nombre": "Chocolate para Taza",
-        "img": "./img/colonial_taza.jpg",
+        "img": "./img/colonial_taza.png",
         "descripcion": "El clásico chocolate en tabletas de 100gr para disfrutar de un buen desayuno y/o merienda. Chocolate semiamargo aromatizado con vainillina, libre de gluten, SIN TACC.",
         "precio": 210.23,
         "stock": 0,

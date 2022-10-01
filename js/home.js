@@ -11,23 +11,6 @@ const open_close_menu = () => {
 }
 btnOpen.addEventListener("click", open_close_menu);
 
-/* if (window.innerWidth < 767.98) {
-    /* body.classList.add("body__move");
-    menuSide.classList.add("menu__side__move");
-}
-
-//Resize de pantalla
-window.addEventListener("resize", () => {
-    if(window.innerWidth > 767.98){
-        body.classList.remove("body__move");
-        menuSide.classList.remove("menu__side__move");
-    }
-    if(window.innerWidth < 767.98){
-        body.classList.add("body__move");
-        menuSide.classList.add("menu__side__move");
-    }
-}); */
-
 //Pintar en Home los productos
 const container = document.getElementById("shop");
 let getCarrito = [];

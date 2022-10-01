@@ -8,7 +8,7 @@
                 margin: 0 auto;
 
                 button {
-                    width: 40%;
+                    width: 50%;
                 }
             }
 
@@ -38,11 +38,21 @@
             font-size: 3rem;
         }
 
-        .shop__card button {
-            font-size: 1rem;
+        .shop__card{
 
-            iconify-icon {
-                margin-right: 0;
+            &__product{
+
+                p{
+                    top: 48%;
+                }
+            }
+
+            button {
+                font-size: 1rem;
+
+                iconify-icon {
+                    margin-right: 0;
+                }
             }
         }
 
@@ -75,7 +85,7 @@
                         width: 275px;
                         height: auto;
                         position: relative;
-                        left: -30%;
+                        left: -28%;
                     }
 
                     .carousel-item{
@@ -87,20 +97,25 @@
                                 width: 50%;
                                 position: absolute;
                                 top: -565%;
-                                right: 25%;
+                                right: 20%;
                             }
 
                             p{
                                 position: absolute;
-                                top: -430%;
-                                right: 20%;
+                                top: -460%;
+                                right: 15%;
                                 width: 60%;
                             }
 
                             .price{
                                 position: absolute;
-                                top: -170%;
-                                right: 40%;
+                                top: -225%;
+                                right: 35%;
+                            }
+
+                            .vendidos{
+                                top: -110%;
+                                right: 15%;
                             }
                         }
                     }
@@ -120,11 +135,25 @@
             &__card {
                 width: 48%;
 
+                .style{
+                    height: 450px;
+                }
+
                 button {
-                    width: 50%;
+                    width: 45%;
 
                     iconify-icon {
                         margin-right: 0.5rem;
+                    }
+                }
+
+                &__product{
+                    p{
+                        top: 53%;
+                    }
+
+                    .description{
+                        top: 58%;
                     }
                 }
             }
@@ -189,22 +218,27 @@
 
                             h5{
                                 position: absolute;
-                                top: 9%;
+                                top: 4%;
                                 right: -15%;
-                                width: 100%;
+                                width: 75%;
                             }
 
                             p{
                                 position: absolute;
-                                top: 25%;
-                                right: -5%;
+                                top: 20%;
+                                right: -17%;
                                 width: 80%;
                             }
 
                             .price{
                                 position: absolute;
-                                top: 60%;
-                                right: 22%;
+                                top: 58%;
+                                right: 8%;
+                            }
+
+                            .vendidos {
+                                top: 70%;
+                                right: -17%;
                             }
                         }
                     }
@@ -303,6 +337,11 @@
                                 top: 60%;
                                 right: 16%;
                             }
+
+                            .vendidos {
+                                top: 75%;
+                                right: -10%;
+                            }
                         }
                     }
                 }
@@ -398,7 +437,7 @@
 
                         .carousel-caption{
                             position: absolute;
-                            top: 0;
+                            top: -7%;
 
                             h5{
                                 position: absolute;
@@ -410,8 +449,8 @@
                             p{
                                 position: absolute;
                                 top: 45%;
-                                right: 5%;
-                                width: 40%;
+                                right: 0%;
+                                width: 50%;
                                 margin-bottom: 0;
                             }
 
@@ -419,6 +458,11 @@
                                 position: absolute;
                                 top: 80%;
                                 right: 17%;
+                            }
+
+                            .vendidos {
+                                top: 93%;
+                                right: 0%;
                             }
                         }
                     }
@@ -504,10 +548,11 @@
                 margin-bottom: 3rem;
 
                 .style {
-                    height: 450px;
+                    height: 480px;
 
                     .img-container {
-                        height: 250px;
+                        height: 300px;
+                        align-items: flex-end;
                     }
                 }
 
@@ -534,11 +579,11 @@
                     }
 
                     p {
-                        top: 55%;
+                        top: 62%;
                     }
 
                     .description {
-                        top: 63%;
+                        top: 66%;
                     }
 
                 }
