@@ -1,6 +1,10 @@
 @media screen and (min-width: 479.98px) {
     #main {
 
+        #formSearch{
+            width: 75%;
+        }
+
         .shop {
 
             &__card {
@@ -36,6 +40,10 @@
 
         h1 {
             font-size: 3rem;
+        }
+
+        #formSearch{
+            width: 60%;
         }
 
         .shop__card{
@@ -128,6 +136,10 @@
 @media screen and (min-width: 767.98px) {
 
     #main {
+
+        #formSearch{
+            width: 50%;
+        }
 
         .shop {
             justify-content: space-evenly;
@@ -265,14 +277,6 @@
         left: -230px;
     }
 
-    .header #search {
-        right: 27%;
-    }
-
-    .header #search.search__move {
-        right: -20%;
-    }
-
 }
 
 @media screen and (min-width: 991.98px) {
@@ -391,20 +395,16 @@
         width: 230px;
         left: 0px;
     }
-
-    .header #search {
-        right: 5%;
-    }
-
-    .header #search.search__move {
-        right: 3%;
-    }
-
 }
 
 @media screen and (min-width: 1279.98px) {
 
     #main {
+
+        #formSearch{
+            width: 30%;
+        }
+
         .shop {
 
             &__card {
@@ -488,17 +488,7 @@
         width: 80px;
         left: 0px;
     }
-
-    .header #search {
-        right: 15%;
-    }
-
-    .header #search.search__move {
-        right: -14%;
-    }
-
 }
-
 
 @media screen and (min-width: 1365.98px) {
 

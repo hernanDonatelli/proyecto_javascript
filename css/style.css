@@ -73,42 +73,6 @@ h1 {
       font-size: 1.5rem;
       cursor: pointer;
       position: absolute; }
-  .header #search {
-    position: relative;
-    font-family: "Roboto", sans-serif;
-    margin-right: 5%;
-    font-size: .8rem;
-    transition: margin-right 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
-    .header #search .btn-buscar {
-      font-family: "Roboto", sans-serif;
-      font-size: .9rem;
-      border: unset;
-      color: #ecd1a7;
-      padding: .15rem .75rem;
-      background-color: transparent; }
-      .header #search .btn-buscar iconify-icon {
-        position: absolute;
-        top: 28%;
-        right: 0;
-        color: #ecd1a7;
-        font-size: 1.2rem;
-        transition: font-size 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
-        .header #search .btn-buscar iconify-icon:hover {
-          font-size: 1.4rem; }
-    .header #search input {
-      font-size: .9rem;
-      background-color: transparent;
-      border: unset;
-      border-bottom: 1px solid #ecd1a7;
-      border-radius: 0;
-      color: #ecd1a7; }
-      .header #search input::placeholder {
-        color: #ecd1a7;
-        font-style: italic;
-        font-weight: 200;
-        font-size: .8rem; }
-      .header #search input:focus {
-        box-shadow: unset; }
 
 .menu__side {
   width: 80px;
@@ -213,7 +177,7 @@ h1 {
     color: #644336;
     margin: 0 auto;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-top: 2rem;
     font-weight: 400; }
     .start__pyme h1 span {
@@ -252,15 +216,60 @@ h1 {
   background-color: #eaf1f1;
   position: relative; }
   #main h1 {
-    font-size: 1.65rem;
+    font-size: 2.5rem;
     font-family: "Roboto", sans-serif;
     color: #644336;
     font-weight: 400;
-    padding: 80px 0 20px; }
+    padding: 80px 0 0; }
     #main h1 span {
       font-weight: 100; }
+  #main #formSearch {
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    width: 90%;
+    margin: 0 auto;
+    font-size: .8rem;
+    transition: margin-right 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+    #main #formSearch .btn-buscar {
+      font-family: "Roboto", sans-serif;
+      font-size: .9rem;
+      border: unset;
+      color: #644336;
+      padding: .15rem .75rem;
+      background-color: transparent; }
+      #main #formSearch .btn-buscar iconify-icon {
+        position: absolute;
+        top: 28%;
+        right: 0;
+        color: #644336;
+        font-size: 1.2rem;
+        transition: font-size 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+        #main #formSearch .btn-buscar iconify-icon:hover {
+          font-size: 1.4rem; }
+    #main #formSearch input {
+      font-size: .9rem;
+      background-color: transparent;
+      border: unset;
+      border-bottom: 1px solid #644336;
+      border-radius: 0;
+      color: #644336; }
+      #main #formSearch input::placeholder {
+        color: #644336;
+        font-style: italic;
+        font-weight: 200;
+        font-size: .8rem; }
+      #main #formSearch input:focus {
+        box-shadow: unset; }
   #main #destacados {
     background-color: #644336; }
+    #main #destacados h1 {
+      font-size: 3rem;
+      font-family: "Roboto", sans-serif;
+      color: #ecd1a7;
+      font-weight: 400;
+      padding: 80px 0 0; }
+      #main #destacados h1 span {
+        font-weight: 100; }
     #main #destacados .carousel .carousel-inner {
       height: 550px;
       padding: 1.5rem 0; }
@@ -306,6 +315,11 @@ h1 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; }
+    #main .shop .description {
+      font-family: "Inter", sans-serif;
+      color: #644336;
+      font-weight: 400;
+      font-size: 1rem; }
     #main .shop__card {
       width: 100%;
       position: relative;
@@ -435,7 +449,7 @@ h1 {
           top: 54%;
           padding: 1rem;
           font-family: "Inter", sans-serif;
-          color: black;
+          color: #644336;
           font-weight: 300;
           font-size: .85rem;
           text-align: center; }
@@ -640,6 +654,8 @@ h1 {
     border-color: #4c924f; }
 
 @media screen and (min-width: 479.98px) {
+  #main #formSearch {
+    width: 75%; }
   #main .shop__card {
     width: 80%;
     margin: 0 auto; }
@@ -653,6 +669,8 @@ h1 {
     font-size: 1rem; }
   #main h1 {
     font-size: 3rem; }
+  #main #formSearch {
+    width: 60%; }
   #main .shop__card__product p {
     top: 48%; }
   #main .shop__card button {
@@ -695,6 +713,8 @@ h1 {
           right: 15%; } }
 
 @media screen and (min-width: 767.98px) {
+  #main #formSearch {
+    width: 50%; }
   #main .shop {
     justify-content: space-evenly; }
     #main .shop__card {
@@ -764,11 +784,7 @@ h1 {
     width: 230px; }
   .menu__side__move {
     width: 0px;
-    left: -230px; }
-  .header #search {
-    right: 27%; }
-  .header #search.search__move {
-    right: -20%; } }
+    left: -230px; } }
 
 @media screen and (min-width: 991.98px) {
   #main .shop__card {
@@ -831,13 +847,11 @@ h1 {
       width: 215px; }
   .menu__side__move {
     width: 230px;
-    left: 0px; }
-  .header #search {
-    right: 5%; }
-  .header #search.search__move {
-    right: 3%; } }
+    left: 0px; } }
 
 @media screen and (min-width: 1279.98px) {
+  #main #formSearch {
+    width: 30%; }
   #main .shop__card {
     width: 29%; }
   #main .modal__product {
@@ -883,11 +897,7 @@ h1 {
     width: 230px; }
   .menu__side__move {
     width: 80px;
-    left: 0px; }
-  .header #search {
-    right: 15%; }
-  .header #search.search__move {
-    right: -14%; } }
+    left: 0px; } }
 
 @media screen and (min-width: 1365.98px) {
   /* HEADER */

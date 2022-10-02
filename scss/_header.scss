@@ -46,55 +46,6 @@ h1 {
         }
     }
 
-    #search{
-        position: relative;
-        font-family: $fuente-Roboto;
-        margin-right: 5%;
-        font-size: .8rem;
-        transition: margin-right .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-
-        .btn-buscar{
-            font-family: $fuente-Roboto;
-            font-size: .9rem;
-            border: unset;
-            color: $color-BeigeSuave;
-            padding: .15rem .75rem;
-            background-color: transparent;
-
-            iconify-icon{
-                position: absolute;
-                top: 28%;
-                right: 0;
-                color: $color-BeigeSuave;
-                font-size: 1.2rem;
-                transition: font-size .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-
-                &:hover{
-                    font-size: 1.4rem;
-                }
-            }
-        }
-
-        input{
-            font-size: .9rem;
-            background-color: transparent;
-            border: unset;
-            border-bottom: 1px solid $color-BeigeSuave;
-            border-radius: 0;
-            color: $color-BeigeSuave;
-
-            &::placeholder{
-                color: $color-BeigeSuave;
-                font-style: italic;
-                font-weight: 200;
-                font-size: .8rem;
-            }
-
-            &:focus{
-                box-shadow: unset;
-            }
-        }
-    }
 }
 
 .menu__side {
@@ -244,7 +195,7 @@ h1 {
             color: $color-Marron;
             margin: 0 auto;
             text-align: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-top: 2rem;
             font-weight: 400;
 

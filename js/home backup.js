@@ -59,28 +59,16 @@ const calculoPrecioTotal = (arrayCarrito) => {
     tarjeta6.innerText = `Total: $${printTarjeta6}`;
 }
 
-const search = async () => {
+const traerDatos = async () => {
     const respuesta = await fetch("./js/json/data.json");
     const data = await respuesta.json();
+    
+    data.forEach(producto => {
+        let articulo = document.createElement("article");
+        articulo.classList.add("shop__card");
+        articulo.classList.add("my-4");
 
-    const inputSearch = document.querySelector("#inputSearch");
-    // const btnSearch = document.querySelector("#btn-search");
-    const resultado = document.querySelector("#shop");
-
-    const filtrar = () => {
-        resultado.innerHTML = '';
-        const ingresousuario = inputSearch.value.toLocaleLowerCase();
-
-        for (const producto of data) {
-            let resultado = document.createElement("article");
-            resultado.classList.add("shop__card");
-            resultado.classList.add("animate__fadeInUp");
-            resultado.classList.add("animate__animated");
-            resultado.classList.add("my-4");
-            let nombre = producto.nombre.toLocaleLowerCase();
-
-            if (nombre.indexOf(ingresousuario) !== -1) {
-                resultado.innerHTML += `<div class="shop__card__product style">
+        articulo.innerHTML += `<div class="shop__card__product style">
                                 <div class="img-container">
                                     <img src="${producto.img}">
                                 </div>
@@ -98,43 +86,36 @@ const search = async () => {
                             <button id="btn-${producto.id}" class="d-flex justify-content-around align-items-center mt-3">
                                 <iconify-icon class="market" icon="map:grocery-or-supermarket"></iconify-icon>
                                 <span>Agregar</span>
-                            </button>`;
-                container.appendChild(resultado);
+                            </button>
+                            `;
 
-                //Eventos
-                const btn = document.getElementById(`btn-${producto.id}`);
-                const span = document.getElementById(`stock-${producto.id}`);
+        container.appendChild(articulo);
 
-                if (producto.stock < 1) {
-                    span.classList.add("sinStock");
-                    span.innerText = `Sin Stock`;
-                    btn.setAttribute("disabled", "");
-                } else {
-                    span.innerText = `Stock: ${producto.stock}un.`;
-                    span.classList.add("enStock");
-                }
+        //Eventos
+        const btn = document.getElementById(`btn-${producto.id}`);
+        const span = document.getElementById(`stock-${producto.id}`);
 
-                btn.addEventListener("click", () => {
-                    carritoIndex(producto.id);
-                    const span = document.getElementById(`stock-${producto.id}`);
-                    producto.stock = producto.stock - 1;
-                    span.innerText = `Stock: ${producto.stock}un.`;
-                });
-            }
+        if (producto.stock < 1) {
+            span.classList.add("sinStock");
+            span.innerText = `Sin Stock`;
+            btn.setAttribute("disabled", "");
+        } else {
+            span.innerText = `Stock: ${producto.stock}un.`;
+            span.classList.add("enStock");
         }
 
-        if (resultado.innerHTML === '') {
-            resultado.innerHTML += `<span class="description my-4">No hay coincidencias.</span>`
-        }
+        btn.addEventListener("click", () => {
+            carritoIndex(producto.id);
+            const span = document.getElementById(`stock-${producto.id}`);
+            producto.stock = producto.stock - 1;
+            span.innerText = `Stock: ${producto.stock}un.`;
+        });
 
-    }
-    // btnSearch.addEventListener("click", filtrar);
-    inputSearch.addEventListener("keyup", filtrar);
+    });
 
-    filtrar();
-
+    search();
 }
-search();
+traerDatos();
 
 //Pintar carrito
 let printCart = (producto) => {

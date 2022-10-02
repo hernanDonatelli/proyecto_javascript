@@ -1,7 +1,9 @@
 const carritoIndex = (productoId) => {
 
-    const renderProductosCarrito = () => {
-        let producto = productos.find((producto) => producto.id === productoId);
+    const renderProductosCarrito = async() => {
+        const respuesta = await fetch("./js/json/data.json");
+        const data = await respuesta.json();
+        let producto = data.find((producto) => producto.id === productoId);
         const existe = getCarrito.some((producto) => producto.id === productoId);
 
         if (existe) {
