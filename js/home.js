@@ -2,13 +2,11 @@
 const menuSide = document.getElementById("menu__side");
 const btnOpen = document.getElementById("btn-open-menu");
 const body = document.getElementById("body");
-const buscador = document.getElementById("search");
 
 const open_close_menu = () => {
     menuSide.classList.toggle("menu__side__move");
     body.classList.toggle("body__move");
-    buscador.classList.toggle("search__move");
-}
+};
 btnOpen.addEventListener("click", open_close_menu);
 
 //Pintar en Home los productos
@@ -29,7 +27,6 @@ const divCuotas = document.getElementById("pagoEnCuotas");
 const btnEnd = document.getElementById("btn-end");
 const btnVaciarCarrito = document.getElementById("btn-vaciar-carrito");
 
-
 const agregarQuitarItem = (producto) => {
     let cantidad = document.getElementById(`cantidades-${producto.id}`);
     cantidad.innerText = producto.cantidad;
@@ -37,10 +34,15 @@ const agregarQuitarItem = (producto) => {
 
     let printSubTotal = document.getElementById(`unitario-${producto.id}`);
     printSubTotal.innerText = `Subtotal: $${subtotal}`;
-}
+};
 
 const calculoPrecioTotal = (arrayCarrito) => {
-    let printTotal = (arrayCarrito.reduce((total, producto) => total += producto.precio * producto.cantidad, 0)).toFixed(2);
+    let printTotal = arrayCarrito
+        .reduce(
+            (total, producto) => (total += producto.precio * producto.cantidad),
+            0
+        )
+        .toFixed(2);
     total.innerText = `Subtotal: $${printTotal}`;
 
     let printImpuestos = (printTotal * 0.21).toFixed(2);
@@ -55,31 +57,38 @@ const calculoPrecioTotal = (arrayCarrito) => {
     let printTarjeta3 = (printTotalFinal * 1.15).toFixed(2);
     tarjeta3.innerText = `Total: $${printTarjeta3}`;
 
-    let printTarjeta6 = (printTotalFinal * 1.30).toFixed(2);
+    let printTarjeta6 = (printTotalFinal * 1.3).toFixed(2);
     tarjeta6.innerText = `Total: $${printTarjeta6}`;
-}
+};
 
 const search = async () => {
     const respuesta = await fetch("./js/json/data.json");
     const data = await respuesta.json();
 
     const inputSearch = document.querySelector("#inputSearch");
-    // const btnSearch = document.querySelector("#btn-search");
     const resultado = document.querySelector("#shop");
 
-    const filtrar = () => {
-        resultado.innerHTML = '';
+    const inputFiltrado = () => {
+        resultado.innerHTML = "";
         const ingresousuario = inputSearch.value.toLocaleLowerCase();
 
-        for (const producto of data) {
+        data.forEach((producto) => {
             let resultado = document.createElement("article");
             resultado.classList.add("shop__card");
-            resultado.classList.add("animate__fadeInUp");
             resultado.classList.add("animate__animated");
+            resultado.classList.add("animate__fadeIn");
             resultado.classList.add("my-4");
             let nombre = producto.nombre.toLocaleLowerCase();
+            let categoria = producto.categoria.toLocaleLowerCase();
+            let precio = producto.precio;
+            let marca = producto.marca.toLocaleLowerCase();
 
-            if (nombre.indexOf(ingresousuario) !== -1) {
+            if (
+                nombre.indexOf(ingresousuario) !== -1 ||
+                categoria.indexOf(ingresousuario) !== -1 ||
+                precio > Number(ingresousuario) ||
+                marca.indexOf(ingresousuario) !== -1
+            ) {
                 resultado.innerHTML += `<div class="shop__card__product style">
                                 <div class="img-container">
                                     <img src="${producto.img}">
@@ -116,24 +125,23 @@ const search = async () => {
 
                 btn.addEventListener("click", () => {
                     carritoIndex(producto.id);
-                    const span = document.getElementById(`stock-${producto.id}`);
+                    const span = document.getElementById(
+                        `stock-${producto.id}`
+                    );
                     producto.stock = producto.stock - 1;
                     span.innerText = `Stock: ${producto.stock}un.`;
                 });
             }
+        });
+
+        if (resultado.innerHTML === "") {
+            resultado.innerHTML += `<p class="description my-4">No hay coincidencias.</p>`;
         }
+    };
+    inputSearch.addEventListener("keyup", inputFiltrado);
 
-        if (resultado.innerHTML === '') {
-            resultado.innerHTML += `<span class="description my-4">No hay coincidencias.</span>`
-        }
-
-    }
-    // btnSearch.addEventListener("click", filtrar);
-    inputSearch.addEventListener("keyup", filtrar);
-
-    filtrar();
-
-}
+    inputFiltrado();
+};
 search();
 
 //Pintar carrito
@@ -149,18 +157,28 @@ let printCart = (producto) => {
     div.innerHTML = `<div class="inCart">
                         <p>Producto: ${producto.nombre}</p>
                         <p>Precio: $${producto.precio}</p>
-                        <p id="unitario-${producto.id}">Subtotal: $${producto.precio}</p>
+                        <p id="unitario-${producto.id}">Subtotal: $${
+        producto.precio
+    }</p>
                     </div>
                     <p class="cantidades mt-2">
-                        <span>Cantidad: <span id="cantidades-${producto.id}">${producto.cantidad = 1}</span></span>
-                        <button id="agregarCantidad-${producto.id}" class="btn-cantidades" type="button">
+                        <span>Cantidad: <span id="cantidades-${
+                            producto.id
+                        }">${(producto.cantidad = 1)}</span></span>
+                        <button id="agregarCantidad-${
+                            producto.id
+                        }" class="btn-cantidades" type="button">
                         <iconify-icon icon="carbon:shopping-cart-plus"></iconify-icon>
                         </button>
-                        <button id="quitarCantidad-${producto.id}" class="btn-cantidades" type="button">
+                        <button id="quitarCantidad-${
+                            producto.id
+                        }" class="btn-cantidades" type="button">
                             <iconify-icon icon="carbon:shopping-cart-minus"></iconify-icon>
                         </button>
                     </p>
-                    <button id="btn-eliminar-${producto.id}" class="btn-eliminar">
+                    <button id="btn-eliminar-${
+                        producto.id
+                    }" class="btn-eliminar">
                         <iconify-icon icon="bi:trash"></iconify-icon>
                     </button>
                     <hr>`;
@@ -168,8 +186,12 @@ let printCart = (producto) => {
     contenedorCarrito.append(div);
 
     //Agregar o quitar cantidades
-    let agregarCantidad = document.getElementById(`agregarCantidad-${producto.id}`);
-    let quitarCantidad = document.getElementById(`quitarCantidad-${producto.id}`);
+    let agregarCantidad = document.getElementById(
+        `agregarCantidad-${producto.id}`
+    );
+    let quitarCantidad = document.getElementById(
+        `quitarCantidad-${producto.id}`
+    );
 
     agregarCantidad.addEventListener("click", () => {
         if (producto.stock > 0) {
@@ -182,17 +204,16 @@ let printCart = (producto) => {
         } else {
             Toastify({
                 className: "warningToasty",
-                text: `No tenemos suficiente stock de ${(producto.nombre)}.`,
+                text: `No tenemos suficiente stock de ${producto.nombre}.`,
                 offset: {
                     x: 0,
-                    y: 10
+                    y: 10,
                 },
                 duration: 3500,
                 gravity: "top",
                 position: "center",
             }).showToast();
         }
-
     });
 
     quitarCantidad.addEventListener("click", () => {
@@ -211,7 +232,7 @@ let printCart = (producto) => {
                 text: "No hay cantidad para eliminar.",
                 offset: {
                     x: 0,
-                    y: 10
+                    y: 10,
                 },
                 duration: 2000,
                 gravity: "top",
@@ -222,27 +243,29 @@ let printCart = (producto) => {
 
     //Eliminar producto del carrito y del Storage
     let deleteItemStorage = (productoID) => {
-
-        const btn_eliminar = document.getElementById(`btn-eliminar-${productoID}`);
+        const btn_eliminar = document.getElementById(
+            `btn-eliminar-${productoID}`
+        );
         btn_eliminar.addEventListener("click", () => {
             Swal.fire({
-                title: 'Desea eliminar este producto del Carrito?',
+                title: "Desea eliminar este producto del Carrito?",
                 // text: "Una vez eliminado se recalculan los precios",
-                icon: 'warning',
+                icon: "warning",
                 showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Si, borrarlo!'
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si, borrarlo!",
             }).then((result) => {
                 if (result.isConfirmed) {
-
                     let index = getCarrito.indexOf(producto);
                     getCarrito.splice(index, 1);
 
-                    let elemento = JSON.parse(localStorage.getItem("cartStorage"));
+                    let elemento = JSON.parse(
+                        localStorage.getItem("cartStorage")
+                    );
                     elemento.splice(index, 1);
                     let elementoJSON = JSON.stringify(elemento);
-                    localStorage.setItem("cartStorage", elementoJSON)
+                    localStorage.setItem("cartStorage", elementoJSON);
 
                     calculoPrecioTotal(getCarrito);
 
@@ -262,16 +285,16 @@ let printCart = (producto) => {
                     }
 
                     Swal.fire(
-                        'Eliminado!',
-                        'El producto ha sido eliminado del carrito',
-                        'success'
-                    )
+                        "Eliminado!",
+                        "El producto ha sido eliminado del carrito",
+                        "success"
+                    );
                 }
-            })
+            });
         });
-    }
+    };
     deleteItemStorage(producto.id);
-}
+};
 
 //Vaciar Carrito
 let deleteCarrito = () => {
@@ -279,7 +302,7 @@ let deleteCarrito = () => {
         localStorage.clear("cartStorage");
         getCarrito = JSON.parse(localStorage.getItem("cartStorage")) || [];
 
-        divSinProducto ? divSinProducto.style.display = "block" : '';
+        divSinProducto ? (divSinProducto.style.display = "block") : "";
         containerTotales.style.display = "none";
         containerImpuestos.style.display = "none";
         containerTotalFinal.style.display = "none";
@@ -293,15 +316,16 @@ let deleteCarrito = () => {
 
         totalCarrito.innerText = getCarrito.length;
     });
-}
+};
 deleteCarrito();
 
 //LocalStorage
 const contenedorCarrito = document.getElementById("carritoContainer");
 getCarrito = JSON.parse(localStorage.getItem("cartStorage")) || [];
 
-
-getCarrito === 0 && divSinProducto ? divSinProducto.style.display = 'block' : '';
+getCarrito === 0 && divSinProducto
+    ? (divSinProducto.style.display = "block")
+    : "";
 
 containerTotales.style.display = "none";
 containerImpuestos.style.display = "none";
@@ -310,11 +334,10 @@ divCuotas.style.display = "none";
 btnEnd.style.display = "none";
 
 divSinProducto.style.display = "none";
-getCarrito.forEach(item => {
+getCarrito.forEach((item) => {
     printCart(item);
 });
 
 calculoPrecioTotal(getCarrito);
-
 
 totalCarrito.innerText = getCarrito.length;

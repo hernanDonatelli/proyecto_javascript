@@ -177,7 +177,7 @@ h1 {
     color: #644336;
     margin: 0 auto;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-top: 2rem;
     font-weight: 400; }
     .start__pyme h1 span {
@@ -216,13 +216,29 @@ h1 {
   background-color: #eaf1f1;
   position: relative; }
   #main h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: "Roboto", sans-serif;
     color: #644336;
     font-weight: 400;
-    padding: 80px 0 0; }
+    padding: 80px 0 0;
+    margin-bottom: 0; }
     #main h1 span {
       font-weight: 100; }
+  #main #listadoCategorias {
+    font-family: "Inter", sans-serif;
+    color: #644336;
+    font-size: .75rem;
+    font-weight: 300; }
+    #main #listadoCategorias span {
+      border: 1px solid #644336;
+      border-radius: 20px;
+      padding: .2rem .6rem;
+      background-color: #644336;
+      color: #ecd1a7;
+      cursor: pointer;
+      transition: all .3s ease-in-out; }
+      #main #listadoCategorias span:hover {
+        color: #eaf1f1; }
   #main #formSearch {
     position: relative;
     font-family: "Roboto", sans-serif;
@@ -230,22 +246,18 @@ h1 {
     margin: 0 auto;
     font-size: .8rem;
     transition: margin-right 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
-    #main #formSearch .btn-buscar {
-      font-family: "Roboto", sans-serif;
-      font-size: .9rem;
-      border: unset;
+    #main #formSearch iconify-icon {
+      position: absolute;
+      top: 28%;
+      right: 4%;
       color: #644336;
-      padding: .15rem .75rem;
-      background-color: transparent; }
-      #main #formSearch .btn-buscar iconify-icon {
-        position: absolute;
-        top: 28%;
-        right: 0;
-        color: #644336;
-        font-size: 1.2rem;
-        transition: font-size 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
-        #main #formSearch .btn-buscar iconify-icon:hover {
-          font-size: 1.4rem; }
+      font-size: 1.2rem;
+      transition: font-size 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+    #main #formSearch input[type="search"]::-webkit-search-decoration,
+    #main #formSearch input[type="search"]::-webkit-search-cancel-button,
+    #main #formSearch input[type="buscar"]::-webkit-search-results-button,
+    #main #formSearch input[type="search"]::-webkit-search-results-decoration {
+      display: none; }
     #main #formSearch input {
       font-size: .9rem;
       background-color: transparent;
@@ -256,20 +268,22 @@ h1 {
       #main #formSearch input::placeholder {
         color: #644336;
         font-style: italic;
-        font-weight: 200;
+        font-weight: 300;
         font-size: .8rem; }
       #main #formSearch input:focus {
         box-shadow: unset; }
   #main #destacados {
     background-color: #644336; }
     #main #destacados h1 {
-      font-size: 3rem;
+      font-size: 2rem;
       font-family: "Roboto", sans-serif;
       color: #ecd1a7;
       font-weight: 400;
       padding: 80px 0 0; }
       #main #destacados h1 span {
         font-weight: 100; }
+    #main #destacados .carousel-indicators button {
+      background-color: #ecd1a7; }
     #main #destacados .carousel .carousel-inner {
       height: 550px;
       padding: 1.5rem 0; }
@@ -320,10 +334,16 @@ h1 {
       color: #644336;
       font-weight: 400;
       font-size: 1rem; }
+    #main .shop p.description {
+      display: block;
+      height: 500px; }
     #main .shop__card {
       width: 100%;
       position: relative;
-      margin: 0 .75rem; }
+      margin: 0 .75rem;
+      transition: all .3s ease-out; }
+      #main .shop__card.animate__animated {
+        --animate-duration: 2s; }
       #main .shop__card button {
         display: block;
         line-height: 2;
@@ -671,6 +691,9 @@ h1 {
     font-size: 3rem; }
   #main #formSearch {
     width: 60%; }
+  #main #listadoCategorias {
+    width: 75%;
+    margin: 0 auto; }
   #main .shop__card__product p {
     top: 48%; }
   #main .shop__card button {
@@ -684,6 +707,8 @@ h1 {
     padding: .30rem .55rem; }
   #main #destacados {
     background-color: #644336; }
+    #main #destacados h1 {
+      font-size: 3rem; }
     #main #destacados .carousel .carousel-inner {
       height: 350px;
       padding: 1.5rem 0; }
@@ -787,6 +812,10 @@ h1 {
     left: -230px; } }
 
 @media screen and (min-width: 991.98px) {
+  .start {
+    height: 60vh; }
+    .start__pyme h1 {
+      font-size: 2.8rem; }
   #main .shop__card {
     width: 44%; }
     #main .shop__card button {
@@ -850,6 +879,12 @@ h1 {
     left: 0px; } }
 
 @media screen and (min-width: 1279.98px) {
+  .start {
+    height: 100vh; }
+    .start__pyme h1 {
+      font-size: 3rem; }
+  #main #listadoCategorias {
+    width: 50%; }
   #main #formSearch {
     width: 30%; }
   #main .shop__card {

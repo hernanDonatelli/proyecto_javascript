@@ -46,6 +46,11 @@
             width: 60%;
         }
 
+        #listadoCategorias{
+            width: 75%;
+            margin: 0 auto;
+        }
+
         .shop__card{
 
             &__product{
@@ -82,6 +87,10 @@
         }
         #destacados{
             background-color: $color-Marron;
+
+            h1{
+                font-size: 3rem;
+            }
 
             .carousel{
 
@@ -280,6 +289,15 @@
 }
 
 @media screen and (min-width: 991.98px) {
+    .start{
+        height: 60vh;
+
+        &__pyme{
+            h1{
+                font-size: 2.8rem;
+            }
+        }
+    }
 
     #main {
 
@@ -398,8 +416,20 @@
 }
 
 @media screen and (min-width: 1279.98px) {
+    .start{
+        height: 100vh;
+
+        &__pyme{
+            h1{
+                font-size: 3rem;
+            }
+        }
+    }
 
     #main {
+        #listadoCategorias{
+            width: 50%;
+        }
 
         #formSearch{
             width: 30%;
