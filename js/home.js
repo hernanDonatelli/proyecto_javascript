@@ -128,7 +128,7 @@ const search = async () => {
                     const span = document.getElementById(
                         `stock-${producto.id}`
                     );
-                    producto.stock = producto.stock - 1;
+                    // producto.stock--;
                     span.innerText = `Stock: ${producto.stock}un.`;
                 });
             }
@@ -194,7 +194,7 @@ let printCart = (producto) => {
     );
 
     agregarCantidad.addEventListener("click", () => {
-        if (producto.stock > 0) {
+        if (producto.stock > 1) {
             const span = document.getElementById(`stock-${producto.id}`);
             producto.cantidad++;
             producto.stock--;
@@ -220,7 +220,7 @@ let printCart = (producto) => {
         cantidad = document.getElementById(`cantidades-${producto.id}`);
         const span = document.getElementById(`stock-${producto.id}`);
 
-        if (cantidad.innerText > 0) {
+        if (cantidad.innerText > 1) {
             producto.cantidad--;
             producto.stock++;
             span.innerText = `Stock: ${producto.stock}un.`;
@@ -229,7 +229,7 @@ let printCart = (producto) => {
         } else {
             Toastify({
                 className: "warningToasty",
-                text: "No hay cantidad para eliminar.",
+                text: "La cantidad mínima es 1 unidad.",
                 offset: {
                     x: 0,
                     y: 10,

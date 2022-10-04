@@ -1,4 +1,8 @@
 @media screen and (min-width: 479.98px) {
+    .start__shop{
+        height: 60vh;
+    }
+
     #main {
 
         #formSearch{
@@ -290,7 +294,11 @@
 
 @media screen and (min-width: 991.98px) {
     .start{
-        height: 60vh;
+        height: 90vh;
+
+        &__shop{
+            height: 90vh;
+        }
 
         &__pyme{
             h1{
@@ -417,7 +425,7 @@
 
 @media screen and (min-width: 1279.98px) {
     .start{
-        height: 100vh;
+        height: 90vh;
 
         &__pyme{
             h1{
