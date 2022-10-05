@@ -1,9 +1,9 @@
 /* MAIN */
-#main{
+#main {
     background-color: $color-Plata;
     position: relative;
 
-    h1{
+    h1 {
         font-size: 2rem;
         font-family: $fuente-Roboto;
         color: $color-Marron;
@@ -11,19 +11,19 @@
         padding: 80px 0 0;
         margin-bottom: 0;
 
-        span{
+        span {
             font-weight: 100;
         }
 
     }
 
-    #listadoCategorias{
+    #listadoCategorias {
         font-family: $fuente-Inter;
         color: $color-Marron;
         font-size: .75rem;
         font-weight: 300;
 
-        span{
+        span {
             border: 1px solid $color-Marron;
             border-radius: 20px;
             padding: .2rem .6rem;
@@ -32,13 +32,13 @@
             cursor: pointer;
             transition: all .3s ease-in-out;
 
-            &:hover{
+            &:hover {
                 color: $color-Plata;
             }
         }
     }
 
-    #formSearch{
+    #formSearch {
         position: relative;
         font-family: $fuente-Roboto;
         width: 90%;
@@ -47,7 +47,7 @@
         transition: margin-right .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
 
-        iconify-icon{
+        iconify-icon {
             position: absolute;
             top: 28%;
             right: 4%;
@@ -58,11 +58,12 @@
 
         input[type="search"]::-webkit-search-decoration,
         input[type="search"]::-webkit-search-cancel-button,
-        input[type ="buscar"]::-webkit-search-results-button,
+        input[type="buscar"]::-webkit-search-results-button,
         input[type="search"]::-webkit-search-results-decoration {
-            display: none; }
+            display: none;
+        }
 
-            input{
+        input {
             font-size: .9rem;
             background-color: transparent;
             border: unset;
@@ -70,57 +71,57 @@
             border-radius: 0;
             color: $color-Marron;
 
-            &::placeholder{
+            &::placeholder {
                 color: $color-Marron;
                 font-style: italic;
                 font-weight: 300;
                 font-size: .8rem;
             }
 
-            &:focus{
+            &:focus {
                 box-shadow: unset;
             }
         }
     }
 
-    #destacados{
+    #destacados {
         background-color: $color-Marron;
 
-        h1{
+        h1 {
             font-size: 2rem;
             font-family: $fuente-Roboto;
             color: $color-BeigeSuave;
             font-weight: 400;
             padding: 80px 0 0;
 
-            span{
+            span {
                 font-weight: 100;
             }
         }
 
-        .carousel{
-            &-indicators button{
+        .carousel {
+            &-indicators button {
                 background-color: $color-BeigeSuave;
             }
 
-            .carousel-inner{
+            .carousel-inner {
                 height: 550px;
                 padding: 1.5rem 0;
 
-                img{
+                img {
                     display: block;
                     width: 250px;
                     height: auto;
                     margin: 0 auto;
                 }
 
-                .carousel-item{
+                .carousel-item {
                     position: relative;
 
-                    .carousel-caption{
+                    .carousel-caption {
                         position: relative;
 
-                        h5{
+                        h5 {
                             font-family: $fuente-Montserrat;
                             text-transform: uppercase;
                             width: 100%;
@@ -128,7 +129,7 @@
                             right: 15%;
                         }
 
-                        p{
+                        p {
                             font-family: $fuente-Roboto;
                             font-size: .9rem;
                             font-weight: 300;
@@ -139,7 +140,7 @@
                             margin-bottom: 0;
                         }
 
-                        .price{
+                        .price {
                             position: relative;
                             right: 15%;
                             font-family: $fuente-Inter;
@@ -148,7 +149,7 @@
                             font-weight: 200;
                         }
 
-                        .vendidos{
+                        .vendidos {
                             font-family: $fuente-Roboto;
                             font-size: .8rem;
                             color: $color-BeigeSuave;
@@ -162,34 +163,34 @@
         }
     }
 
-    .shop{
+    .shop {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
 
-        .description{
-                font-family: $fuente-Inter;
-                color: $color-Marron;
-                font-weight: 400;
-                font-size: 1rem;
+        .description {
+            font-family: $fuente-Inter;
+            color: $color-Marron;
+            font-weight: 400;
+            font-size: 1rem;
         }
 
-        p.description{
+        p.description {
             display: block;
             height: 500px;
         }
 
-        &__card{
+        &__card {
             width: 100%;
             position: relative;
             margin: 0 .75rem;
             transition: all .3s ease-out;
 
-            &.animate__animated{
+            &.animate__animated {
                 --animate-duration: 2s;
             }
 
-            button{
+            button {
                 display: block;
                 line-height: 2;
                 text-decoration: none;
@@ -206,24 +207,31 @@
                 text-transform: uppercase;
                 transition: all .3s ease-in-out;
 
-                span{
+                &.btn-disabled {
+                    font-size: .9rem;
+                    background-color: rgb(165, 165, 165);
+                    color: rgb(82, 82, 82);
+                    border: 1px solid rgb(165, 165, 165);
+                }
+
+                span {
                     font-size: .85rem;
                 }
 
-                &:hover{
+                &:hover {
                     background-color: $color-BeigeSuave;
                     color: $color-Marron;
                     border: 1px solid $color-BeigeSuave;
                     border-radius: 5px;
 
-                    &:disabled{
+                    &:disabled {
                         background-color: rgb(165, 165, 165);
                         color: rgb(82, 82, 82);
                         border: 1px solid rgb(165, 165, 165);
                     }
                 }
 
-                iconify-icon{
+                iconify-icon {
                     line-height: 1;
                     display: block;
                     margin-right: .4rem;
@@ -231,14 +239,14 @@
 
             }
 
-            .style{
+            .style {
                 height: 480px;
                 font-family: sans-serif;
                 border: 1px solid $color-Marron-Bordes;
                 border-radius: 2%;
 
 
-                .img-container{
+                .img-container {
                     height: 260px;
                     display: flex;
                     justify-content: center;
@@ -246,7 +254,7 @@
                     overflow: hidden;
                     object-position: 100px 50px;
 
-                    img{
+                    img {
                         display: block;
                         width: 65%;
                         transition: all .3s ease-in-out;
@@ -254,13 +262,13 @@
                 }
             }
 
-            &__product{
+            &__product {
                 position: relative;
                 background-color: transparent;
 
                 .price,
                 .brand,
-                .like{
+                .like {
                     position: absolute;
                     top: 5%;
                     padding: .3rem 1rem;
@@ -268,7 +276,8 @@
                     font-weight: 600;
                     font-size: 1rem;
                 }
-                .price{
+
+                .price {
                     top: -1%;
                     color: $color-Marron;
                     letter-spacing: -.1rem;
@@ -276,13 +285,15 @@
                     font-size: 2rem;
                     font-weight: 300;
                 }
-                .brand{
+
+                .brand {
                     top: 90%;
                     font-weight: 300;
                     color: white;
                     width: 72%;
                 }
-                .like{
+
+                .like {
                     display: block;
                     top: 90%;
                     right: 3%;
@@ -295,21 +306,21 @@
                     cursor: pointer;
                     transition: all .3s ease-in-out;
 
-                    iconify-icon{
+                    iconify-icon {
                         color: $color-Marron;
                     }
 
-                    &:hover{
+                    &:hover {
                         background-color: $color-Marron;
                         border-color: $color-Marron;
 
-                        iconify-icon{
+                        iconify-icon {
                             color: white;
                         }
                     }
                 }
 
-                p{
+                p {
                     position: absolute;
                     width: 100%;
                     margin: 0 auto;
@@ -323,7 +334,7 @@
                     color: $color-Marron;
                 }
 
-                .sinStock{
+                .sinStock {
                     background-color: rgb(252, 74, 74);
                     font-family: $fuente-Roboto;
                     font-size: .75rem;
@@ -334,7 +345,7 @@
                     padding: .2rem .5rem;
                 }
 
-                .enStock{
+                .enStock {
                     font-family: $fuente-Roboto;
                     font-size: .75rem;
                     position: absolute;
@@ -345,7 +356,7 @@
                     color: #212121;
                 }
 
-                .description{
+                .description {
                     position: absolute;
                     top: 54%;
                     padding: 1rem;
@@ -362,7 +373,7 @@
 
     }
 
-    .modal__product{
+    .modal__product {
         position: fixed;
         width: 90vw;
         height: 90vh;
@@ -376,20 +387,20 @@
         opacity: 0;
         overflow-y: auto;
 
-        &__active{
+        &__active {
             transform: translate(0%, -5%);
             opacity: 1;
             z-index: 1050;
             box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .8);
         }
 
-        .modal__carrito{
+        .modal__carrito {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding-top: 1rem;
 
-            h3{
+            h3 {
                 color: $color-Marron;
                 font-family: $fuente-Roboto;
                 font-weight: 400;
@@ -397,12 +408,12 @@
                 padding-left: .5rem;
                 margin: 0;
 
-                span{
+                span {
                     font-weight: 100;
                 }
             }
 
-            .btn-vaciar-carrito{
+            .btn-vaciar-carrito {
                 font-family: $fuente-Montserrat;
                 font-weight: 500;
                 text-transform: uppercase;
@@ -414,32 +425,47 @@
                 border: 1px solid $color-BeigeSuave;
                 transition: all .3s ease;
 
-                &:hover{
-                    background-color: rgb(252, 74, 74);
-                    border: 1px solid rgb(252, 74, 74);
+                &:disabled {
+                    font-size: .8rem;
+                    background-color: rgb(165, 165, 165);
+                    color: rgb(82, 82, 82);
+                    border: 1px solid rgb(165, 165, 165);
+                }
+
+                &:hover {
+                    background-color: $color-Marron;
+                    border: 1px solid $color-Marron;
                     color: white;
+
+                    &:disabled {
+                        font-size: .8rem;
+                        background-color: rgb(165, 165, 165);
+                        color: rgb(82, 82, 82);
+                        border: 1px solid rgb(165, 165, 165);
+
+                    }
                 }
             }
 
-            #close{
+            #close {
                 background-color: transparent;
                 border: none;
                 width: 10%;
 
-                iconify-icon{
+                iconify-icon {
                     color: $color-Marron;
                     font-size: 1.75rem;
                     transition: all .3s ease;
 
-                    &:hover{
+                    &:hover {
                         color: rgb(252, 74, 74);
                     }
                 }
             }
         }
 
-        #noProducto{
-            p{
+        #noProducto {
+            p {
                 color: $color-Marron;
                 font-family: "Roboto", sans-serif;
                 font-weight: 400;
@@ -449,7 +475,7 @@
             }
         }
 
-        .productoEnCarrito{
+        .productoEnCarrito {
             position: relative;
             width: 100%;
             display: flex;
@@ -459,7 +485,7 @@
             flex-wrap: wrap;
             transition: all .3s ease-in-out;
 
-            p{
+            p {
                 color: $color-Marron;
                 font-family: $fuente-Roboto;
                 font-weight: 400;
@@ -468,7 +494,7 @@
                 margin: 0;
             }
 
-            button{
+            button {
                 font-size: 1.6rem;
                 padding-right: 1.4rem;
                 background-color: transparent;
@@ -476,52 +502,52 @@
                 color: $color-Marron;
                 transition: all .3s ease;
 
-                &:hover{
+                &:hover {
                     color: $color-Naranja;
                 }
             }
 
-            .btn-eliminar{
+            .btn-eliminar {
                 position: absolute;
                 top: 20%;
                 right: 5%;
                 padding: 0;
             }
 
-            hr{
+            hr {
                 color: $color-Marron;
                 width: 90%;
                 margin: .75rem auto;
             }
 
-            p.cantidades{
+            p.cantidades {
                 width: 95%;
                 display: flex;
                 align-items: center;
                 padding: 0;
 
-                span{
+                span {
                     margin-right: .4rem;
                 }
 
-                .btn-cantidades{
+                .btn-cantidades {
                     font-size: 1.5rem;
                     padding: 0 .3rem;
                     line-height: 1rem;
                 }
             }
 
-            .inCart{
+            .inCart {
                 width: 95%;
                 border-left: 5px solid $color-Naranja;
             }
         }
 
-        .resumen #pagoEnCuotas{
+        .resumen #pagoEnCuotas {
             display: flex;
             flex-direction: column;
 
-            p{
+            p {
                 position: relative;
                 font-family: $fuente-Roboto;
                 font-size: .95rem;
@@ -529,7 +555,7 @@
                 line-height: 1;
                 color: $color-Marron;
 
-                iconify-icon{
+                iconify-icon {
                     position: absolute;
                     top: 0;
                     left: 11%;
@@ -540,7 +566,7 @@
                     color: $color-Naranja;
                 }
 
-                span{
+                span {
                     display: block;
                     width: 100%;
                     text-align: center;
@@ -551,7 +577,7 @@
             }
         }
 
-        #btn-end{
+        #btn-end {
             display: block;
             line-height: 2;
             text-decoration: none;
@@ -568,7 +594,7 @@
             text-transform: uppercase;
             transition: all .3s ease-in-out;
 
-            &:hover{
+            &:hover {
                 background-color: rgb(0, 128, 6);
                 border: 1px solid rgb(0, 128, 6);
                 border-radius: 5px;
@@ -576,7 +602,7 @@
 
             }
 
-            iconify-icon{
+            iconify-icon {
                 line-height: 1;
                 display: block;
                 margin-right: .4rem;
@@ -586,7 +612,7 @@
 
         #total,
         #impuestos,
-        #totalFinal{
+        #totalFinal {
             font-family: $fuente-Roboto;
             color: $color-Marron;
             font-size: 1rem;
@@ -595,7 +621,7 @@
             line-height: 1;
         }
 
-        #totalFinal{
+        #totalFinal {
             font-size: 1.3rem;
             font-weight: 700;
         }

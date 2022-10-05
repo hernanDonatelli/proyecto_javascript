@@ -13,13 +13,13 @@
 
 /*Fuentes*/
 /*Colores*/
-.brand-Infusiones {
+.brand-infusiones {
   background-color: #57aa5b; }
 
-.brand-Chocolates {
+.brand-chocolates {
   background-color: #856f34; }
 
-.brand-Leches {
+.brand-leches {
   background-color: #7d438f; }
 
 .warningToasty,
@@ -360,6 +360,11 @@ h1 {
         border: 1px solid #c8c9c9;
         text-transform: uppercase;
         transition: all .3s ease-in-out; }
+        #main .shop__card button.btn-disabled {
+          font-size: .9rem;
+          background-color: #a5a5a5;
+          color: #525252;
+          border: 1px solid #a5a5a5; }
         #main .shop__card button span {
           font-size: .85rem; }
         #main .shop__card button:hover {
@@ -516,10 +521,20 @@ h1 {
         background-color: #ecd1a7;
         border: 1px solid #ecd1a7;
         transition: all .3s ease; }
+        #main .modal__product .modal__carrito .btn-vaciar-carrito:disabled {
+          font-size: .8rem;
+          background-color: #a5a5a5;
+          color: #525252;
+          border: 1px solid #a5a5a5; }
         #main .modal__product .modal__carrito .btn-vaciar-carrito:hover {
-          background-color: #fc4a4a;
-          border: 1px solid #fc4a4a;
+          background-color: #644336;
+          border: 1px solid #644336;
           color: white; }
+          #main .modal__product .modal__carrito .btn-vaciar-carrito:hover:disabled {
+            font-size: .8rem;
+            background-color: #a5a5a5;
+            color: #525252;
+            border: 1px solid #a5a5a5; }
       #main .modal__product .modal__carrito #close {
         background-color: transparent;
         border: none;
