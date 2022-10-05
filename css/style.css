@@ -664,29 +664,49 @@ h1 {
       font-size: 1.3rem;
       font-weight: 700; }
 
-.swal2-popup .swal2-title {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem; }
-
-.swal2-popup .swal2-html-container {
-  font-family: "Inter", sans-serif;
-  font-size: .9rem;
-  color: #212121; }
-
-.swal2-popup .swal2-actions .swal2-styled.swal2-confirm {
-  border: 1px solid #212121;
-  border-radius: 0.25em;
-  background: initial;
-  font-family: Roboto;
-  text-transform: none;
-  background-color: white;
-  color: #212121;
-  font-size: 1em;
-  padding: 0.25rem 2.5rem;
-  transition: background-color .3s ease-in-out; }
-  .swal2-popup .swal2-actions .swal2-styled.swal2-confirm:hover {
-    background-color: #85ff8b;
-    border-color: #4c924f; }
+.swal2-popup {
+  padding: 0rem 1rem 2rem !important; }
+  .swal2-popup .swal2-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    color: #644336;
+    font-weight: 400; }
+  .swal2-popup .swal2-html-container {
+    font-family: "Roboto", sans-serif;
+    font-size: .9rem;
+    color: #644336; }
+  .swal2-popup .swal2-icon {
+    width: 5em;
+    height: 5em; }
+    .swal2-popup .swal2-icon.swal2-question {
+      border-color: #ecd1a7;
+      color: #ecd1a7;
+      margin-top: 2rem; }
+      .swal2-popup .swal2-icon.swal2-question .swal2-icon-content {
+        font-size: 3rem; }
+  .swal2-popup .swal2-actions .swal2-styled.swal2-confirm {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    border: 1px solid #ecd1a7;
+    border-radius: 0.25em;
+    background-color: #ecd1a7;
+    text-transform: none;
+    color: #644336;
+    font-size: .9em;
+    padding: 0.25rem 2.5rem;
+    transition: background-color .3s ease-in-out; }
+    .swal2-popup .swal2-actions .swal2-styled.swal2-confirm:focus {
+      box-shadow: unset; }
+    .swal2-popup .swal2-actions .swal2-styled.swal2-confirm:hover {
+      background-color: #644336;
+      border-color: #644336;
+      color: #ecd1a7; }
+  .swal2-popup .swal2-actions .swal2-styled.swal2-cancel {
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    font-weight: 300;
+    font-size: .9em;
+    padding: 0.25rem 2.5rem; }
 
 @media screen and (min-width: 479.98px) {
   .start__shop {
@@ -994,7 +1014,7 @@ h1 {
       top: 0%; }
     #main .shop__card__product .brand {
       top: 10%;
-      width: 50%; }
+      width: 52%; }
     #main .shop__card__product .like {
       top: 90%;
       right: 45%; }

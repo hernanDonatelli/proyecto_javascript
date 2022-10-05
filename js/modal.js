@@ -16,9 +16,9 @@ cerrarModal.addEventListener("click", (e) => {
 
 /* modalContainer.addEventListener("click", () => {
   cerrarModal.click();
-}); */
+});
 
-/* modalCarrito.addEventListener("click", (e) => {
+modalCarrito.addEventListener("click", (e) => {
   if(modalCarrito){
     e.stopPropagation();
   }

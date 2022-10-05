@@ -216,11 +216,12 @@ let printCart = (producto) => {
         btn_eliminar.addEventListener("click", () => {
             Swal.fire({
                 title: "Desea eliminar este producto del Carrito?",
-                icon: "warning",
+                text: "No te preocupes, lo podés volver a agregar :)",
+                icon: "question",
+                background: "#eaf1f1",
                 showCancelButton: true,
-                confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Si, borrarlo!",
+                confirmButtonText: "Si, eliminarlo!",
             }).then((result) => {
                 if (result.isConfirmed) {
                     let index = getCarrito.indexOf(producto);
@@ -277,7 +278,6 @@ let printCart = (producto) => {
                 text: "Una vez realizada esta acción deberá volver a ingresar productos.",
                 icon: "warning",
                 showCancelButton: true,
-                confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
                 confirmButtonText: "Si, vaciarlo!",
             }).then((result) => {
@@ -316,6 +316,9 @@ let printCart = (producto) => {
 
 };
 
+///////////////////////////////////////////////////////////
+
+/* Ejecucion */
 const search = async () => {
     const respuesta = await fetch("./js/json/data.json");
     const data = await respuesta.json();
@@ -402,7 +405,6 @@ search();
 //LocalStorage
 const contenedorCarrito = document.getElementById("carritoContainer");
 getCarrito = JSON.parse(localStorage.getItem("cartStorage")) || [];
-console.log(getCarrito);
 
 containerTotales.style.display = "none";
 containerImpuestos.style.display = "none";
