@@ -517,9 +517,18 @@
         }
     }
 
+
+
     .menu__side {
         left: 0;
         width: 230px;
+
+        &__options{
+            
+            h2.productosMenu{
+                font-size: .95rem;
+            }
+        }
     }
 
     .menu__side__move {

@@ -1,256 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-            crossorigin="anonymous"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Inter:wght@200;300;400;500;600&family=Zilla+Slab:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.33/sweetalert2.css"
-            integrity="sha512-e+TwvhjDvKqpzQLJ7zmtqqz+5jF9uIOa+5s1cishBRfmapg7mqcEzEl44ufb04BXOsEbccjHK9V0IVukORmO8w=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <link rel="stylesheet" href="./css/style.css" />
-        <title>Proyecto Javascript - Tienda Gourmet</title>
-    </head>
 
-    <body id="body">
-        <!-- Header -->
-        <header class="container-fluid header">
-            <div id="btn-open-menu" class="header__bars">
-                <iconify-icon icon="codicon:three-bars"></iconify-icon>
-            </div>
-        </header>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Inter:wght@200;300;400;500;600&family=Zilla+Slab:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.33/sweetalert2.css"
+        integrity="sha512-e+TwvhjDvKqpzQLJ7zmtqqz+5jF9uIOa+5s1cishBRfmapg7mqcEzEl44ufb04BXOsEbccjHK9V0IVukORmO8w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Proyecto Javascript - Tienda Gourmet</title>
+</head>
 
-        <div class="start container-fluid">
-            <div class="row">
-                <div
-                    class="start__pyme col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center"
-                >
-                    <h1><span>Shopping</span>Gourmet</h1>
-                    <p class="w-75 mx-auto text-center my-3">
-                        Comercializamos productos gourmet de calidad comprobada.
-                    </p>
-                    <p class="w-75 mx-auto text-center">
-                        Accede a nuestra tienda online y comprá con las mejores
-                        marcas del mercado.
-                    </p>
-                    <div class="start__pyme__down mt-2">
-                        <a href="#main">
-                            <iconify-icon
-                                class="animate__animated animate__shakeY animate__infinite"
-                                icon="bi:box-arrow-down"
-                            ></iconify-icon>
-                        </a>
-                    </div>
-                </div>
-                <div class="start__shop col-12 col-lg-6"></div>
-            </div>
+<body id="body">
+    <!-- Header -->
+    <header class="container-fluid header">
+        <div id="btn-open-menu" class="header__bars">
+            <iconify-icon icon="codicon:three-bars"></iconify-icon>
         </div>
+    </header>
 
-        <div id="menu__side" class="menu__side">
-            <div class="menu__side__page">
-                <iconify-icon icon="bi:shop"></iconify-icon>
+    <div class="start container-fluid">
+        <div class="row">
+            <div class="start__pyme col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
                 <h1><span>Shopping</span>Gourmet</h1>
+                <p class="w-75 mx-auto text-center my-3">
+                    Comercializamos productos gourmet de calidad comprobada.
+                </p>
+                <p class="w-75 mx-auto text-center">
+                    Accede a nuestra tienda online y comprá con las mejores
+                    marcas del mercado.
+                </p>
+                <div class="start__pyme__down mt-2">
+                    <a href="#main">
+                        <iconify-icon class="animate__animated animate__shakeY animate__infinite"
+                            icon="bi:box-arrow-down"></iconify-icon>
+                    </a>
+                </div>
             </div>
+            <div class="start__shop col-12 col-lg-6"></div>
+        </div>
+    </div>
 
-            <div class="menu__side__options">
-                <a href="#" class="selected">
-                    <div class="option">
-                        <iconify-icon
-                            icon="ant-design:home-outlined"
-                            title="inicio"
-                        ></iconify-icon>
-                        <h2>Inicio</h2>
-                    </div>
-                </a>
-                <a href="#tienda">
-                    <div class="option">
-                        <iconify-icon icon="gridicons:product"></iconify-icon>
-                        <h2>Productos</h2>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="option">
-                        <iconify-icon icon="wpf:geo-fence"></iconify-icon>
-                        <h2>Tiendas</h2>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="option">
-                        <iconify-icon
-                            icon="fluent:contact-card-16-regular"
-                        ></iconify-icon>
-                        <h2>Contacto</h2>
-                    </div>
-                </a>
-                <a id="open" href="#">
-                    <div class="option shop-car">
-                        <iconify-icon icon="bi:cart"></iconify-icon>
-                        <span id="countCart">0</span>
-                        <h2>Carrito</h2>
-                    </div>
-                </a>
-            </div>
+    <div id="menu__side" class="menu__side">
+        <div class="menu__side__page">
+            <iconify-icon icon="bi:shop"></iconify-icon>
+            <h1><span>Shopping</span>Gourmet</h1>
         </div>
 
-        <!-- Contenido -->
-        <main id="main" class="container-fluid mb-5">
-            <!-- Destacados -->
-            <section id="destacados">
-                <h1 class="text-center"><span>Mas</span>Vendidos</h1>
-                <div
-                    id="carousel-captions"
-                    class="carousel slide"
-                    data-bs-ride="false"
-                >
-                    <div class="carousel-indicators">
-                        <button
-                            type="button"
-                            data-bs-target="#carousel-captions"
-                            data-bs-slide-to="0"
-                            class="active"
-                            aria-current="true"
-                            aria-label="Slide 1"
-                        ></button>
-                        <button
-                            type="button"
-                            data-bs-target="#carousel-captions"
-                            data-bs-slide-to="1"
-                            aria-label="Slide 2"
-                        ></button>
-                        <button
-                            type="button"
-                            data-bs-target="#carousel-captions"
-                            data-bs-slide-to="2"
-                            aria-label="Slide 3"
-                        ></button>
-                    </div>
-                    <div id="carousel-inner" class="carousel-inner"></div>
+        <div class="menu__side__options">
+            <a href="#" class="selected">
+                <div class="option">
+                    <iconify-icon icon="ant-design:home-outlined" title="inicio"></iconify-icon>
+                    <h2>Inicio</h2>
                 </div>
-            </section>
+            </a>
+            <a href="#tienda">
+                <div class="option">
+                    <iconify-icon icon="gridicons:product"></iconify-icon>
+                    <h2 class="productosMenu">Productos</h2>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <iconify-icon icon="wpf:geo-fence"></iconify-icon>
+                    <h2>Tiendas</h2>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <iconify-icon icon="fluent:contact-card-16-regular"></iconify-icon>
+                    <h2>Contacto</h2>
+                </div>
+            </a>
+            <a id="open" href="#">
+                <div class="option shop-car">
+                    <iconify-icon icon="bi:cart"></iconify-icon>
+                    <span id="countCart">0</span>
+                    <h2>Carrito</h2>
+                </div>
+            </a>
+        </div>
+    </div>
 
-            <!-- La Tienda -->
-            <h1 id="tienda" class="text-center"><span>La</span>Tienda</h1>
-            <div id="listadoCategorias" class="d-flex justify-content-evenly my-3">
-                <span>Infusiones</span>
-                <span>Chocolates</span>
-                <span>Leches</span>
+    <!-- Contenido -->
+    <main id="main" class="container-fluid mb-5">
+        <!-- Destacados -->
+        <section id="destacados">
+            <h1 class="text-center"><span>Mas</span>Vendidos</h1>
+            <div id="carousel-captions" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carousel-captions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carousel-captions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carousel-captions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div id="carousel-inner" class="carousel-inner"></div>
             </div>
-            <!-- Buscador -->
-            <section id="sectionSearch" class="mt-3">
-                <form id="formSearch" class="search d-flex" role="search">
-                    <input
-                        id="inputSearch"
-                        class="form-control me-2"
-                        type="search"
-                        placeholder="Buscar por nombre, categoría, precio..."
-                        aria-label="Search"
-                    />
-                    <iconify-icon icon="bi:search"></iconify-icon>
-                </form>
-            </section>
+        </section>
 
-            <section
-                id="shop"
-                class="shop container col-12 col-sm-9 col-md-12 col-lg-10 col-xl-12"
-            >
-                <!-- Productos desde js -->
-            </section>
+        <!-- La Tienda -->
+        <h1 id="tienda" class="text-center"><span>La</span>Tienda</h1>
+        <div id="listadoCategorias" class="d-flex justify-content-evenly my-3">
+            <button id="btn-todos">Todos</button>
+            <button id="btn-infusiones">Infusiones</button>
+            <button id="btn-chocolates">Chocolates</button>
+            <button id="btn-leches">Leches</button>
+        </div>
+        <!-- Buscador -->
+        <section id="sectionSearch" class="mt-3">
+            <form id="formSearch" class="search d-flex" role="search">
+                <input id="inputSearch" class="form-control me-2" type="search"
+                    placeholder="Buscar por nombre, categoría, precio..." aria-label="Search" />
+                <iconify-icon icon="bi:search"></iconify-icon>
+            </form>
+        </section>
 
-            <!-- Modal Carrito -->
-            <div id="modal__product" class="modal__product">
-                <div class="modal__carrito mb-3">
-                    <h3><span>Mi</span>Carrito</h3>
-                    <button id="btn-vaciar-carrito" class="btn-vaciar-carrito" disabled>
-                        Vaciar Carrito
-                    </button>
-                    <button id="close">
-                        <iconify-icon
-                            icon="ant-design:close-circle-outlined"
-                        ></iconify-icon>
-                    </button>
+        <section id="shop" class="shop container col-12 col-sm-9 col-md-12 col-lg-10 col-xl-12">
+            <!-- Productos desde js -->
+        </section>
+
+        <!-- Modal Carrito -->
+        <div id="modal__product" class="modal__product">
+            <div class="modal__carrito mb-3">
+                <h3><span>Mi</span>Carrito</h3>
+                <button id="btn-vaciar-carrito" class="btn-vaciar-carrito" disabled>
+                    Vaciar Carrito
+                </button>
+                <button id="close">
+                    <iconify-icon icon="ant-design:close-circle-outlined"></iconify-icon>
+                </button>
+            </div>
+            <!-- Contenido del carrito por JS -->
+            <div id="carritoContainer"></div>
+            <div id="noProducto">
+                <p>No hay productos en el carrito</p>
+            </div>
+            <div class="resumen d-flex flex-column align-items-center mt-3">
+                <div class="costo col-12 d-flex align-items-center justify-content-center justify-content-md-evenly">
+                    <div id="total"></div>
+                    <div id="impuestos"></div>
+                    <div id="totalFinal"></div>
                 </div>
-                <!-- Contenido del carrito por JS -->
-                <div id="carritoContainer"></div>
-                <div id="noProducto">
-                    <p>No hay productos en el carrito</p>
-                </div>
-                <div class="resumen d-flex flex-column align-items-center mt-3">
-                    <div
-                        class="costo col-12 d-flex align-items-center justify-content-center justify-content-md-evenly"
-                    >
-                        <div id="total"></div>
-                        <div id="impuestos"></div>
-                        <div id="totalFinal"></div>
-                    </div>
-                    <div id="pagoEnCuotas" class="cuotas mt-3 col-12 mt-md-4">
-                        <p>
-                            <iconify-icon
-                                icon="emojione-monotone:money-with-wings"
-                            ></iconify-icon>
-                            Efectivo (10% descuento)
-                            <span id="efectivo10">256.57</span>
-                        </p>
-                        <p>
-                            <iconify-icon
-                                icon="emojione-monotone:credit-card"
-                            ></iconify-icon>
-                            3 Cuotas (15% recargo)
-                            <span id="tarjeta3">256.57</span>
-                        </p>
-                        <p>
-                            <iconify-icon
-                                icon="emojione-monotone:credit-card"
-                            ></iconify-icon>
-                            6 Cuotas (30% recargo)
-                            <span id="tarjeta6">256.57</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="finalizarCompra mt-3 mb-4">
-                    <button id="btn-end" type="submit">Finalizar Compra</button>
+                <div id="pagoEnCuotas" class="cuotas mt-3 col-12 mt-md-4">
+                    <p>
+                        <iconify-icon icon="emojione-monotone:money-with-wings"></iconify-icon>
+                        Efectivo (10% descuento)
+                        <span id="efectivo10">256.57</span>
+                    </p>
+                    <p>
+                        <iconify-icon icon="emojione-monotone:credit-card"></iconify-icon>
+                        3 Cuotas (15% recargo)
+                        <span id="tarjeta3">256.57</span>
+                    </p>
+                    <p>
+                        <iconify-icon icon="emojione-monotone:credit-card"></iconify-icon>
+                        6 Cuotas (30% recargo)
+                        <span id="tarjeta6">256.57</span>
+                    </p>
                 </div>
             </div>
-        </main>
+            <div class="finalizarCompra mt-3 mb-4">
+                <button id="btn-end" type="submit">Finalizar Compra</button>
+            </div>
+        </div>
+    </main>
 
-        <!-- Footer -->
-        <footer></footer>
+    <!-- Footer -->
+    <footer></footer>
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-            crossorigin="anonymous"
-        ></script>
-        <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
-        <!-- Javascript -->
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script
-            type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/toastify-js"
-        ></script>
-        <script src="./js/index.js"></script>
-        <script src="./js/modal.js"></script>
-        <script src="./js/vendidos.js"></script>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+    <!-- Javascript -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/vendidos.js"></script>
+    <script src="./js/categorias.js"></script>
+</body>
+
 </html>

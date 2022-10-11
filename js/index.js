@@ -254,11 +254,13 @@ let printCart = (producto) => {
                         calculoPrecioTotal(getCarrito);
                     }
 
-                    Swal.fire(
-                        "Eliminado!",
-                        "El producto ha sido eliminado del carrito",
-                        "success"
-                    );
+                    Swal.fire({
+                        title: "Eliminado!",
+                        text: "El producto ha sido eliminado del carrito",
+                        icon: "success",
+                        timer: 4000,
+                        timerProgressBar: "true",
+                    });
                 }
             });
         });

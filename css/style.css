@@ -139,6 +139,8 @@ h1 {
         display: flex;
         align-items: center;
         position: relative; }
+        .menu__side__options a .option h2.productosMenu {
+          font-size: .95rem; }
         .menu__side__options a .option h2 {
           font-size: .95rem;
           margin-bottom: 0;
@@ -229,7 +231,7 @@ h1 {
     color: #644336;
     font-size: .75rem;
     font-weight: 300; }
-    #main #listadoCategorias span {
+    #main #listadoCategorias button {
       border: 1px solid #644336;
       border-radius: 20px;
       padding: .2rem .6rem;
@@ -237,7 +239,7 @@ h1 {
       color: #ecd1a7;
       cursor: pointer;
       transition: all .3s ease-in-out; }
-      #main #listadoCategorias span:hover {
+      #main #listadoCategorias button:hover {
         color: #eaf1f1; }
   #main #formSearch {
     position: relative;
@@ -969,6 +971,8 @@ h1 {
   .menu__side {
     left: 0;
     width: 230px; }
+    .menu__side__options h2.productosMenu {
+      font-size: .95rem; }
   .menu__side__move {
     width: 80px;
     left: 0px; } }
