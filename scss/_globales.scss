@@ -12,3 +12,21 @@
     padding-left: 0;
     padding-right: 0;
 }
+
+.modal__overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+    &__active{
+        visibility: visible;
+        opacity: 1;
+    }
+}

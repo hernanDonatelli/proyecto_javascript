@@ -11,6 +11,21 @@
   padding-left: 0;
   padding-right: 0; }
 
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  .modal__overlay__active {
+    visibility: visible;
+    opacity: 1; }
+
 /*Fuentes*/
 /*Colores*/
 .brand-infusiones {
@@ -226,6 +241,43 @@ h1 {
     margin-bottom: 0; }
     #main h1 span {
       font-weight: 100; }
+  #main .modal__final {
+    display: none;
+    transition: all .4s ease-in-out; }
+    #main .modal__final__active {
+      display: block; }
+    #main .modal__final button {
+      display: block;
+      line-height: 2;
+      text-decoration: none;
+      width: 65%;
+      margin: 1rem auto;
+      text-align: center;
+      color: #644336;
+      padding: 0.35rem 1rem;
+      background-color: transparent;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: .9rem;
+      border: 1px solid #644336;
+      border-radius: unset;
+      text-transform: uppercase;
+      transition: all .3s ease-in-out; }
+      #main .modal__final button:hover {
+        background-color: #008006;
+        border: 1px solid #008006;
+        border-radius: 5px;
+        color: #eaf1f1; }
+    #main .modal__final h3 {
+      color: #644336;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding-left: .5rem;
+      margin: 0; }
+      #main .modal__final h3 span {
+        font-weight: 100; }
   #main #listadoCategorias {
     font-family: "Inter", sans-serif;
     color: #644336;
@@ -489,7 +541,7 @@ h1 {
     bottom: 0%;
     right: 5%;
     transform: translate(0%, 100%);
-    transition: all .7s ease-in-out;
+    transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     z-index: 10;
     opacity: 0;
     overflow-y: auto; }
@@ -636,7 +688,7 @@ h1 {
       margin: 0 auto;
       text-align: center;
       color: #644336;
-      padding: 0.5rem 1rem;
+      padding: 0.35rem 1rem;
       background-color: transparent;
       font-family: "Montserrat", sans-serif;
       font-weight: 600;
@@ -778,6 +830,8 @@ h1 {
 
 @media screen and (min-width: 767.98px) {
   #main #formSearch {
+    width: 50%; }
+  #main #modal__final button {
     width: 50%; }
   #main .shop {
     justify-content: space-evenly; }
@@ -931,7 +985,11 @@ h1 {
   #main .shop__card {
     width: 29%; }
   #main .modal__product {
-    right: 13%; }
+    height: 95vh;
+    right: 13%;
+    transform: translate(0%, 100%); }
+    #main .modal__product__active {
+      transform: translate(0%, -2%); }
   #main #destacados .carousel .carousel-inner {
     height: 450px;
     padding: 1.5rem 0; }
@@ -1027,10 +1085,10 @@ h1 {
     #main .shop__card__product .description {
       top: 66%; }
   #main .modal__product {
-    width: 60vw;
-    height: 75vh;
-    bottom: 0%;
-    right: 20%; }
+    width: 70vw;
+    height: 90vh;
+    bottom: -3%;
+    right: 15%; }
     #main .modal__product .productoEnCarrito {
       flex-direction: row;
       justify-content: flex-start; }

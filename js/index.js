@@ -26,6 +26,8 @@ const tarjeta6 = document.getElementById("tarjeta6");
 const divCuotas = document.getElementById("pagoEnCuotas");
 const btnEnd = document.getElementById("btn-end");
 const btnVaciarCarrito = document.getElementById("btn-vaciar-carrito");
+const btnEndFinal = document.getElementById("btn-end-final");
+const modalFinal = document.getElementById("modal__final");
 
 /* Funciones */
 
@@ -269,7 +271,7 @@ let printCart = (producto) => {
 
     //Vaciar Carrito
     let deleteCarrito = () => {
-        if(getCarrito.length > 0){
+        if (getCarrito.length > 0) {
             btnVaciarCarrito.removeAttribute("disabled", "");
             btnVaciarCarrito.innerText = "Vaciar Carrito";
             btnVaciarCarrito.classList.remove("disabled");
@@ -277,7 +279,7 @@ let printCart = (producto) => {
         btnVaciarCarrito.addEventListener("click", () => {
             Swal.fire({
                 title: "Desea vaciar el Carrito?",
-                text: "Una vez realizada esta acción deberá volver a ingresar productos.",
+                text: "Esta acción eliminará todos los items del carrito.",
                 icon: "warning",
                 showCancelButton: true,
                 cancelButtonColor: "#d33",
@@ -317,6 +319,8 @@ let printCart = (producto) => {
     deleteCarrito();
 
 };
+
+
 
 ///////////////////////////////////////////////////////////
 
