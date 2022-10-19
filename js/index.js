@@ -5,33 +5,24 @@ const body = document.getElementById("body");
 const sections = document.querySelectorAll("section");
 let menuSideItems = document.querySelectorAll(".menu__side__options a");
 
-/* menuSideItems.forEach(button => {
-    button.addEventListener("click", function(){
-        menuSideItems.forEach(btn => btn.classList.remove("selected"));
-        this.classList.add("selected");
-    })
-}); */
-
+//Item de menu activo de acuerdo a seccion de la pagina
 window.addEventListener("scroll", () => {
-    let current = '';
+    let current = 'inicio';
     sections.forEach(section => {
-        const sectionTop = (section.offsetTop + 200);
-        const sectionHeight = section.clientHeight;
-        if(scrollY > (sectionTop - 50)){
+        const sectionTop = (section.offsetTop + 400);
+        if(scrollY > sectionTop){
             current = section.getAttribute("id");
         }
-    })
-    console.log(current);
+    });
+
     menuSideItems.forEach(item => {
         item.classList.remove("selected");
         if(item.classList.contains(current)){
             item.classList.add("selected");
         }
-    })
+    });
 
 });
-
-
 
 //Menu
 const open_close_menu = () => {
