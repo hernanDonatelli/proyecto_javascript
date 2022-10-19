@@ -1,5 +1,8 @@
-//Confirma la compra, cierra el modal
-btnEndFinal.addEventListener("click", () => {
+//Validacion formulario
+const formulario = document.getElementById("formulario");
+const inputs = document.querySelectorAll("#formulario input");
+
+const finalizarCompra = () => {
   Swal.fire({
     title: "Finalizar Compra?",
     text: "Click en Comprar para continuar!",
@@ -36,7 +39,7 @@ btnEndFinal.addEventListener("click", () => {
         timer: 4000,
         timerProgressBar: true,
         showConfirmButton: false
-    });
+      });
 
       modalOverlay.classList.remove("modal__overlay__active");
       btnVaciarCarrito.setAttribute("disabled", "");
@@ -44,4 +47,92 @@ btnEndFinal.addEventListener("click", () => {
       btnVaciarCarrito.classList.add("disabled");
     }
   });
+}
+
+//Expresiones regulares
+const expresiones = {
+  email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+  nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios.
+  apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios.
+  documento: /^\d{7,8}$/, //Solo numeros para documento
+  telefono: /^\d{7,12}$/ // 7 a 12 numeros, con codigo de pais y area.
+}
+
+//Validar campos completos
+const campos = {
+  email: false,
+  nombre: false,
+  apellido: false,
+  documento: false,
+  telefono: false
+}
+
+const validarFormulario = (e) => {
+  switch(e.target.name){
+    case "nombre":
+      validarCampo(expresiones.nombre, e.target, 'nombre');
+    break;
+
+    case "apellido":
+      validarCampo(expresiones.apellido, e.target, 'apellido');
+    break;
+
+    case "email":
+      validarCampo(expresiones.email, e.target, 'email');
+    break;
+
+    case "documento":
+      validarCampo(expresiones.documento, e.target, 'documento');
+    break;
+
+    case "telefono":
+      validarCampo(expresiones.telefono, e.target, 'telefono');
+    break;
+  }
+
+  if (campos.email && campos.nombre && campos.apellido && campos.telefono && campos.documento){
+    btnEndFinal.removeAttribute("disabled");
+    btnEndFinal.classList.remove("formulario__btn-disabled");
+  }
+};
+
+const validarCampo = (expresion, input, campo) => {
+  if (expresion.test(input.value)) {
+    document.getElementById(`grupo__${campo}`).classList.remove("formulario__grupo-incorrecto");
+    document.getElementById(`grupo__${campo}`).classList.add("formulario__grupo-correcto");
+    document.querySelector(`#grupo__${campo} i`).classList.add("fa-circle-check");
+    document.querySelector(`#grupo__${campo} i`).classList.remove("fa-circle-xmark");
+    document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove("formulario__input-error-active");
+    campos[campo] = true;
+  } else {
+    document.getElementById(`grupo__${campo}`).classList.add("formulario__grupo-incorrecto");
+    document.getElementById(`grupo__${campo}`).classList.remove("formulario__grupo-correcto");
+    document.querySelector(`#grupo__${campo} i`).classList.remove("fa-circle-check");
+    document.querySelector(`#grupo__${campo} i`).classList.add("fa-circle-xmark");
+    document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add("formulario__input-error-active");
+    campos[campo] = false;
+  }
+};
+
+inputs.forEach((input) => {
+  input.addEventListener("keyup", validarFormulario);
+  input.addEventListener("blur", validarFormulario);
+});
+
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if(campos.email && campos.nombre && campos.apellido && campos.telefono && campos.documento){
+    formulario.reset();
+
+    document.querySelectorAll(".formulario__grupo-correcto").forEach((icono) => {
+      icono.classList.remove("formulario__grupo-correcto");
+    });
+    document.getElementById("formulario__mensaje").classList.remove("formulario__mensaje-active");
+
+    finalizarCompra();
+  }else{
+    document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-active");
+  }
+
 });

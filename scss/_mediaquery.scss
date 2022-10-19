@@ -156,6 +156,22 @@
 
         #modal__final{
 
+            .formulario{
+                grid-template-columns: 1fr 1fr;
+
+                &__grupo:nth-child(1){
+                    grid-column: span 2;
+                }
+
+                &__grupo:last-child{
+                    grid-column: span 2;
+                }
+
+                &__mensaje-active{
+                    grid-column: span 2;
+                }
+            }
+
             button{
                 width: 50%;
             }
@@ -465,6 +481,11 @@
 
             &__active{
                 transform: translate(0%, -2%);
+            }
+
+            .modal__final .formulario{
+                width: 80%;
+                margin: 0 auto;
             }
         }
 

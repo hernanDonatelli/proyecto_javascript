@@ -25,6 +25,112 @@
             display: block;
         }
 
+        .formulario{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            font-family: $fuente-Roboto;
+
+            &__label{
+                display: block;
+                font-weight: 600;
+                padding: 5px 0;
+                cursor: pointer;
+            }
+
+            &__grupo-input{
+                position: relative;
+            }
+
+            &__input{
+                width: 100%;
+                padding: 0 40px 0 10px;
+                background: #fff;
+                border: 3px solid transparent;
+                border-radius: 3px;
+                height: 45px;
+                line-height: 45px;
+                transition: all .3s ease;
+
+                &:focus{
+                    border: 3px solid $color-Naranja;
+                    outline: none;
+                    box-shadow: 3px 0 30px rgba(163, 163, 163, .4);
+                }
+
+                &-error{
+                    font-size: 12px;
+                    margin-bottom: 0;
+                    display: none;
+
+                    &-active{
+                        display: block;
+                    }
+                }
+            }
+
+            &__validacion-estado{
+                position: absolute;
+                right: 5%;
+                top: 30%;
+                z-index: 100;
+                font-size: 1rem;
+                opacity: 0;
+            }
+
+            &__mensaje{
+                height: 45px;
+                line-height: 45px;
+                padding: 0 15px;
+                border-radius: 3px;
+                background: rgb(255, 133, 133);
+                display: none;
+
+                p{
+                    margin: 0;
+                }
+
+                &-active{
+                    display: block;
+                }
+
+                &-exito{
+                    font-size: 14px;
+                    color: rgb(0, 179, 9);
+                    text-align: center;
+                    display: none;
+
+                    &-active{
+                        display: block;
+                    }
+                }
+            }
+
+            &__grupo-correcto{
+
+                .formulario__validacion-estado{
+                    color: #1ed12d;
+                    opacity: 1;
+                }
+            }
+
+            &__grupo-incorrecto{
+
+                .formulario__label{
+                    color: rgb(255, 133, 133);
+                }
+
+                .formulario__validacion-estado{
+                    color: rgb(255, 133, 133);
+                    opacity: 1;
+                }
+
+                .formulario__input{
+                    border: 3px solid rgb(255, 133, 133);
+                }
+            }
+        }
+
         button{
             display: block;
             line-height: 2;
@@ -48,6 +154,13 @@
                 border: 1px solid rgb(0, 128, 6);
                 border-radius: 5px;
                 color: $color-Plata;
+            }
+
+            &.formulario__btn-disabled{
+                font-size: .9rem;
+                background-color: rgb(165, 165, 165);
+                color: rgb(82, 82, 82);
+                border: 1px solid rgb(165, 165, 165);
             }
         }
 
@@ -135,6 +248,7 @@
 
     #destacados {
         background-color: $color-Marron;
+        height: 100vh;
 
         h1 {
             font-size: 2rem;

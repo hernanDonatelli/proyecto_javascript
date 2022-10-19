@@ -183,7 +183,6 @@ h1 {
 
 .start {
   background-color: #ecd1a7;
-  height: 100vh;
   margin-top: 3.5rem;
   padding-left: 0;
   padding-right: 0; }
@@ -246,6 +245,72 @@ h1 {
     transition: all .4s ease-in-out; }
     #main .modal__final__active {
       display: block; }
+    #main .modal__final .formulario {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      font-family: "Roboto", sans-serif; }
+      #main .modal__final .formulario__label {
+        display: block;
+        font-weight: 600;
+        padding: 5px 0;
+        cursor: pointer; }
+      #main .modal__final .formulario__grupo-input {
+        position: relative; }
+      #main .modal__final .formulario__input {
+        width: 100%;
+        padding: 0 40px 0 10px;
+        background: #fff;
+        border: 3px solid transparent;
+        border-radius: 3px;
+        height: 45px;
+        line-height: 45px;
+        transition: all .3s ease; }
+        #main .modal__final .formulario__input:focus {
+          border: 3px solid #f1a036;
+          outline: none;
+          box-shadow: 3px 0 30px rgba(163, 163, 163, 0.4); }
+        #main .modal__final .formulario__input-error {
+          font-size: 12px;
+          margin-bottom: 0;
+          display: none; }
+          #main .modal__final .formulario__input-error-active {
+            display: block; }
+      #main .modal__final .formulario__validacion-estado {
+        position: absolute;
+        right: 5%;
+        top: 30%;
+        z-index: 100;
+        font-size: 1rem;
+        opacity: 0; }
+      #main .modal__final .formulario__mensaje {
+        height: 45px;
+        line-height: 45px;
+        padding: 0 15px;
+        border-radius: 3px;
+        background: #ff8585;
+        display: none; }
+        #main .modal__final .formulario__mensaje p {
+          margin: 0; }
+        #main .modal__final .formulario__mensaje-active {
+          display: block; }
+        #main .modal__final .formulario__mensaje-exito {
+          font-size: 14px;
+          color: #00b309;
+          text-align: center;
+          display: none; }
+          #main .modal__final .formulario__mensaje-exito-active {
+            display: block; }
+      #main .modal__final .formulario__grupo-correcto .formulario__validacion-estado {
+        color: #1ed12d;
+        opacity: 1; }
+      #main .modal__final .formulario__grupo-incorrecto .formulario__label {
+        color: #ff8585; }
+      #main .modal__final .formulario__grupo-incorrecto .formulario__validacion-estado {
+        color: #ff8585;
+        opacity: 1; }
+      #main .modal__final .formulario__grupo-incorrecto .formulario__input {
+        border: 3px solid #ff8585; }
     #main .modal__final button {
       display: block;
       line-height: 2;
@@ -268,6 +333,11 @@ h1 {
         border: 1px solid #008006;
         border-radius: 5px;
         color: #eaf1f1; }
+      #main .modal__final button.formulario__btn-disabled {
+        font-size: .9rem;
+        background-color: #a5a5a5;
+        color: #525252;
+        border: 1px solid #a5a5a5; }
     #main .modal__final h3 {
       color: #644336;
       font-family: "Roboto", sans-serif;
@@ -327,7 +397,8 @@ h1 {
       #main #formSearch input:focus {
         box-shadow: unset; }
   #main #destacados {
-    background-color: #644336; }
+    background-color: #644336;
+    height: 100vh; }
     #main #destacados h1 {
       font-size: 2rem;
       font-family: "Roboto", sans-serif;
@@ -831,6 +902,14 @@ h1 {
 @media screen and (min-width: 767.98px) {
   #main #formSearch {
     width: 50%; }
+  #main #modal__final .formulario {
+    grid-template-columns: 1fr 1fr; }
+    #main #modal__final .formulario__grupo:nth-child(1) {
+      grid-column: span 2; }
+    #main #modal__final .formulario__grupo:last-child {
+      grid-column: span 2; }
+    #main #modal__final .formulario__mensaje-active {
+      grid-column: span 2; }
   #main #modal__final button {
     width: 50%; }
   #main .shop {
@@ -990,6 +1069,9 @@ h1 {
     transform: translate(0%, 100%); }
     #main .modal__product__active {
       transform: translate(0%, -2%); }
+    #main .modal__product .modal__final .formulario {
+      width: 80%;
+      margin: 0 auto; }
   #main #destacados .carousel .carousel-inner {
     height: 450px;
     padding: 1.5rem 0; }
