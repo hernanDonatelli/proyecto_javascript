@@ -244,6 +244,7 @@ let printCart = (producto) => {
                 icon: "question",
                 background: "#eaf1f1",
                 showCancelButton: true,
+                cancelButtonText: "Cancelar",
                 cancelButtonColor: "#d33",
                 confirmButtonText: "Si, eliminarlo!",
             }).then((result) => {
@@ -282,7 +283,8 @@ let printCart = (producto) => {
                         title: "Eliminado!",
                         text: "El producto ha sido eliminado del carrito",
                         icon: "success",
-                        timer: 4000,
+                        showConfirmButton: false,
+                        timer: 3000,
                         timerProgressBar: "true",
                     });
                 }
@@ -304,6 +306,7 @@ let printCart = (producto) => {
                 text: "Esta acción eliminará todos los items del carrito.",
                 icon: "warning",
                 showCancelButton: true,
+                cancelButtonText: 'Cancelar',
                 cancelButtonColor: "#d33",
                 confirmButtonText: "Si, vaciarlo!",
             }).then((result) => {
@@ -325,11 +328,14 @@ let printCart = (producto) => {
 
                     totalCarrito.innerText = getCarrito.length;
 
-                    Swal.fire(
-                        "Carrito sin productos!",
-                        "El Carrito ahora está vacío.",
-                        "success"
-                    );
+                    Swal.fire({
+                        title: "Carrito sin productos!",
+                        text: "El Carrito ahora está vacío.",
+                        icon: "success",
+                        showConfirmButton: false,
+                        timerProgressBar: true,
+                        timer: 3000
+                    });
 
                     btnVaciarCarrito.setAttribute("disabled", "");
                     btnVaciarCarrito.innerText = "Carrito Vacío";
@@ -341,8 +347,6 @@ let printCart = (producto) => {
     deleteCarrito();
 
 };
-
-
 
 ///////////////////////////////////////////////////////////
 

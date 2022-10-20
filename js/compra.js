@@ -34,9 +34,10 @@ const finalizarCompra = () => {
 
       Swal.fire({
         title: "La compra ha sido exitosa!",
-        text: "Te esperamos nuevamente en Shopping Gourmet.",
+        text: "Se ha enviado un mail con tu compra. Te esperamos nuevamente!",
         icon: "success",
-        timer: 4000,
+        timer: 5000,
+        showConfirmButton: false,
         timerProgressBar: true,
         showConfirmButton: false
       });
@@ -119,20 +120,31 @@ inputs.forEach((input) => {
   input.addEventListener("blur", validarFormulario);
 });
 
-formulario.addEventListener("submit", (e) => {
-  e.preventDefault();
+//Compra y envio de mail al usuario
+const sendMail = () => {
 
-  if(campos.email && campos.nombre && campos.apellido && campos.telefono && campos.documento){
-    formulario.reset();
+  document.getElementById('formulario').addEventListener("submit", function (e) {
+    e.preventDefault();
 
-    document.querySelectorAll(".formulario__grupo-correcto").forEach((icono) => {
-      icono.classList.remove("formulario__grupo-correcto");
-    });
-    document.getElementById("formulario__mensaje").classList.remove("formulario__mensaje-active");
+    const serviceID = 'default_service';
+    const templateID = 'template_nq0hg0m';
 
-    finalizarCompra();
-  }else{
-    document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-active");
-  }
+    emailjs.sendForm(serviceID, templateID, this);
 
-});
+    if (campos.email && campos.nombre && campos.apellido && campos.telefono && campos.documento) {
+      formulario.reset();
+
+      document.querySelectorAll(".formulario__grupo-correcto").forEach((icono) => {
+        icono.classList.remove("formulario__grupo-correcto");
+      });
+      document.getElementById("formulario__mensaje").classList.remove("formulario__mensaje-active");
+
+      finalizarCompra();
+    } else {
+      document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-active");
+    }
+
+  });
+}
+
+sendMail();

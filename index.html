@@ -256,11 +256,19 @@
 
                             <div class="formulario__grupo formulario__grupo-btn-enviar">
                                 <button type="submit" id="btn-end-final"
-                                    class="formulario__btn formulario__btn-disabled" disabled>Finalizar Compra</button>
+                                    class="formulario__btn formulario__btn-disabled" value="Finalizar Compra" disabled>Finalizar Compra</button>
                                 <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado
                                     exitosamente!</p>
                             </div>
                         </form>
+
+                        <!-- Scripts de EmailJS -->
+                        <script type="text/javascript"
+                            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+                        <script type="text/javascript">
+                            emailjs.init('XcpFl9Ds8mQUrTjD6')
+                        </script>
                     </div>
                 </div>
             </div>
