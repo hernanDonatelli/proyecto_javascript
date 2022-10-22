@@ -279,6 +279,7 @@ let printCart = (producto) => {
                         btnVaciarCarrito.setAttribute("disabled", "");
                         btnVaciarCarrito.innerText = "Carrito Vacío";
                         btnVaciarCarrito.classList.add("disabled");
+                        modalFinal.classList.remove("modal__final__active");
                     } else {
                         calculoPrecioTotal(getCarrito);
                     }
@@ -344,6 +345,7 @@ let printCart = (producto) => {
                     btnVaciarCarrito.setAttribute("disabled", "");
                     btnVaciarCarrito.innerText = "Carrito Vacío";
                     btnVaciarCarrito.classList.add("disabled");
+                    modalFinal.classList.remove("modal__final__active");
                 }
             });
         });

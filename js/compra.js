@@ -1,8 +1,7 @@
 //Validacion formulario
 const formulario = document.getElementById("formulario");
 const inputs = document.querySelectorAll("#formulario input");
-const confirmarCompra = document.querySelector('.swal2-actions button.swal2-confirm');
-const cancelarCompra = document.querySelector('.swal2-actions button.swal2-cancel');
+btnEndFinal.disabled = true;
 
 const finalizarCompra = () => {
 
@@ -58,7 +57,7 @@ const expresiones = {
 }
 
 //Validar campos completos
-const campos = {
+let campos = {
   email: false,
   nombre: false,
   apellido: false,
@@ -91,10 +90,10 @@ const validarFormulario = (e) => {
   }
 
   if (campos.email && campos.nombre && campos.apellido && campos.telefono && campos.documento) {
-    btnEndFinal.removeAttribute("disabled");
+    btnEndFinal.disabled = false;
     btnEndFinal.classList.remove("formulario__btn-disabled");
   }else{
-    btnEndFinal.setAttribute("disabled", '');
+    btnEndFinal.disabled = true;
     btnEndFinal.classList.add("formulario__btn-disabled");
   }
 };
@@ -148,8 +147,8 @@ document.getElementById('formulario').addEventListener("submit", function (e) {
   emailjs.sendForm(serviceID, templateID, this).then(() => {
     finalizarCompra();
 
-    btnEndFinal.value = 'Email Enviado';
-
+    btnEndFinal.value = 'Finalizar Compra';
+    
     Swal.fire({
       title: "La compra ha sido exitosa!",
       text: "Se ha enviado un mail con tu compra. Te esperamos nuevamente!",
@@ -159,8 +158,7 @@ document.getElementById('formulario').addEventListener("submit", function (e) {
       timerProgressBar: true,
       showConfirmButton: false
     });
-  }, /* (err) => {
-    btnEndFinal.value = 'Ha ocurrido un error';
-    alert(JSON.stringify(err));
-  } */);
+  });
+
 });
+

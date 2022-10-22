@@ -18,4 +18,14 @@ cerrarModal.addEventListener("click", (e) => {
 
 btnEnd.addEventListener("click", () => {
   modalFinal.classList.toggle("modal__final__active");
+  btnEndFinal.disabled = true;
+  btnEndFinal.classList.add("formulario__btn-disabled");
+  campos = {
+    email: false,
+    nombre: false,
+    apellido: false,
+    documento: false,
+    telefono: false,
+    pago: false
+  }
 });
