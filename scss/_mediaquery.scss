@@ -21,6 +21,19 @@
             }
 
         }
+
+        #modal__final #pagoEnCuotas{
+
+            p{
+                input[type="radio"]{
+                    left: 48%;
+                }
+
+                iconify-icon{
+                    left: 18%;
+                }
+            }
+        }
     }
 }
 
@@ -74,11 +87,9 @@
         }
 
         .modal__product {
-            .resumen #pagoEnCuotas {
-                p {
-                    iconify-icon {
-                        left: 25%;
-                    }
+            #modal__final #pagoEnCuotas{
+                iconify-icon{
+                    left: 25%;
                 }
             }
 
@@ -169,6 +180,16 @@
 
                 &__mensaje-active{
                     grid-column: span 2;
+                }
+
+                #pagoEnCuotas{
+                    justify-content: space-around;
+                    flex-direction: row;
+                    grid-column: span 2;
+
+                    iconify-icon{
+                        left: -21%;
+                    }
                 }
             }
 

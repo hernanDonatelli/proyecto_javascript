@@ -1,53 +1,50 @@
 //Validacion formulario
 const formulario = document.getElementById("formulario");
 const inputs = document.querySelectorAll("#formulario input");
+const confirmarCompra = document.querySelector('.swal2-actions button.swal2-confirm');
+const cancelarCompra = document.querySelector('.swal2-actions button.swal2-cancel');
 
 const finalizarCompra = () => {
-  Swal.fire({
-    title: "Finalizar Compra?",
-    text: "Click en Comprar para continuar!",
-    icon: "warning",
-    showCancelButton: true,
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Si, comprar!",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      localStorage.clear("cartStorage");
-      getCarrito = JSON.parse(localStorage.getItem("cartStorage")) || [];
 
-      modalContainer.classList.remove("modal__product__active");
-      modalFinal.classList.remove("modal__final__active");
+  const pago = findSelected();
 
-      (divSinProducto.style.display === 'none') ? (divSinProducto.style.display = "block") : "";
-      containerTotales.style.display = "none";
-      containerImpuestos.style.display = "none";
-      containerTotalFinal.style.display = "none";
-      divCuotas.style.display = "none";
-      btnEnd.style.display = "none";
-      let carritoContainer = document.getElementById("carritoContainer");
+  if (campos.email && campos.nombre && campos.apellido && campos.telefono && campos.documento) {
+    formulario.reset();
 
-      while (carritoContainer.firstChild) {
-        carritoContainer.removeChild(carritoContainer.firstChild);
-      }
+    document.querySelectorAll(".formulario__grupo-correcto").forEach((icono) => {
+      icono.classList.remove("formulario__grupo-correcto");
+    });
+    document.getElementById("formulario__mensaje").classList.remove("formulario__mensaje-active");
 
-      totalCarrito.innerText = getCarrito.length;
+  } else {
+    document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-active");
+  }
 
-      Swal.fire({
-        title: "La compra ha sido exitosa!",
-        text: "Se ha enviado un mail con tu compra. Te esperamos nuevamente!",
-        icon: "success",
-        timer: 5000,
-        showConfirmButton: false,
-        timerProgressBar: true,
-        showConfirmButton: false
-      });
+  localStorage.clear("cartStorage");
+  getCarrito = JSON.parse(localStorage.getItem("cartStorage")) || [];
 
-      modalOverlay.classList.remove("modal__overlay__active");
-      btnVaciarCarrito.setAttribute("disabled", "");
-      btnVaciarCarrito.innerText = "Carrito Vacío";
-      btnVaciarCarrito.classList.add("disabled");
-    }
-  });
+  modalContainer.classList.remove("modal__product__active");
+  modalFinal.classList.remove("modal__final__active");
+
+  (divSinProducto.style.display === 'none') ? (divSinProducto.style.display = "block") : "";
+  containerTotales.style.display = "none";
+  containerImpuestos.style.display = "none";
+  containerTotalFinal.style.display = "none";
+  divCuotas.style.display = "none";
+  btnEnd.style.display = "none";
+  let carritoContainer = document.getElementById("carritoContainer");
+
+  while (carritoContainer.firstChild) {
+    carritoContainer.removeChild(carritoContainer.firstChild);
+  }
+
+  totalCarrito.innerText = getCarrito.length;
+
+  modalOverlay.classList.remove("modal__overlay__active");
+  btnVaciarCarrito.setAttribute("disabled", "");
+  btnVaciarCarrito.innerText = "Carrito Vacío";
+  btnVaciarCarrito.classList.add("disabled");
+
 }
 
 //Expresiones regulares
@@ -56,7 +53,8 @@ const expresiones = {
   nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios.
   apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios.
   documento: /^\d{7,8}$/, //Solo numeros para documento
-  telefono: /^\d{7,12}$/ // 7 a 12 numeros, con codigo de pais y area.
+  telefono: /^\d{7,12}$/, // 7 a 12 numeros, con codigo de pais y area.
+  pago: /^[a-zA-ZÀ-ÿ\s]{1,40}$/
 }
 
 //Validar campos completos
@@ -65,35 +63,39 @@ const campos = {
   nombre: false,
   apellido: false,
   documento: false,
-  telefono: false
+  telefono: false,
+  pago: false
 }
 
 const validarFormulario = (e) => {
-  switch(e.target.name){
+  switch (e.target.name) {
     case "nombre":
       validarCampo(expresiones.nombre, e.target, 'nombre');
-    break;
+      break;
 
     case "apellido":
       validarCampo(expresiones.apellido, e.target, 'apellido');
-    break;
+      break;
 
     case "email":
       validarCampo(expresiones.email, e.target, 'email');
-    break;
+      break;
 
     case "documento":
       validarCampo(expresiones.documento, e.target, 'documento');
-    break;
+      break;
 
     case "telefono":
       validarCampo(expresiones.telefono, e.target, 'telefono');
-    break;
+      break;
   }
 
-  if (campos.email && campos.nombre && campos.apellido && campos.telefono && campos.documento){
+  if (campos.email && campos.nombre && campos.apellido && campos.telefono && campos.documento) {
     btnEndFinal.removeAttribute("disabled");
     btnEndFinal.classList.remove("formulario__btn-disabled");
+  }else{
+    btnEndFinal.setAttribute("disabled", '');
+    btnEndFinal.classList.add("formulario__btn-disabled");
   }
 };
 
@@ -115,36 +117,50 @@ const validarCampo = (expresion, input, campo) => {
   }
 };
 
+//Capturar valor de los radiobuttons en forma de pago
+let radioBtns = document.querySelectorAll("input[name='pago']");
+
+let findSelected = () => {
+  let selected = document.querySelector("input[name='pago']:checked");
+  return selected.value;
+}
+
+radioBtns.forEach(radioBtn => {
+  radioBtn.addEventListener("change", findSelected);
+})
+
+findSelected();
+
 inputs.forEach((input) => {
   input.addEventListener("keyup", validarFormulario);
   input.addEventListener("blur", validarFormulario);
 });
 
 //Compra y envio de mail al usuario
-const sendMail = () => {
+document.getElementById('formulario').addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  document.getElementById('formulario').addEventListener("submit", function (e) {
-    e.preventDefault();
+  btnEndFinal.value = 'Finalizando Compra...';
 
-    const serviceID = 'default_service';
-    const templateID = 'template_nq0hg0m';
 
-    emailjs.sendForm(serviceID, templateID, this);
+  const serviceID = 'default_service';
+  const templateID = 'template_nq0hg0m';
+  emailjs.sendForm(serviceID, templateID, this).then(() => {
+    finalizarCompra();
 
-    if (campos.email && campos.nombre && campos.apellido && campos.telefono && campos.documento) {
-      formulario.reset();
+    btnEndFinal.value = 'Email Enviado';
 
-      document.querySelectorAll(".formulario__grupo-correcto").forEach((icono) => {
-        icono.classList.remove("formulario__grupo-correcto");
-      });
-      document.getElementById("formulario__mensaje").classList.remove("formulario__mensaje-active");
-
-      finalizarCompra();
-    } else {
-      document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-active");
-    }
-
-  });
-}
-
-sendMail();
+    Swal.fire({
+      title: "La compra ha sido exitosa!",
+      text: "Se ha enviado un mail con tu compra. Te esperamos nuevamente!",
+      icon: "success",
+      timer: 5000,
+      showConfirmButton: false,
+      timerProgressBar: true,
+      showConfirmButton: false
+    });
+  }, /* (err) => {
+    btnEndFinal.value = 'Ha ocurrido un error';
+    alert(JSON.stringify(err));
+  } */);
+});

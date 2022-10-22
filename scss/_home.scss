@@ -131,7 +131,7 @@
             }
         }
 
-        button{
+        input#btn-end-final{
             display: block;
             line-height: 2;
             text-decoration: none;
@@ -706,7 +706,7 @@
             }
         }
 
-        .resumen #pagoEnCuotas {
+        .modal__final #pagoEnCuotas {
             display: flex;
             flex-direction: column;
 
@@ -716,6 +716,7 @@
                 font-size: .95rem;
                 text-align: center;
                 line-height: 1;
+                margin: 1rem 0;
                 color: $color-Marron;
 
                 iconify-icon {
@@ -736,6 +737,12 @@
                     padding-top: .3rem;
                     font-weight: bold;
                     color: $color-Marron;
+                }
+
+                input[type="radio"]{
+                    position: absolute;
+                    bottom: -40%;
+                    left: 45%;
                 }
             }
         }

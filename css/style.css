@@ -311,7 +311,7 @@ h1 {
         opacity: 1; }
       #main .modal__final .formulario__grupo-incorrecto .formulario__input {
         border: 3px solid #ff8585; }
-    #main .modal__final button {
+    #main .modal__final input#btn-end-final {
       display: block;
       line-height: 2;
       text-decoration: none;
@@ -328,12 +328,12 @@ h1 {
       border-radius: unset;
       text-transform: uppercase;
       transition: all .3s ease-in-out; }
-      #main .modal__final button:hover {
+      #main .modal__final input#btn-end-final:hover {
         background-color: #008006;
         border: 1px solid #008006;
         border-radius: 5px;
         color: #eaf1f1; }
-      #main .modal__final button.formulario__btn-disabled {
+      #main .modal__final input#btn-end-final.formulario__btn-disabled {
         font-size: .9rem;
         background-color: #a5a5a5;
         color: #525252;
@@ -725,17 +725,18 @@ h1 {
       #main .modal__product .productoEnCarrito .inCart {
         width: 95%;
         border-left: 5px solid #f1a036; }
-    #main .modal__product .resumen #pagoEnCuotas {
+    #main .modal__product .modal__final #pagoEnCuotas {
       display: flex;
       flex-direction: column; }
-      #main .modal__product .resumen #pagoEnCuotas p {
+      #main .modal__product .modal__final #pagoEnCuotas p {
         position: relative;
         font-family: "Roboto", sans-serif;
         font-size: .95rem;
         text-align: center;
         line-height: 1;
+        margin: 1rem 0;
         color: #644336; }
-        #main .modal__product .resumen #pagoEnCuotas p iconify-icon {
+        #main .modal__product .modal__final #pagoEnCuotas p iconify-icon {
           position: absolute;
           top: 0;
           left: 11%;
@@ -744,13 +745,17 @@ h1 {
           font-size: 1.8rem;
           line-height: 1;
           color: #f1a036; }
-        #main .modal__product .resumen #pagoEnCuotas p span {
+        #main .modal__product .modal__final #pagoEnCuotas p span {
           display: block;
           width: 100%;
           text-align: center;
           padding-top: .3rem;
           font-weight: bold;
           color: #644336; }
+        #main .modal__product .modal__final #pagoEnCuotas p input[type="radio"] {
+          position: absolute;
+          bottom: -40%;
+          left: 45%; }
     #main .modal__product #btn-end {
       display: block;
       line-height: 2;
@@ -842,7 +847,11 @@ h1 {
     width: 80%;
     margin: 0 auto; }
     #main .shop__card button {
-      width: 50%; } }
+      width: 50%; }
+  #main #modal__final #pagoEnCuotas p input[type="radio"] {
+    left: 48%; }
+  #main #modal__final #pagoEnCuotas p iconify-icon {
+    left: 18%; } }
 
 @media screen and (min-width: 575.98px) {
   .start__pyme h1 {
@@ -862,7 +871,7 @@ h1 {
     font-size: 1rem; }
     #main .shop__card button iconify-icon {
       margin-right: 0; }
-  #main .modal__product .resumen #pagoEnCuotas p iconify-icon {
+  #main .modal__product #modal__final #pagoEnCuotas iconify-icon {
     left: 25%; }
   #main .modal__product .modal__carrito .btn-vaciar-carrito {
     font-size: .8rem;
@@ -910,6 +919,12 @@ h1 {
       grid-column: span 2; }
     #main #modal__final .formulario__mensaje-active {
       grid-column: span 2; }
+    #main #modal__final .formulario #pagoEnCuotas {
+      justify-content: space-around;
+      flex-direction: row;
+      grid-column: span 2; }
+      #main #modal__final .formulario #pagoEnCuotas iconify-icon {
+        left: -21%; }
   #main #modal__final button {
     width: 50%; }
   #main .shop {

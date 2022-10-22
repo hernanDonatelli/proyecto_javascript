@@ -162,7 +162,7 @@
                         <div id="impuestos"></div>
                         <div id="totalFinal"></div>
                     </div>
-                    <div id="pagoEnCuotas" class="cuotas mt-3 col-12 mt-md-4">
+                    <!-- <div id="pagoEnCuotas" class="cuotas mt-3 col-12 mt-md-4">
                         <p>
                             <iconify-icon icon="emojione-monotone:money-with-wings"></iconify-icon>
                             Efectivo (10% descuento)
@@ -178,7 +178,7 @@
                             6 Cuotas (30% recargo)
                             <span id="tarjeta6">256.57</span>
                         </p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="finalizarCompra mt-3 mb-4">
                     <button id="btn-end" type="submit">Procesar Compra</button>
@@ -254,9 +254,32 @@
                                     campos. </p>
                             </div>
 
+                            <!-- Forma de pago -->
+                            <div id="pagoEnCuotas" class="cuotas mt-3 col-12 mt-md-4">
+                                <p>
+                                    <iconify-icon icon="emojione-monotone:money-with-wings"></iconify-icon>
+                                    Efectivo (10% descuento)
+                                    <input type="radio" id="desc10" name="pago" value="Efectivo (10% de descuento)" checked>
+                                    <span id="efectivo10"></span>
+                                </p>
+                                <p>
+                                    <iconify-icon icon="emojione-monotone:credit-card"></iconify-icon>
+                                    3 Cuotas (15% recargo)
+                                    <input type="radio" id="rec15" name="pago" value="3 cuotas (Recargo 15%)">
+                                    <span id="tarjeta3"></span>
+                                </p>
+                                <p>
+                                    <iconify-icon icon="emojione-monotone:credit-card"></iconify-icon>
+                                    6 Cuotas (30% recargo)
+                                    <input type="radio" id="rec30" name="pago" value="6 cuotas (Recargo 30%)">
+                                    <span id="tarjeta6"></span>
+                                </p>
+                            </div>
+                            <!-- Boton Finalizar Compra -->
                             <div class="formulario__grupo formulario__grupo-btn-enviar">
-                                <button type="submit" id="btn-end-final"
-                                    class="formulario__btn formulario__btn-disabled" value="Finalizar Compra" disabled>Finalizar Compra</button>
+                                <input type="submit" id="btn-end-final"
+                                    class="formulario__btn formulario__btn-disabled" value="Finalizar Compra"
+                                    disabled>
                                 <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado
                                     exitosamente!</p>
                             </div>

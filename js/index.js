@@ -50,6 +50,10 @@ const btnEnd = document.getElementById("btn-end");
 const btnVaciarCarrito = document.getElementById("btn-vaciar-carrito");
 const btnEndFinal = document.getElementById("btn-end-final");
 const modalFinal = document.getElementById("modal__final");
+let printTotalFinal;
+let printEfectivo10;
+let printTarjeta3;
+let printTarjeta6;
 
 /* Funciones */
 
@@ -76,16 +80,16 @@ const calculoPrecioTotal = (arrayCarrito) => {
     let printImpuestos = (printTotal * 0.21).toFixed(2);
     impuestos.innerText = `IVA 21%: $${printImpuestos}`;
 
-    let printTotalFinal = parseFloat(printTotal * 1.21).toFixed(2);
+    printTotalFinal = parseFloat(printTotal * 1.21).toFixed(2);
     totalFinal.innerText = `Total: $${printTotalFinal}`;
 
-    let printEfectivo10 = (printTotalFinal * 0.9).toFixed(2);
+    printEfectivo10 = (printTotalFinal * 0.9).toFixed(2);
     efectivo10.innerText = `Total: $${printEfectivo10}`;
 
-    let printTarjeta3 = (printTotalFinal * 1.15).toFixed(2);
+    printTarjeta3 = (printTotalFinal * 1.15).toFixed(2);
     tarjeta3.innerText = `Total: $${printTarjeta3}`;
 
-    let printTarjeta6 = (printTotalFinal * 1.3).toFixed(2);
+    printTarjeta6 = (printTotalFinal * 1.3).toFixed(2);
     tarjeta6.innerText = `Total: $${printTarjeta6}`;
 };
 
