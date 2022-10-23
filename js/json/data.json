@@ -25,6 +25,66 @@
     },
     {
         "id": 3,
+        "marca": "Inti Zen",
+        "nombre": "Herbal Box",
+        "img": "./img/herbal.png",
+        "descripcion": "Herbal Mix contiene la colección de las 4 tisanas de hierbas sin teína de Inti Zen, relajantes, digestivas y energizantes, para disfrutarlos a toda hora.",
+        "precio": 295.71,
+        "stock": 150,
+        "cantidad": 0,
+        "vendidos": 102,
+        "categoria": "Infusiones"
+    },
+    {
+        "id": 4,
+        "marca": "Inti Zen",
+        "nombre": "Golden Chai",
+        "img": "./img/golde_chai.png",
+        "descripcion": "Blend a base de cúrcuma, ligeramente picante y rico en antioxidantes. Mezclado con jengibre, canela y clavo, se convierte en el chai dorado perfecto.",
+        "precio": 284.16,
+        "stock": 10,
+        "cantidad": 0,
+        "vendidos": 275,
+        "categoria": "Infusiones"
+    },
+    {
+        "id": 5,
+        "marca": "Inti Zen",
+        "nombre": "Dulce Manzanilla",
+        "img": "./img/dulce_manzanilla.png",
+        "descripcion": "Flores de manzanilla relajantes con perfume de miel producen una tisana naturalmente dulce y suave, que irradia aromas duraderos y envolventes, con un toque cítrico de melisa.",
+        "precio": 284.16,
+        "stock": 5,
+        "cantidad": 0,
+        "vendidos": 145,
+        "categoria": "Infusiones"
+    },
+    {
+        "id": 6,
+        "marca": "Inti Zen",
+        "nombre": "Tres Mentas",
+        "img": "./img/tres_mentas.png",
+        "descripcion": "La intensidad y frescura de las hojas de menta piperita egipcia, el toque dulce de la hierbabuena argentina y el aroma sensual de la menta silvestre andina.",
+        "precio": 284.16,
+        "stock": 0,
+        "cantidad": 0,
+        "vendidos": 245,
+        "categoria": "Infusiones"
+    },
+    {
+        "id": 7,
+        "marca": "Inti Zen",
+        "nombre": "Inti Matcha",
+        "img": "./img/inti_matcha.png",
+        "descripcion": "Té verde de Japón, Matcha, Yuzu cítrico y limón. Yuzu es un cítrico de origen japonés con sabor a fruta, similar al de una mandarina, y con aroma floral y dulce.",
+        "precio": 284.16,
+        "stock": 110,
+        "cantidad": 0,
+        "vendidos": 177,
+        "categoria": "Infusiones"
+    },
+    {
+        "id": 8,
         "marca": "Chocolate Colonial",
         "nombre": "Chocolate para Taza",
         "img": "./img/colonial_taza.png",
@@ -36,7 +96,7 @@
         "categoria": "Chocolates"
     },
     {
-        "id": 4,
+        "id": 9,
         "marca": "Chocolate Colonial",
         "nombre": "Chocolate 55% sin Azucar",
         "img": "./img/colonial_sin_azucar.png",
@@ -48,9 +108,69 @@
         "categoria": "Chocolates"
     },
     {
-        "id": 5,
+        "id": 10,
+        "marca": "Chocolate Colonial",
+        "nombre": "Chocolate Organico 60% Cacao",
+        "img": "./img/organico60.png",
+        "descripcion": "Caja que contiene 10 unidades de 100 gramos. Peso neto 1 kg. Ingredientes: licor de cacao orgánico, azúcar orgánico, manteca de cacao orgánica.",
+        "precio": 516.23,
+        "stock": 120,
+        "cantidad": 0,
+        "vendidos": 265,
+        "categoria": "Chocolates"
+    },
+    {
+        "id": 11,
+        "marca": "Chocolate Colonial",
+        "nombre": "Chocolate Organico 70% Cacao",
+        "img": "./img/organico70.png",
+        "descripcion": "Caja que contiene 10 unidades de 100 gramos. Peso neto 1 kg. Ingredientes: licor de cacao orgánico, azúcar orgánico, manteca de cacao orgánica.",
+        "precio": 547.19,
+        "stock": 70,
+        "cantidad": 0,
+        "vendidos": 235,
+        "categoria": "Chocolates"
+    },
+    {
+        "id": 12,
+        "marca": "Chocolate Colonial",
+        "nombre": "Chocolate Organico 80% Cacao",
+        "img": "./img/organico80.png",
+        "descripcion": "Caja que contiene 10 unidades de 100 gramos. Peso neto 1 kg. Ingredientes: licor de cacao orgánico, azúcar orgánico, manteca de cacao orgánica.",
+        "precio": 597.25,
+        "stock": 0,
+        "cantidad": 0,
+        "vendidos": 165,
+        "categoria": "Chocolates"
+    },
+    {
+        "id": 13,
+        "marca": "Chocolate Colonial",
+        "nombre": "Konfitt Almendras",
+        "img": "./img/konfitt_almendras.png",
+        "descripcion": "Almendras cubiertas con chocolate blanco aromatizado con vainillina, libre de gluten. SIN TACC.",
+        "precio": 1463.19,
+        "stock": 30,
+        "cantidad": 0,
+        "vendidos": 95,
+        "categoria": "Chocolates"
+    },
+    {
+        "id": 14,
+        "marca": "Chocolate Colonial",
+        "nombre": "Chocolatinas Semiamargas",
+        "img": "./img/chocolatinas_semi.png",
+        "descripcion": "Chocolatinas semiamargas Sin Tacc, de 5gr cada una. La presentación es en estuche de 50 unidades, peso neto 250g.",
+        "precio": 1358.24,
+        "stock": 70,
+        "cantidad": 0,
+        "vendidos": 62,
+        "categoria": "Chocolates"
+    },
+    {
+        "id": 15,
         "marca": "Cocoon",
-        "nombre": "Leche de Almendras s/Azucar",
+        "nombre": "Leche de Almendras s/Azucar 1l",
         "img": "./img/cocoon_sin_azucar.png",
         "descripcion": "Bebida de almendras con verdadero sabor a almendras. Sin azúcar, sin saborizantes, sin aditivos artificiales. ¡Naturalmente rica!",
         "precio": 255.78,
@@ -60,9 +180,9 @@
         "categoria": "Leches"
     },
     {
-        "id": 6,
+        "id": 16,
         "marca": "Cocoon",
-        "nombre": "Leche de Almendras Original",
+        "nombre": "Leche de Almendras Original 1l",
         "img": "./img/cocoon_original.png",
         "descripcion": "100% natural, de extractos vegetales. Nuestra bebida original es la alternativa saludable y liviana para agregarle a tu café o disfrutarla sola, tomala bien fría!",
         "precio": 255.78,
@@ -72,15 +192,63 @@
         "categoria": "Leches"
     },
     {
-        "id": 7,
+        "id": 17,
         "marca": "Cocoon",
-        "nombre": "Leche de Almendras Chocolatada",
+        "nombre": "Leche de Almendras Chocolatada 1l",
         "img": "./img/cocoon_chocolatada.png",
         "descripcion": "Disfrutá del mejor sabor a chocolate intenso en nuestra chocolatada de almendras. Un sabor equilibrado y liviano para los amantes de lo dulce, y sin culpa!",
         "precio": 278.25,
         "stock": 0,
         "cantidad": 0,
         "vendidos": 154,
+        "categoria": "Leches"
+    },
+    {
+        "id": 18,
+        "marca": "Cocoon",
+        "nombre": "Leche de Almendras Coco 1l",
+        "img": "./img/cocoon_coco.png",
+        "descripcion": "Nuestra bebida de coco es tan rica y naturalmente dulce que no necesitamos agregarle azúcar. Tomala sola, ¡bien fría! o sumala en tus licuados.",
+        "precio": 310.55,
+        "stock": 100,
+        "cantidad": 0,
+        "vendidos": 265,
+        "categoria": "Leches"
+    },
+    {
+        "id": 19,
+        "marca": "Cocoon",
+        "nombre": "Leche de Almendras Cajú 1l",
+        "img": "./img/cocoon_caju.png",
+        "descripcion": "Nuestra bebida de castañas de cajú es tan rica y naturalmente dulce. Tomala sola, ¡bien fría! o sumala en tus licuados.",
+        "precio": 320.18,
+        "stock": 30,
+        "cantidad": 0,
+        "vendidos": 100,
+        "categoria": "Leches"
+    },
+    {
+        "id": 20,
+        "marca": "Cocoon",
+        "nombre": "Leche de Almendras Chocolatada 200ml",
+        "img": "./img/cocoon_choco200.png",
+        "descripcion": "Disfrutá del mejor sabor a chocolate intenso en nuestra chocolatada de almendras. Un sabor equilibrado y liviano para los amantes de lo dulce, y sin culpa!",
+        "precio": 305.10,
+        "stock": 240,
+        "cantidad": 0,
+        "vendidos": 100,
+        "categoria": "Leches"
+    },
+    {
+        "id": 21,
+        "marca": "Cocoon",
+        "nombre": "Leche de Almendras S/Azucar 200ml",
+        "img": "./img/cocoon_sin_azucar200.png",
+        "descripcion": "Bebida de almendras con verdadero sabor a almendras. Sin azúcar, sin saborizantes, sin aditivos artificiales. ¡Naturalmente rica!",
+        "precio": 330.57,
+        "stock": 0,
+        "cantidad": 0,
+        "vendidos": 100,
         "categoria": "Leches"
     }
 ]
