@@ -26,6 +26,7 @@ btnEnd.addEventListener("click", () => {
     apellido: false,
     documento: false,
     telefono: false,
-    pago: false
+    pago: false,
+    final: false
   }
 });

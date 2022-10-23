@@ -2,10 +2,12 @@
 const formulario = document.getElementById("formulario");
 const inputs = document.querySelectorAll("#formulario input");
 btnEndFinal.disabled = true;
+let totalHide = document.querySelector("input[name='final']");
+let pago;
+let totalFinalMail;
+let final;
 
 const finalizarCompra = () => {
-
-  const pago = findSelected();
 
   if (campos.email && campos.nombre && campos.apellido && campos.telefono && campos.documento) {
     formulario.reset();
@@ -53,7 +55,8 @@ const expresiones = {
   apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios.
   documento: /^\d{7,8}$/, //Solo numeros para documento
   telefono: /^\d{7,12}$/, // 7 a 12 numeros, con codigo de pais y area.
-  pago: /^[a-zA-ZÀ-ÿ\s]{1,40}$/
+  pago: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+  final: /^\d$/
 }
 
 //Validar campos completos
@@ -63,7 +66,8 @@ let campos = {
   apellido: false,
   documento: false,
   telefono: false,
-  pago: false
+  pago: false,
+  final: false
 }
 
 const validarFormulario = (e) => {
@@ -116,6 +120,27 @@ const validarCampo = (expresion, input, campo) => {
   }
 };
 
+const rb10 = document.getElementById("desc10");
+const rb15 = document.getElementById("rec15");
+const rb30 = document.getElementById("rec30");
+
+const capturarMonto = () => {
+  document.getElementById("pagoEnCuotas").addEventListener("click", () => {
+
+    if(rb10.checked == true){
+      totalHide.value = printEfectivo10;
+      totalFinalMail = totalHide.value;
+    }else if(rb15.checked == true){
+      totalHide.value = printTarjeta3;
+      totalFinalMail = totalHide.value;
+    }else if(rb30.checked){
+      totalHide.value = printTarjeta6;
+      totalFinalMail = totalHide.value;
+    }
+  })
+}
+capturarMonto();
+
 //Capturar valor de los radiobuttons en forma de pago
 let radioBtns = document.querySelectorAll("input[name='pago']");
 
@@ -128,7 +153,7 @@ radioBtns.forEach(radioBtn => {
   radioBtn.addEventListener("change", findSelected);
 })
 
-findSelected();
+// pago = findSelected();
 
 inputs.forEach((input) => {
   input.addEventListener("keyup", validarFormulario);
@@ -141,14 +166,16 @@ document.getElementById('formulario').addEventListener("submit", function (e) {
 
   btnEndFinal.value = 'Finalizando Compra...';
 
-
   const serviceID = 'default_service';
   const templateID = 'template_nq0hg0m';
   emailjs.sendForm(serviceID, templateID, this).then(() => {
+    pago = findSelected();
+    final = totalFinalMail;
+
     finalizarCompra();
 
     btnEndFinal.value = 'Finalizar Compra';
-    
+
     Swal.fire({
       title: "La compra ha sido exitosa!",
       text: "Se ha enviado un mail con tu compra. Te esperamos nuevamente!",

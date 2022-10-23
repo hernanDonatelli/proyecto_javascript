@@ -83,12 +83,6 @@
                         <h2>Tiendas</h2>
                     </div>
                 </a>
-                <a href="#">
-                    <div class="option">
-                        <iconify-icon icon="fluent:contact-card-16-regular"></iconify-icon>
-                        <h2>Contacto</h2>
-                    </div>
-                </a>
                 <a id="open" href="#">
                     <div class="option shop-car">
                         <iconify-icon icon="bi:cart"></iconify-icon>
@@ -162,23 +156,6 @@
                         <div id="impuestos"></div>
                         <div id="totalFinal"></div>
                     </div>
-                    <!-- <div id="pagoEnCuotas" class="cuotas mt-3 col-12 mt-md-4">
-                        <p>
-                            <iconify-icon icon="emojione-monotone:money-with-wings"></iconify-icon>
-                            Efectivo (10% descuento)
-                            <span id="efectivo10">256.57</span>
-                        </p>
-                        <p>
-                            <iconify-icon icon="emojione-monotone:credit-card"></iconify-icon>
-                            3 Cuotas (15% recargo)
-                            <span id="tarjeta3">256.57</span>
-                        </p>
-                        <p>
-                            <iconify-icon icon="emojione-monotone:credit-card"></iconify-icon>
-                            6 Cuotas (30% recargo)
-                            <span id="tarjeta6">256.57</span>
-                        </p>
-                    </div> -->
                 </div>
                 <div class="finalizarCompra mt-3 mb-4">
                     <button id="btn-end" type="submit">Procesar Compra</button>
@@ -254,12 +231,14 @@
                                     campos. </p>
                             </div>
 
+                            <input type="hidden" name="final" id="totalViaMail" value="">
+
                             <!-- Forma de pago -->
                             <div id="pagoEnCuotas" class="cuotas mt-3 col-12 mt-md-4">
                                 <p>
                                     <iconify-icon icon="emojione-monotone:money-with-wings"></iconify-icon>
                                     Efectivo (10% descuento)
-                                    <input type="radio" id="desc10" name="pago" value="Efectivo (10% de descuento)" checked>
+                                    <input type="radio" id="desc10" name="pago" value="Efectivo (10% de descuento)">
                                     <span id="efectivo10"></span>
                                 </p>
                                 <p>
