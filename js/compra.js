@@ -93,9 +93,9 @@ const validarFormulario = (e) => {
       break;
   }
 
-  if (campos.email && campos.nombre && campos.apellido && campos.telefono && campos.documento) {
-    btnEndFinal.disabled = false;
+  if (campos.email && campos.nombre && campos.apellido && campos.telefono && campos.documento && totalFinalMail !== undefined) {
     btnEndFinal.classList.remove("formulario__btn-disabled");
+    btnEndFinal.disabled = false;
   }else{
     btnEndFinal.disabled = true;
     btnEndFinal.classList.add("formulario__btn-disabled");
@@ -120,6 +120,7 @@ const validarCampo = (expresion, input, campo) => {
   }
 };
 
+//En base al radiobutton checked capturo el valor (numerico)
 const rb10 = document.getElementById("desc10");
 const rb15 = document.getElementById("rec15");
 const rb30 = document.getElementById("rec30");
@@ -130,18 +131,24 @@ const capturarMonto = () => {
     if(rb10.checked == true){
       totalHide.value = printEfectivo10;
       totalFinalMail = totalHide.value;
+      btnEndFinal.disabled = false;
+      btnEndFinal.classList.remove("formulario__btn-disabled");
     }else if(rb15.checked == true){
       totalHide.value = printTarjeta3;
       totalFinalMail = totalHide.value;
+      btnEndFinal.disabled = false;
+      btnEndFinal.classList.remove("formulario__btn-disabled");
     }else if(rb30.checked){
       totalHide.value = printTarjeta6;
       totalFinalMail = totalHide.value;
+      btnEndFinal.disabled = false;
+      btnEndFinal.classList.remove("formulario__btn-disabled");
     }
   })
 }
 capturarMonto();
 
-//Capturar valor de los radiobuttons en forma de pago
+//Capturar valor de los radiobuttons en forma de pago(string)
 let radioBtns = document.querySelectorAll("input[name='pago']");
 
 let findSelected = () => {
@@ -152,8 +159,6 @@ let findSelected = () => {
 radioBtns.forEach(radioBtn => {
   radioBtn.addEventListener("change", findSelected);
 })
-
-// pago = findSelected();
 
 inputs.forEach((input) => {
   input.addEventListener("keyup", validarFormulario);
