@@ -5,15 +5,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Inter:wght@200;300;400;500;600&family=Zilla+Slab:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet" />
+    <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Toastify -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <!-- sweetalert2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.33/sweetalert2.css"
         integrity="sha512-e+TwvhjDvKqpzQLJ7zmtqqz+5jF9uIOa+5s1cishBRfmapg7mqcEzEl44ufb04BXOsEbccjHK9V0IVukORmO8w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+        integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+    <!-- Leaflet Extra Markers -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-extra-markers/1.2.1/css/leaflet.extra-markers.min.css"
+        integrity="sha512-wurszDyO1nj6ESdfrXb9h1hmoHMu3sQ3iXgKcu/p81lT+KaPGkta9NIPX7k6XXGgVYpcRHcc8AA4UIeQ7Ax/Cw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Proyecto Javascript - Tienda Gourmet</title>
@@ -27,6 +43,12 @@
         <header class="container-fluid header">
             <div id="btn-open-menu" class="header__bars">
                 <iconify-icon icon="codicon:three-bars"></iconify-icon>
+            </div>
+
+            <div class="menu__side__social">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
             </div>
         </header>
 
@@ -77,7 +99,7 @@
                         <h2 class="productosMenu">Productos</h2>
                     </div>
                 </a>
-                <a href="#">
+                <a href="#mapaComercios" class="mapaComercios">
                     <div class="option">
                         <iconify-icon icon="wpf:geo-fence"></iconify-icon>
                         <h2>Tiendas</h2>
@@ -94,7 +116,7 @@
         </div>
     </section>
     <!-- Contenido -->
-    <main id="main" class="container-fluid mb-5">
+    <main id="main" class="container-fluid">
         <!-- Destacados -->
         <section id="destacados">
             <h1 class="text-center"><span>Mas</span>Vendidos</h1>
@@ -256,8 +278,8 @@
                             </div>
                             <!-- Boton Finalizar Compra -->
                             <div class="formulario__grupo formulario__grupo-btn-enviar">
-                                <input type="submit" id="btn-end-final"
-                                    class="formulario__btn formulario__btn-disabled" value="Finalizar Compra">
+                                <input type="submit" id="btn-end-final" class="formulario__btn formulario__btn-disabled"
+                                    value="Finalizar Compra">
                                 <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado
                                     exitosamente!</p>
                             </div>
@@ -275,15 +297,31 @@
             </div>
         </section>
 
+        <!-- Tiendas fisicas -->
+        <section id="mapaComercios">
+            <div class="container-fluid">
+                <h1 class="text-center my-3"><span>Nuestros</span>Comercios</h1>
+                <select name="select-location" id="select-location">
+                    <option value="-34.5598689,-58.4514425">Seleccione un comercio</option>
+                    <option value="-34.5570653,-58.4525777">Tina & Co</option>
+                    <option value="-34.5573558,-58.4527654">Casa China</option>
+                    <option value="-34.5565086,-58.4533029">Ichiban</option>
+                    <option value="-34.5641763,-58.458524">Cocktail</option>
+                    <option value="-34.590647,-58.4157209">Marché Bio</option>
+                    <option value="-34.6156851,-58.4400576">Le Pot</option>
+                    <option value="-34.5936756,-58.3944317">Matcha Life</option>
+                    <option value="-34.5683417,-58.4378185">Elote</option>
+                </select>
+                <div id="map"></div>
+            </div>
+        </section>
     </main>
-
-    <!-- Footer -->
-    <footer></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+    <!-- Fotnawesome Kit -->
     <script src="https://kit.fontawesome.com/51efdbf107.js" crossorigin="anonymous"></script>
     <!-- Javascript -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -293,6 +331,7 @@
     <script src="./js/vendidos.js"></script>
     <script src="./js/categorias.js"></script>
     <script src="./js/compra.js"></script>
+    <script src="./js/mapa.js"></script>
 </body>
 
 </html>

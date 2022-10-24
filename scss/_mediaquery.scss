@@ -4,6 +4,11 @@
     }
 
     #main {
+        #mapaComercios{
+            #select-location{
+                left: 24%;
+            }
+        }
 
         #formSearch{
             width: 75%;
@@ -54,6 +59,12 @@
     }
 
     #main {
+        #mapaComercios{
+            #select-location{
+                top: 17%;
+                left: 30%;
+            }
+        }
 
         h1 {
             font-size: 3rem;
@@ -456,6 +467,12 @@
         left: 0;
         width: 80px;
 
+        &__social{
+            bottom: 35%;
+            right: 10%;
+            padding: 0;
+        }
+
         &__page {
             width: 215px;
         }
@@ -479,6 +496,11 @@
     }
 
     #main {
+        #mapaComercios{
+            #select-location{
+                left: 40%;
+            }
+        }
         #listadoCategorias{
             width: 50%;
         }
@@ -631,6 +653,13 @@
 
     /* MAIN */
     #main {
+
+        #mapaComercios{
+            #select-location{
+                top: 20%;
+                left: 40%;
+            }
+        }
 
         .shop {
 

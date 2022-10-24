@@ -69,6 +69,20 @@ h1 {
         display: none;
     }
 
+    &__social{
+        position: absolute;
+        bottom: 33%;
+        right: 0%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        i{
+            padding-right: .5rem;
+            color: $color-BeigeSuave;
+        }
+    }
+
     &__page {
         display: flex;
         align-items: center;

@@ -104,6 +104,16 @@ h1 {
   scrollbar-width: none; }
   .menu__side::-webkit-scrollbar {
     display: none; }
+  .menu__side__social {
+    position: absolute;
+    bottom: 33%;
+    right: 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    .menu__side__social i {
+      padding-right: .5rem;
+      color: #ecd1a7; }
   .menu__side__page {
     display: flex;
     align-items: center;
@@ -793,6 +803,23 @@ h1 {
     #main .modal__product #totalFinal {
       font-size: 1.3rem;
       font-weight: 700; }
+  #main #mapaComercios {
+    position: relative; }
+    #main #mapaComercios #map {
+      height: 100vh;
+      width: 100%; }
+    #main #mapaComercios #select-location {
+      position: absolute;
+      top: 15%;
+      left: 18%;
+      z-index: 2000;
+      background-color: rgba(255, 255, 255, 0.6);
+      border: 1px solid #644336;
+      font-family: "Roboto", sans-serif;
+      color: #644336;
+      font-size: 15px;
+      padding: .5rem 1rem;
+      margin: 1rem; }
 
 .swal2-popup {
   padding: 0rem 1rem 2rem !important; }
@@ -841,6 +868,8 @@ h1 {
 @media screen and (min-width: 479.98px) {
   .start__shop {
     height: 60vh; }
+  #main #mapaComercios #select-location {
+    left: 24%; }
   #main #formSearch {
     width: 75%; }
   #main .shop__card {
@@ -858,6 +887,9 @@ h1 {
     font-size: 3rem; }
   .start__pyme p {
     font-size: 1rem; }
+  #main #mapaComercios #select-location {
+    top: 17%;
+    left: 30%; }
   #main h1 {
     font-size: 3rem; }
   #main #formSearch {
@@ -1061,6 +1093,10 @@ h1 {
   .menu__side {
     left: 0;
     width: 80px; }
+    .menu__side__social {
+      bottom: 35%;
+      right: 10%;
+      padding: 0; }
     .menu__side__page {
       width: 215px; }
   .menu__side__move {
@@ -1072,6 +1108,8 @@ h1 {
     height: 90vh; }
     .start__pyme h1 {
       font-size: 3rem; }
+  #main #mapaComercios #select-location {
+    left: 40%; }
   #main #listadoCategorias {
     width: 50%; }
   #main #formSearch {
@@ -1156,6 +1194,9 @@ h1 {
       background-repeat: no-repeat;
       background-size: cover; }
   /* MAIN */
+  #main #mapaComercios #select-location {
+    top: 20%;
+    left: 40%; }
   #main .shop__card {
     width: 30%;
     margin: 0 .5rem;

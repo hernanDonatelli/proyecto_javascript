@@ -16,6 +16,7 @@
     <li>Sass</li>
     <li>Vanilla Javascript</li>
     <li>Sweetalert2</li>
+    <li>Toastify</li>
     <li>EmailJS</li>
     <li>LeafletJS</li>
 </ul>

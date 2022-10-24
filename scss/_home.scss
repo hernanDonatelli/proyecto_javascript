@@ -796,4 +796,26 @@
         }
 
     }
+    #mapaComercios{
+        position: relative;
+
+        #map{
+            height: 100vh;
+            width: 100%;
+        }
+
+        #select-location{
+            position: absolute;
+            top: 15%;
+            left: 18%;
+            z-index: 2000;
+            background-color: rgba(255, 255, 255, .6);
+            border: 1px solid $color-Marron;
+            font-family: $fuente-Roboto;
+            color: $color-Marron;
+            font-size: 15px;
+            padding: .5rem 1rem;
+            margin: 1rem;
+        }
+    }
 }
